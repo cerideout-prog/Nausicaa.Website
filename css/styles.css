@@ -1,22 +1,23 @@
-/* Nausicaa Consult — Ghibli wind-valley palette, sky/sage forward, ochre as a minimal accent */
+/* Nausicaa Consult — Ghibli wind-valley palette, blue/indigo forward */
 :root {
-  --ochre: #c06a3b;
-  --ochre-dark: #96502b;
-  --sand: #eef1ea;
-  --sand-light: #f7faf8;
-  --sage: #5c8a7c;
-  --sage-dark: #2f5c54;
-  --sky: #6fb3c9;
-  --sky-light: #dcf0f4;
-  --ink: #233331;
-  --ink-soft: #51625f;
+  --ochre: #4a5d99;
+  --ochre-dark: #38456f;
+  --sand: #eef1f5;
+  --sand-light: #f8fafc;
+  --sage: #335169;
+  --sage-dark: #1f3347;
+  --sky: #5b94c2;
+  --sky-light: #dceefa;
+  --ink: #1f2733;
+  --ink-soft: #57626f;
   --white: #ffffff;
 
-  --font-head: 'Cormorant Garamond', Georgia, serif;
+  --font-head: 'Inter', -apple-system, Segoe UI, sans-serif;
+  --font-logo: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
 
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(42, 37, 33, 0.12);
+  --shadow: 0 10px 30px rgba(31, 39, 51, 0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -108,7 +109,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-head);
+  font-family: var(--font-logo);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--sage-dark);
@@ -484,7 +485,7 @@ section { padding: 90px 0; }
   margin-bottom: 24px;
 }
 .footer-brand {
-  font-family: var(--font-head);
+  font-family: var(--font-logo);
   font-size: 1.3rem;
   color: var(--white);
   margin-bottom: 8px;
