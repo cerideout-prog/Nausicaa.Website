@@ -1,17 +1,16 @@
-/* Nausicaa Consult — Ghibli-inspired palette with a Kimberley twist
-   Wind-valley teal/sage + sky blue, layered with Kimberley red ochre/sandstone */
+/* Nausicaa Consult — Ghibli wind-valley palette, sky/sage forward, ochre as a minimal accent */
 :root {
-  --ochre: #b5552c;
-  --ochre-dark: #8a3f1f;
-  --sand: #e8d9bd;
-  --sand-light: #f6efe0;
-  --sage: #5c7a64;
-  --sage-dark: #3c5446;
-  --sky: #6fa8b8;
-  --sky-light: #cfe7ec;
-  --ink: #2a2521;
-  --ink-soft: #5a5248;
-  --white: #fffdf8;
+  --ochre: #c06a3b;
+  --ochre-dark: #96502b;
+  --sand: #eef1ea;
+  --sand-light: #f7faf8;
+  --sage: #5c8a7c;
+  --sage-dark: #2f5c54;
+  --sky: #6fb3c9;
+  --sky-light: #dcf0f4;
+  --ink: #233331;
+  --ink-soft: #51625f;
+  --white: #ffffff;
 
   --font-head: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, Segoe UI, sans-serif;
@@ -186,7 +185,7 @@ h1, h2, h3, h4 {
   height: 420px;
   border-radius: var(--radius);
   background:
-    linear-gradient(200deg, var(--sage) 0%, var(--sage-dark) 45%, var(--ochre-dark) 100%);
+    linear-gradient(195deg, var(--sky-light) 0%, var(--sky) 50%, var(--sage-dark) 100%);
   overflow: hidden;
   box-shadow: var(--shadow);
 }
@@ -196,20 +195,35 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.25), transparent 35%),
-    repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+    radial-gradient(circle at 75% 18%, rgba(255,255,255,0.55), transparent 38%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.08) 0 2px, transparent 2px 30px);
+}
+
+.hero-figure {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  max-width: 320px;
+}
+
+.hero-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-art .glider {
   position: absolute;
-  width: 140px;
+  width: 150px;
   height: 6px;
-  background: var(--sand-light);
+  background: var(--white);
   border-radius: 4px;
-  top: 38%;
-  left: 18%;
-  transform: rotate(-12deg);
-  box-shadow: 0 0 24px 4px rgba(246, 239, 224, 0.6);
+  top: 30%;
+  left: 14%;
+  transform: rotate(-10deg);
+  box-shadow: 0 0 24px 4px rgba(255, 255, 255, 0.55);
 }
 
 .hero-art .glider::after {
@@ -220,7 +234,7 @@ h1, h2, h3, h4 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--sand-light);
+  background: var(--white);
   opacity: 0.85;
 }
 
