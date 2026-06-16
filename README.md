@@ -10,7 +10,6 @@ Landing page for Nausicaa Consult — business capability and tendering consulta
 
 ## Before going live
 
-- Replace `YOUR_FORM_ID` in both `<form action="https://formspree.io/f/YOUR_FORM_ID">` attributes in `index.html` with your real Formspree form ID (sign up free at formspree.io).
 - Swap placeholder hero/about visuals for real photography/logo when available.
 
 ## Local preview
