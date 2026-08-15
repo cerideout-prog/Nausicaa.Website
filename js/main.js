@@ -1,9 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', function () {
+  // Footer year
+  const yr = document.getElementById('year');
+  if (yr) yr.textContent = new Date().getFullYear();
 
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', (e) => {
+  // Active nav link (by pathname)
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    const href = a.getAttribute('href').replace(/\/$/, '') || '/';
+    if (href === path || (href !== '/' && path.startsWith(href))) {
+      a.classList.add('active');
+    }
+  });
+
+  // Smooth scroll for same-page anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
         e.preventDefault();
