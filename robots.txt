@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Draft terms — built but not published, pending legal review.
+Disallow: /terms.html
+
+Sitemap: https://nausicaaconsulting.com.au/sitemap.xml

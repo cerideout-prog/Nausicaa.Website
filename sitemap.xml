@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- terms.html is deliberately excluded — draft, pending legal review.
+     contract-administration.html and business-capability.html are excluded —
+     they are redirect stubs for the pre-v2 URLs. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nausicaaconsulting.com.au/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/delivering-in-the-kimberley.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/kimberley-business.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/superintendents-representative.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/fractional-commercial-manager.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/local-content.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/supply-chain.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/business-support.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/active-procurement.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/conflict-policy.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/rates.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>
