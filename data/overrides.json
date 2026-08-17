@@ -1,0 +1,15 @@
+{
+  "_comment": "Corrections applied on top of whatever the KDC email says. Keyed by the slugified tender title. Overrides always win and survive regeneration, so fix source errors here rather than by editing tenders.json (which gets overwritten every run). Any field is overridable: issuer, location, category, notes, url.",
+
+  "panel-contract-for-the-provision-of-driver-training-services": {
+    "issuer": "Main Roads WA",
+    "location": "Statewide",
+    "category": "Professional",
+    "_why": "KDC's list has the issuer and location transposed in this row."
+  },
+
+  "provision-of-employee-assistance-program-eap": {
+    "issuer": "Dept. Housing & Works",
+    "_why": "Typo in KDC's list — 'Dept. THousing & Works'."
+  }
+}

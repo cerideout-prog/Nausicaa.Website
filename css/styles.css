@@ -1324,3 +1324,8 @@ strong { color: var(--ink); font-weight: 600; }
 /* Paragraph rhythm for content sitting directly in a narrow section */
 .container--narrow > p { margin-bottom: 18px; }
 .container--narrow > p:last-child { margin-bottom: 0; }
+
+/* Procurement table: keep the source and close-date columns compact */
+.proc-table td:nth-child(5) { white-space: nowrap; }
+.proc-table td:nth-child(6) { white-space: nowrap; }
+.proc-table th:nth-child(6), .proc-table td:nth-child(6) { width: 1%; }
