@@ -24,6 +24,10 @@ window.NAUSICAA = {
   acn:         null,                 // set once Pty Ltd registered
 
   /* ── Contact ───────────────────────────────────────────── */
+  /* Switch to callum@nausicaaconsulting.com.au once the Workspace
+     mailbox is live and MX/SPF/DKIM/DMARC are verified. Changing it
+     here updates the header bar, contact page, footer and schema in
+     one go. Don't switch until mail actually delivers to it. */
   email:       'cerideout@gmail.com',
   phone:       '0450 137 044',
   phoneHref:   'tel:+61450137044',
