@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="164" viewBox="0 0 320 164" role="img" aria-label="Nausicaa — Commercial Management for the Kimberley">
+  <title>Nausicaa — Commercial Management for the Kimberley</title>
+  <g transform="translate(130 4) scale(0.6)">
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#14243C" stroke-width="4.5"></circle>
+  <path d="M33 68 V32 L67 68 V32" fill="none" stroke="#14243C" stroke-width="4.5"></path>
+  </g>
+  <text text-anchor="middle" x="160" y="110" font-family="Jost, Helvetica, Arial, sans-serif" font-weight="500" font-size="28" letter-spacing="1.68" fill="#14243C">Nausicaa</text>
+  <text x="160" y="136" font-family="Jost, Helvetica, Arial, sans-serif" font-weight="400" font-size="9" letter-spacing="1.80" fill="#5A6779" text-anchor="middle">COMMERCIAL MANAGEMENT FOR THE KIMBERLEY</text>
+</svg>
