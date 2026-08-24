@@ -1012,6 +1012,7 @@ strong { color: var(--ink); font-weight: 600; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .roles-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -1024,6 +1025,7 @@ strong { color: var(--ink); font-weight: 600; }
   .region-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .credential-grid { grid-template-columns: 1fr; }
+  .profile-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-col:not(:first-child) { display: none; }
@@ -1360,6 +1362,38 @@ strong { color: var(--ink); font-weight: 600; }
 /* Paragraph rhythm for content sitting directly in a narrow section */
 .container--narrow > p { margin-bottom: 18px; }
 .container--narrow > p:last-child { margin-bottom: 0; }
+
+/* ── Project profiles (index grid) ── */
+.profile-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.profile-card {
+  display: block; background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 30px 28px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  text-decoration: none;
+}
+.profile-card:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-lg);
+  border-color: var(--blue); text-decoration: none;
+}
+.profile-card .profile-tag {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--blue); margin-bottom: 12px;
+}
+.profile-card h3 { font-size: 1.18rem; margin-bottom: 10px; letter-spacing: -0.01em; }
+.profile-card > p { font-size: 0.92rem; margin-bottom: 16px; }
+.profile-card .profile-meta {
+  font-size: 0.82rem; color: var(--ink-muted); font-weight: 500;
+  padding-top: 14px; margin-bottom: 16px; border-top: 1px solid var(--border);
+}
+.profile-card .card-link {
+  font-weight: 600; color: var(--blue); font-size: 0.92rem;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.profile-card:hover .card-link { gap: 10px; }
+.profile-card .card-link span { transition: all .18s ease; }
 
 /* Procurement table: keep the source and close-date columns compact */
 .proc-table td:nth-child(5) { white-space: nowrap; }

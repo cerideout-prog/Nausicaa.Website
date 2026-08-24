@@ -44,6 +44,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nausicaaconsulting.com.au/project-profiles.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/projects/kaynar-group.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/projects/micromine-pitram.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/projects/prominent-hill.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/projects/ministry-of-data.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/projects/governance-community.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nausicaaconsulting.com.au/conflict-policy.html</loc>
     <priority>0.7</priority>
   </url>
