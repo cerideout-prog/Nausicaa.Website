@@ -29,8 +29,8 @@
   var NAUSICAA_MARKUP_LOW  = 20;
   var NAUSICAA_MARKUP_HIGH = 30;
 
-  /* Published rate basis (js/config.js is authoritative; these are
-     fallbacks if config.js has not loaded). */
+  /* Internal rate basis, not published in page copy (js/config.js is
+     authoritative; these are fallbacks if config.js has not loaded). */
   function dayRate() {
     return (window.NAUSICAA && window.NAUSICAA.dayRate) || 1280;
   }
@@ -138,19 +138,18 @@
     var onGroundCost = days * dayRate() * duration;
     if (isBlank('c-remoteday') || remoteDay <= 0) {
       set('r-engage', money(onGroundCost),
-        days + ' days/month × ' + money(dayRate()) + '/day × ' + duration +
-        ' months. Enter your current cost per site attendance day to compare.');
+        days + ' days/month × our day rate × ' + duration +
+        ' months. Day and hourly rates are available on request. Enter your current cost per site attendance day to compare.');
     } else {
       var remoteCost = days * remoteDay * duration;
       var delta = remoteCost - onGroundCost;
       if (delta > 0) {
         set('r-engage', range(delta * 0.85, delta * 1.15),
           'Your ' + money(remoteDay) + '/day × ' + days + ' days × ' + duration +
-          ' months = ' + money(remoteCost) + ', against ' + money(onGroundCost) + ' on our published day rate.');
+          ' months = ' + money(remoteCost) + ', against ' + money(onGroundCost) + ' on our day rate.');
       } else {
         set('r-engage', 'No indicative difference',
-          'The day cost you entered (' + money(remoteDay) + ') is at or below our published ' +
-          money(dayRate()) + '/day. On this input the difference is in coverage, not cost.');
+          'The day cost you entered (' + money(remoteDay) + ') is at or below our day rate. On this input the difference is in coverage, not cost.');
       }
     }
 
@@ -163,7 +162,7 @@
 
     /* ── 5. Indicative engagement cost, for context ── */
     set('r-fee', money(onGroundCost),
-      'On-ground engagement at the published day rate for the inputs above. Retainer and project-fee structures are usually more economic — fee schedule provided on enquiry.');
+      'On-ground engagement at our day rate for the inputs above. Retainer and project-fee structures are usually more economic — fee schedule and day/hourly rates provided on enquiry.');
   }
 
   /* Comma-format the contract value field as the user types */

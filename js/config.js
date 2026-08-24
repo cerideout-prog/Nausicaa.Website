@@ -24,11 +24,9 @@ window.NAUSICAA = {
   acn:         null,                 // set once Pty Ltd registered
 
   /* ── Contact ───────────────────────────────────────────── */
-  /* Switch to callum@nausicaaconsulting.com.au once the Workspace
-     mailbox is live and MX/SPF/DKIM/DMARC are verified. Changing it
-     here updates the header bar, contact page, footer and schema in
-     one go. Don't switch until mail actually delivers to it. */
-  email:       'cerideout@gmail.com',
+  /* Changing this updates the header bar, contact page, footer and
+     schema in one go. */
+  email:       'callum.rideout@nausicaaconsulting.com.au',
   phone:       '0450 137 044',
   phoneHref:   'tel:+61450137044',
   linkedin:    'https://www.linkedin.com/in/callum-rideout/',
@@ -39,7 +37,11 @@ window.NAUSICAA = {
   state:       'WA',
   postcode:    '6725',
 
-  /* ── Published rate basis (brief §5.2, §10.1) ──────────── */
+  /* ── Rate basis — internal only, not published on the site.
+     Used to drive the indicative calculator's on-ground engagement
+     estimate. Actual day/hourly rates are quoted after a discussion
+     about the project and are deliberately not stated as a figure
+     anywhere in the page copy (brief §5.2, §10.1). ──────────── */
   hourlyRate:  160,
   dayRate:     1280,
   dayHours:    8,

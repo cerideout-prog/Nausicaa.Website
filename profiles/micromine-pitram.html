@@ -262,6 +262,49 @@ p { orphans: 3; widows: 3; }
   main { padding: 30px 0 10px; }
   section { margin-bottom: 26px; }
 }
+
+/* ── Download gate (lead capture before PDF export) — shared across all
+   project profiles. Requires work email + organisation, posts to the
+   contact Formspree endpoint, then opens the browser print dialog so
+   the visitor can save this page as a PDF. Never shown on the printed
+   output itself (see @media print rule below). ── */
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 22px; padding: 11px 20px;
+  background: var(--n-on-navy); color: var(--n-navy);
+  border: none; border-radius: 999px;
+  font-family: var(--n-font-body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em; cursor: pointer;
+}
+.dl-btn:hover { background: #ffffff; }
+.dl-modal-backdrop {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background: rgba(11,21,38,0.6);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.dl-modal { background: var(--n-paper); border-radius: 10px; max-width: 420px; width: 100%; padding: 32px; position: relative; }
+.dl-modal h3 { font-family: var(--n-font-head); font-size: 19px; color: var(--n-ink); margin: 0 0 8px; }
+.dl-modal p { font-size: 14px; color: var(--n-body); margin: 0 0 20px; }
+.dl-field { margin-bottom: 14px; }
+.dl-field label {
+  display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--n-muted-paper); margin-bottom: 6px;
+}
+.dl-field input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--n-line);
+  border-radius: 6px; font-family: var(--n-font-body); font-size: 14px;
+  background: #fff; color: var(--n-ink); box-sizing: border-box;
+}
+.dl-modal button[type="submit"] {
+  width: 100%; padding: 12px; background: var(--n-navy); color: var(--n-on-navy);
+  border: none; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+.dl-close {
+  position: absolute; top: 14px; right: 14px; background: none; border: none;
+  font-size: 20px; line-height: 1; color: var(--n-muted-paper); cursor: pointer; padding: 4px;
+}
+.dl-note { font-size: 11px; color: var(--n-muted-paper); margin-top: 12px; }
+@media print { .dl-btn, .dl-modal-backdrop { display: none !important; } }
 </style>
 </head>
 <body>
@@ -293,6 +336,7 @@ p { orphans: 3; widows: 3; }
     <p class="kicker">Project Profile — Resources / Mining Technology</p>
     <h1>Building Micromine Pitram's Commercial Engine Through a Private Equity Growth Cycle</h1>
     <p class="positioning">Five and a half years inside a private-equity-backed mining software business — from global product to APAC commercial leadership — spanning Potentia Capital's 2018 investment through to Micromine's 2025 sale to Weir Group plc.</p>
+    <button type="button" class="dl-btn" id="dl-open">Download this profile ↓</button>
   </div>
 </section>
 
@@ -425,6 +469,68 @@ p { orphans: 3; widows: 3; }
     <span>&copy; Nausicaa Consulting. Prepared as an executive project profile for business development, executive search and capability-statement purposes.</span>
   </div>
 </footer>
+
+<div class="dl-modal-backdrop" id="dl-modal-backdrop">
+  <div class="dl-modal">
+    <button type="button" class="dl-close" id="dl-close" aria-label="Close">&times;</button>
+    <h3>Download this profile</h3>
+    <p>Enter your work email and organisation and this profile will open as a PDF you can save.</p>
+    <form id="dl-form">
+      <div class="dl-field">
+        <label for="dl-email">Work email</label>
+        <input type="email" id="dl-email" name="email" required>
+      </div>
+      <div class="dl-field">
+        <label for="dl-org">Organisation</label>
+        <input type="text" id="dl-org" name="organisation" required>
+      </div>
+      <button type="submit">Continue to download</button>
+      <p class="dl-note">Used only to follow up on this download. See the privacy note on our <a href="/contact.html" target="_blank" rel="noopener">contact page</a>.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var STORAGE_KEY = 'nausicaaProfileUnlocked';
+  var FORMSPREE_URL = 'https://formspree.io/f/mbdebkdw';
+  var openBtn = document.getElementById('dl-open');
+  var backdrop = document.getElementById('dl-modal-backdrop');
+  var form = document.getElementById('dl-form');
+  var closeBtn = document.getElementById('dl-close');
+  if (!openBtn || !backdrop || !form) return;
+
+  var unlocked = false;
+  try { unlocked = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+  function doPrint() { setTimeout(function () { window.print(); }, 150); }
+
+  openBtn.addEventListener('click', function () {
+    if (unlocked) { doPrint(); return; }
+    backdrop.style.display = 'flex';
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function () { backdrop.style.display = 'none'; });
+  backdrop.addEventListener('click', function (e) { if (e.target === backdrop) backdrop.style.display = 'none'; });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Please wait…'; }
+    var data = new FormData(form);
+    data.append('form_name', 'Project profile download — lead capture');
+    data.append('profile', document.title);
+    data.append('source_page', window.location.pathname);
+    function after() {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e2) {}
+      unlocked = true;
+      backdrop.style.display = 'none';
+      doPrint();
+    }
+    fetch(FORMSPREE_URL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }).then(after, after);
+  });
+})();
+</script>
 
 </body>
 </html>

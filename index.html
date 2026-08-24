@@ -26,7 +26,7 @@
   "description": "Contract administration, Superintendent's Representative appointments, local content planning, supply chain intelligence and fractional commercial management in the Kimberley region of Western Australia.",
   "url": "https://nausicaaconsulting.com.au/",
   "telephone": "+61450137044",
-  "email": "cerideout@gmail.com",
+  "email": "callum.rideout@nausicaaconsulting.com.au",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Broome",
@@ -56,7 +56,7 @@
   <div class="container">
     <a data-entity-href="phoneHref" href="tel:+61450137044"><span data-entity="phone">0450 137 044</span></a>
     <span class="util-sep">·</span>
-    <a href="mailto:cerideout@gmail.com"><span data-entity="email">cerideout@gmail.com</span></a>
+    <a href="mailto:callum.rideout@nausicaaconsulting.com.au"><span data-entity="email">callum.rideout@nausicaaconsulting.com.au</span></a>
   </div>
 </div>
 
@@ -67,9 +67,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
     <div class="nav-links">
-      <a href="/delivering-in-the-kimberley.html">Bringing Work Here</a>
+      <a href="/delivering-in-the-kimberley.html">Kimberley Projects</a>
       <a href="/kimberley-business.html">Kimberley Business</a>
-      <a href="/active-procurement.html">Active Procurement</a>
+      <a href="/active-procurement.html">Upcoming Works</a>
       <a href="/project-profiles.html">Project Profiles</a>
       <a href="/about.html">About</a>
       <a href="/conflict-policy.html">Conflict Policy</a>
@@ -259,7 +259,26 @@
         <p class="lead">Every assumption below is yours to set. Change any input and the ranges move. Each result shows its workings — nothing is asserted that you can't check.</p>
       </div>
 
-      <div class="calc-wrap">
+      <div class="calc-gate" id="calc-gate">
+        <h3>Unlock the calculator</h3>
+        <p>Enter your work email and organisation to see the indicative figures below.</p>
+        <form class="calc-gate-form" id="calc-gate-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="calc-gate-email">Work email</label>
+              <input type="email" id="calc-gate-email" name="email" required>
+            </div>
+            <div class="form-field">
+              <label for="calc-gate-org">Organisation</label>
+              <input type="text" id="calc-gate-org" name="organisation" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">See my indicative figures</button>
+          <p class="calc-gate-note">Used only to follow up on the figures you generate. Nothing is shared with a third party — see the privacy note on our <a href="/contact.html">contact page</a>.</p>
+        </form>
+      </div>
+
+      <div class="calc-wrap is-locked" id="calc-wrap">
 
         <div class="calc-inputs">
           <div class="calc-field">
@@ -356,7 +375,7 @@
             <p class="result-note" data-note-for="r-engage"></p>
             <details class="workings">
               <summary>How this is calculated</summary>
-              <p>On-ground cost = engagement days per month × our published day rate of $1,280 (based on $160/hour over an 8-hour day) × project duration. If you enter your current cost per site attendance day, the same day count is priced at your figure and the difference shown as a range of ±15%.</p>
+              <p>On-ground cost = engagement days per month × our day rate × project duration. Day and hourly rates are available on request, agreed after a discussion about the project. If you enter your current cost per site attendance day, the same day count is priced at your figure and the difference shown as a range of ±15%.</p>
             </details>
           </div>
 
@@ -449,7 +468,7 @@
           <li><a href="/kimberley-business.html">Overview</a></li>
           <li><a href="/fractional-commercial-manager.html">Fractional Commercial Manager</a></li>
           <li><a href="/business-support.html">Capability &amp; Tendering</a></li>
-          <li><a href="/active-procurement.html">Active Procurement</a></li>
+          <li><a href="/active-procurement.html">Upcoming Works</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -473,5 +492,6 @@
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
 <script src="js/calculator.js"></script>
+<script src="js/calc-gate.js"></script>
 </body>
 </html>
