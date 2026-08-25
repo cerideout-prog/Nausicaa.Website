@@ -2,11 +2,10 @@
    Nausicaa Consulting — lead-capture gate for the indicative
    calculator. The calculator inputs are always visible; work
    email + organisation are compulsory before the RESULTS
-   (#calc-results-body) are revealed. The user picks how they
-   want the figures: revealed inline now, or emailed to them as
-   a non-binding estimate they can forward on. Submissions are
-   sent to the same Formspree endpoint as the contact form,
-   tagged by form_name so they can be told apart in the inbox.
+   (#calc-results-body) are revealed. The submission — including
+   the figures the visitor was looking at — is sent to the same
+   Formspree endpoint as the contact form, tagged by form_name so
+   it can be told apart in the inbox and followed up manually.
    ============================================================ */
 
 (function () {
@@ -18,9 +17,6 @@
   var gate = document.getElementById('calc-gate');
   var resultsBody = document.getElementById('calc-results-body');
   if (!gate || !resultsBody) return;
-
-  var form = document.getElementById('calc-gate-form');
-  var sentNotice = document.getElementById('calc-gate-sent');
 
   function unlock() {
     gate.style.display = 'none';
@@ -37,10 +33,11 @@
     return;
   }
 
+  var form = document.getElementById('calc-gate-form');
   if (!form) return;
 
-  /* Snapshot the current on-page figures so an "email me" request
-     carries the same ranges the visitor was looking at. */
+  /* Snapshot the current on-page figures so the record kept for
+     manual follow-up carries the same ranges the visitor saw. */
   function currentFigures() {
     var ids = ['r-var', 'r-supply', 'r-engage', 'r-exposure', 'r-fee'];
     var labels = {
@@ -60,33 +57,17 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    var mode = (e.submitter && e.submitter.value) || 'view';
-    var buttons = form.querySelectorAll('button[type="submit"]');
-    buttons.forEach(function (b) { b.disabled = true; });
-    if (e.submitter) e.submitter.textContent = 'Please wait…';
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Please wait…'; }
 
     var data = new FormData(form);
-    data.delete('delivery');
-
-    if (mode === 'email') {
-      data.append('form_name', 'Indicative calculator — email me my figures');
-      data.append('requested_delivery', 'Email the figures below to the submitter as a non-binding estimate.');
-      data.append('figures', currentFigures());
-    } else {
-      data.append('form_name', 'Indicative calculator — lead capture');
-    }
+    data.append('form_name', 'Indicative calculator — lead capture');
     data.append('source_page', window.location.pathname);
+    data.append('figures', currentFigures());
 
     function afterSubmit() {
-      if (mode === 'email') {
-        form.style.display = 'none';
-        if (sentNotice) sentNotice.hidden = false;
-        /* Figures stay locked on-page for an email request — nothing
-           to unlock here, this is a delivery choice, not a view choice. */
-      } else {
-        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-        unlock();
-      }
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      unlock();
     }
 
     fetch(FORMSPREE_URL, {
