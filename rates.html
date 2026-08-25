@@ -179,26 +179,7 @@
         <p class="lead">Every assumption below is yours to set. Change any input and the ranges move. Each result shows its workings — nothing is asserted that you can't check.</p>
       </div>
 
-      <div class="calc-gate" id="calc-gate">
-        <h3>Unlock the calculator</h3>
-        <p>Enter your work email and organisation to see the indicative figures below.</p>
-        <form class="calc-gate-form" id="calc-gate-form">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="calc-gate-email">Work email</label>
-              <input type="email" id="calc-gate-email" name="email" required>
-            </div>
-            <div class="form-field">
-              <label for="calc-gate-org">Organisation</label>
-              <input type="text" id="calc-gate-org" name="organisation" required>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">See my indicative figures</button>
-          <p class="calc-gate-note">Used only to follow up on the figures you generate. Nothing is shared with a third party — see the privacy note on our <a href="/contact.html">contact page</a>.</p>
-        </form>
-      </div>
-
-      <div class="calc-wrap is-locked" id="calc-wrap">
+      <div class="calc-wrap" id="calc-wrap">
 
         <div class="calc-inputs">
           <div class="calc-field">
@@ -267,52 +248,77 @@
 
         <div class="calc-results">
           <h3 style="color:#fff;margin-bottom:8px;">Indicative ranges</h3>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:20px;">Based on the assumptions you have entered above.</p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:20px;">Based on the assumptions you have entered on the left.</p>
 
-          <div class="result-row">
-            <div class="result-label">Indicative variation cost difference</div>
-            <div class="result-value" id="r-var">—</div>
-            <p class="result-note" data-note-for="r-var"></p>
-            <details class="workings">
-              <summary>How this is calculated</summary>
-              <p>Variation value = contract value × your expected variation volume. That value is then priced at the markup you entered, and at each end of Nausicaa's stated 20–30% range. The result is the difference between the two, shown as a range. If you leave the markup field blank, no comparison is made. We do not assume what anyone else charges.</p>
-            </details>
+          <div class="calc-gate" id="calc-gate">
+            <h3>Enter your details to see the figures</h3>
+            <p>Work email and organisation, then see the indicative ranges these inputs produce.</p>
+            <form class="calc-gate-form" id="calc-gate-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="calc-gate-email">Work email</label>
+                  <input type="email" id="calc-gate-email" name="email" required>
+                </div>
+                <div class="form-field">
+                  <label for="calc-gate-org">Organisation</label>
+                  <input type="text" id="calc-gate-org" name="organisation" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">See my indicative figures</button>
+              <p class="calc-gate-note">Used only to follow up on the figures you request. Nothing is shared with a third party — see the privacy note on our <a href="/contact.html">contact page</a>.</p>
+            </form>
           </div>
 
-          <div class="result-row">
-            <div class="result-label">Indicative supply chain sourcing difference</div>
-            <div class="result-value" id="r-supply">—</div>
-            <p class="result-note" data-note-for="r-supply"></p>
-            <details class="workings">
-              <summary>How this is calculated</summary>
-              <p>Procured value = contract value × the subcontracted share you set. Premium exposure = that figure × the Kimberley premium you set. The range shown is the share of that exposure you nominated as addressable, plus or minus 30%. All three inputs are yours — set the addressable share to zero and this result goes to nil.</p>
-            </details>
+          <div class="calc-gate-call">
+            <p>Prefer to talk it through? <a href="/contact.html">Book a call to discuss your project &rarr;</a></p>
           </div>
 
-          <div class="result-row">
-            <div class="result-label">On-ground vs remote engagement</div>
-            <div class="result-value" id="r-engage">—</div>
-            <p class="result-note" data-note-for="r-engage"></p>
-            <details class="workings">
-              <summary>How this is calculated</summary>
-              <p>On-ground cost = engagement days per month × our day rate × project duration. Day and hourly rates are available on request, agreed after a discussion about the project. If you enter your current cost per site attendance day, the same day count is priced at your figure and the difference shown as a range of ±15%.</p>
-            </details>
-          </div>
+          <div class="calc-results-body is-locked" id="calc-results-body">
+            <div class="result-row">
+              <div class="result-label">Indicative variation cost difference</div>
+              <div class="result-value" id="r-var">—</div>
+              <p class="result-note" data-note-for="r-var"></p>
+              <details class="workings">
+                <summary>How this is calculated</summary>
+                <p>Variation value = contract value × your expected variation volume. That value is then priced at the markup you entered, and at each end of Nausicaa's stated 20–30% range. The result is the difference between the two, shown as a range. If you leave the markup field blank, no comparison is made. We do not assume what anyone else charges.</p>
+              </details>
+            </div>
 
-          <div class="result-row is-exposure">
-            <div class="result-label">Security of payment — amount at risk</div>
-            <div class="result-value" id="r-exposure">—</div>
-            <p class="result-note" data-note-for="r-exposure"></p>
-            <details class="workings">
-              <summary>How this is calculated</summary>
-              <p>This is an exposure figure, not a saving, and it is deliberately not presented as one. It is simply the contract value divided by the duration — the indicative size of one monthly progress claim. If a payment schedule is not issued within the statutory window, the amount at risk is the full amount claimed, regardless of merit. We make no estimate of how likely that is, because we cannot know.</p>
-            </details>
-          </div>
+            <div class="result-row">
+              <div class="result-label">Indicative supply chain sourcing difference</div>
+              <div class="result-value" id="r-supply">—</div>
+              <p class="result-note" data-note-for="r-supply"></p>
+              <details class="workings">
+                <summary>How this is calculated</summary>
+                <p>Procured value = contract value × the subcontracted share you set. Premium exposure = that figure × the Kimberley premium you set. The range shown is the share of that exposure you nominated as addressable, plus or minus 30%. All three inputs are yours — set the addressable share to zero and this result goes to nil.</p>
+              </details>
+            </div>
 
-          <div class="result-row">
-            <div class="result-label">Indicative engagement cost</div>
-            <div class="result-value" id="r-fee">—</div>
-            <p class="result-note" data-note-for="r-fee"></p>
+            <div class="result-row">
+              <div class="result-label">On-ground vs remote engagement</div>
+              <div class="result-value" id="r-engage">—</div>
+              <p class="result-note" data-note-for="r-engage"></p>
+              <details class="workings">
+                <summary>How this is calculated</summary>
+                <p>On-ground cost = engagement days per month × our day rate × project duration. Day and hourly rates are available on request, agreed after a discussion about the project. If you enter your current cost per site attendance day, the same day count is priced at your figure and the difference shown as a range of ±15%.</p>
+              </details>
+            </div>
+
+            <div class="result-row is-exposure">
+              <div class="result-label">Security of payment — amount at risk</div>
+              <div class="result-value" id="r-exposure">—</div>
+              <p class="result-note" data-note-for="r-exposure"></p>
+              <details class="workings">
+                <summary>How this is calculated</summary>
+                <p>This is an exposure figure, not a saving, and it is deliberately not presented as one. It is simply the contract value divided by the duration — the indicative size of one monthly progress claim. If a payment schedule is not issued within the statutory window, the amount at risk is the full amount claimed, regardless of merit. We make no estimate of how likely that is, because we cannot know.</p>
+              </details>
+            </div>
+
+            <div class="result-row">
+              <div class="result-label">Indicative engagement cost</div>
+              <div class="result-value" id="r-fee">—</div>
+              <p class="result-note" data-note-for="r-fee"></p>
+            </div>
           </div>
         </div>
       </div>
