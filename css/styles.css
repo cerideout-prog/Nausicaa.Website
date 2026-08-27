@@ -715,6 +715,7 @@ strong { color: var(--ink); font-weight: 600; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
 }
 .about-portrait::after {
@@ -1030,7 +1031,7 @@ strong { color: var(--ink); font-weight: 600; }
   .tenders-grid { grid-template-columns: 1fr 1fr; }
   .region-grid { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { max-height: 320px; aspect-ratio: 16/7; }
+  .about-portrait { max-height: 420px; aspect-ratio: 4/3; }
   .contact-grid { grid-template-columns: 1fr; }
   .page-content { grid-template-columns: 1fr; }
   .page-content-sidebar { position: static; }
