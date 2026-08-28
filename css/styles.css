@@ -444,22 +444,30 @@ strong { color: var(--ink); font-weight: 600; }
   overflow: hidden;
   box-shadow: var(--shadow);
 }
-.calc-wrap.is-locked { display: none; }
-
-/* ── Calculator lead-capture gate ── */
+/* ── Calculator lead-capture gate — sits in front of the results
+   panel only; the inputs alongside it are always visible. ── */
 .calc-gate {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 36px 40px;
   box-shadow: var(--shadow-sm);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .calc-gate h3 { margin-bottom: 8px; }
 .calc-gate > p { color: var(--ink-soft); margin-bottom: 22px; }
 .calc-gate-form .form-row { align-items: end; margin-bottom: 4px; }
 .calc-gate-note { font-size: 0.8rem; color: var(--ink-muted); margin-top: 14px; }
 .calc-gate-note a { color: var(--ink-muted); }
+
+.calc-gate-call {
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+.calc-gate-call a { color: var(--white); font-weight: 600; }
+
+.calc-results-body.is-locked { display: none; }
 
 .calc-inputs {
   padding: 44px;
