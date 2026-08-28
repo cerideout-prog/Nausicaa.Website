@@ -1,0 +1,600 @@
+<!doctype html>
+<!--
+  ==========================================================================
+  NAUSICAA CONSULTING — PROJECT PROFILE TEMPLATE
+  --------------------------------------------------------------------------
+  This file is the reference template for all Nausicaa project profiles.
+  Brand tokens (colour/type) live once, in the :root block below, sourced
+  from brand/logo/README.md in "Nausicaa Logo Design Assets": navy #14243C,
+  paper #F7F5F0, wordmark set in Jost. Logo markup is inlined directly from
+  the supplied SVG assets for pixel fidelity.
+
+  TO REUSE FOR THE NEXT PROJECT:
+    1. Duplicate this file.
+    2. Everything between "PROJECT CONTENT START" and "PROJECT CONTENT END"
+       comments in the <body> is project-specific — replace it.
+    3. Everything else (masthead, footer, brand tokens, base styles) is
+       shared chrome — leave it as-is unless the brand itself changes.
+    4. Re-render to PDF with the same print stylesheet (see @media print).
+  ==========================================================================
+-->
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scaling a Kimberley Business — Nausicaa Consulting</title>
+<meta name="description" content="How Callum, as General Manager of a Kimberley business, built the organisational structure, commercial control and governance systems behind its growth from 46 to a peak of 155 people and into contract mining, civil construction and transport.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTmF1c2ljYWEiPjx0aXRsZT5OYXVzaWNhYTwvdGl0bGU+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjQzQyIgc3Ryb2tlLXdpZHRoPSI3Ij48L2NpcmNsZT48cGF0aCBkPSJNMzMgNjkgVjMxIEw2NyA2OSBWMzEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjQzQyIgc3Ryb2tlLXdpZHRoPSI3Ij48L3BhdGg+PC9zdmc+">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   NAUSICAA CONSULTING — BRAND TOKENS
+   Source: Nausicaa Logo Design Assets / brand/logo/README.md
+   Navy #14243C and paper #F7F5F0 are the two brand colours; the mid greys
+   are the exact tagline colours used in the logo lockups (on paper / on
+   navy). Everything else here (tints, hairlines, gradient stop) is a
+   derived UI value within that family, not a new brand colour.
+   ========================================================================== */
+:root {
+  --n-navy:        #14243C;   /* brand — primary */
+  --n-navy-dark:   #0B1526;   /* derived — deep navy for gradients/dark panels */
+  --n-paper:       #F7F5F0;   /* brand — page background */
+  --n-paper-tint:  #EFEBE1;   /* derived — panel background on paper */
+  --n-muted-paper: #5A6779;   /* brand — secondary text on paper (from lockup tagline) */
+  --n-muted-navy:  #A9B3C2;   /* brand — secondary text on navy (from reversed lockup tagline) */
+  --n-ink:         #14243C;   /* headings */
+  --n-body:        #33404F;   /* body copy — softened navy for readability */
+  --n-line:        rgba(20,36,60,0.14);  /* hairlines, derived from navy */
+  --n-on-navy:     #F7F5F0;
+
+  --n-font-head: 'Jost', Helvetica, Arial, sans-serif;
+  --n-font-body: 'Jost', Helvetica, Arial, sans-serif;
+
+  --n-max: 860px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--n-paper);
+  color: var(--n-body);
+  font-family: var(--n-font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+img { max-width: 100%; display: block; }
+.wrap { max-width: var(--n-max); margin: 0 auto; padding: 0 24px; }
+
+/* -------------------------------------------------------------------- */
+/* MASTHEAD (shared chrome)                                             */
+/* -------------------------------------------------------------------- */
+header.masthead {
+  background: var(--n-navy);
+  padding: 22px 0;
+  border-bottom: 3px solid var(--n-navy-dark);
+}
+.masthead .wrap { display: flex; align-items: center; justify-content: space-between; }
+.masthead .lockup svg { height: 34px; width: auto; display: block; }
+.masthead nav a {
+  color: var(--n-muted-navy);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  margin-left: 22px;
+}
+
+/* -------------------------------------------------------------------- */
+/* HERO (project-specific content, shared layout)                       */
+/* -------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(165deg, var(--n-navy) 0%, var(--n-navy-dark) 100%);
+  color: var(--n-on-navy);
+  padding: 52px 0 40px;
+}
+.hero .kicker {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--n-muted-navy);
+  margin: 0 0 16px;
+}
+.hero h1 {
+  font-family: var(--n-font-head);
+  font-weight: 500;
+  font-size: clamp(26px, 3.6vw, 38px);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+.hero .positioning {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--n-muted-navy);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------- */
+/* SITE PHOTO CARD                                                      */
+/* -------------------------------------------------------------------- */
+/* Contained, not full-bleed: the supplied photo is a low-resolution
+   original (600x215px). Showing it at a smaller, deliberate size — rather
+   than stretched full-width — keeps effective print/screen sharpness
+   reasonable and reads as an intentional editorial choice. Swap in a
+   higher-resolution photo later without changing this layout. */
+.site-photo-wrap { padding: 30px 0 4px; }
+.site-photo-card { max-width: 620px; margin: 0 auto; }
+.site-photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--n-line);
+}
+.site-photo-card--portrait { max-width: 400px; }
+.site-photo-card figcaption {
+  padding: 8px 2px 0;
+  font-size: 12px;
+  color: var(--n-muted-paper);
+}
+
+/* -------------------------------------------------------------------- */
+/* FACTS PANEL                                                          */
+/* -------------------------------------------------------------------- */
+.facts {
+  background: var(--n-paper-tint);
+  border-bottom: 1px solid var(--n-line);
+  padding: 26px 0;
+}
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px 24px;
+  margin: 0;
+}
+.fact dt {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--n-muted-paper);
+  margin-bottom: 4px;
+}
+.fact dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--n-ink);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------- */
+/* BODY SECTIONS (project-specific content)                             */
+/* -------------------------------------------------------------------- */
+main { padding: 46px 0 24px; }
+section { margin-bottom: 42px; }
+section:last-of-type { margin-bottom: 0; }
+
+h2 {
+  font-family: var(--n-font-head);
+  font-weight: 500;
+  font-size: 21px;
+  color: var(--n-ink);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--n-line);
+}
+h3 {
+  font-family: var(--n-font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--n-navy);
+  margin: 20px 0 8px;
+}
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+
+.summary-box {
+  background: var(--n-paper-tint);
+  border-left: 3px solid var(--n-navy);
+  padding: 20px 24px;
+  font-size: 17px;
+  color: var(--n-ink);
+}
+
+.approach-theme { margin-bottom: 18px; }
+.approach-theme:last-child { margin-bottom: 0; }
+.approach-theme h3 { margin-top: 0; }
+
+.outcomes-list { margin: 0; padding: 0; list-style: none; }
+.outcomes-list li {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--n-line);
+}
+.outcomes-list li:last-child { border-bottom: none; }
+.outcomes-list .mark {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--n-navy);
+  color: var(--n-paper);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--n-font-head);
+}
+
+.why-matters {
+  background: var(--n-navy);
+  color: var(--n-on-navy);
+  padding: 30px 28px;
+}
+.why-matters h2 { color: #fff; border-bottom-color: rgba(247,245,240,0.2); }
+.why-matters p { color: var(--n-muted-navy); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-size: 13px;
+  padding: 6px 12px;
+  background: var(--n-paper-tint);
+  border: 1px solid var(--n-line);
+  color: var(--n-navy);
+  border-radius: 999px;
+}
+
+.attribution-note {
+  font-size: 13px;
+  color: var(--n-muted-paper);
+  font-style: italic;
+  border-top: 1px dashed var(--n-line);
+  padding-top: 14px;
+  margin-top: 18px;
+}
+
+.sources { font-size: 14px; }
+.sources ol { margin: 0; padding-left: 20px; }
+.sources li { margin-bottom: 10px; }
+.sources .label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+  background: var(--n-paper-tint);
+  color: var(--n-muted-paper);
+  border: 1px solid var(--n-line);
+}
+
+/* -------------------------------------------------------------------- */
+/* FOOTER (shared chrome)                                               */
+/* -------------------------------------------------------------------- */
+footer.site-footer {
+  background: var(--n-navy);
+  color: var(--n-muted-navy);
+  padding: 26px 0;
+  font-size: 12px;
+}
+footer.site-footer .wrap { display: flex; align-items: center; gap: 14px; }
+footer.site-footer .mark svg { height: 22px; width: auto; }
+
+/* -------------------------------------------------------------------- */
+/* PAGINATION CONTROL — shared between screen and print                 */
+/* Keeps atomic blocks (a fact card, an outcome row, a source entry)    */
+/* from splitting across a page break, and keeps headings attached to   */
+/* the content that follows them. Deliberately scoped to small units,  */
+/* not whole sections — forcing a long section to stay whole is what   */
+/* causes big blank gaps at the bottom of a page.                       */
+/* -------------------------------------------------------------------- */
+h2, h3 { break-after: avoid; page-break-after: avoid; }
+.hero, .facts, .site-photo-card, .summary-box, .approach-theme,
+.why-matters, .chips, .outcomes-list li, .sources li, .fact {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+p { orphans: 3; widows: 3; }
+
+/* Deliberate page starts (print only — meaningless on a scrolling screen
+   page, so scoped inside @media print rather than the shared block above):
+     - "Callum's Role" opens a new page; "Approach" follows it on that
+       same page.
+     - "Outcomes" opens its own new page.
+     - "Capabilities Demonstrated" opens the final page, with "Sources"
+       following immediately after on that same page. */
+@media print {
+  #role, #outcomes, #capabilities {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+
+@media print {
+  header.masthead nav { display: none; }
+  a[href]:after { content: none !important; }
+  body { font-size: 10.5pt; line-height: 1.55; }
+  .hero { padding: 30px 0 26px; }
+  .hero h1 { font-size: 24px; }
+  main { padding: 30px 0 10px; }
+  section { margin-bottom: 26px; }
+}
+
+/* ── Download gate (lead capture before PDF export) — shared across all
+   project profiles. Requires work email + organisation, posts to the
+   contact Formspree endpoint, then opens the browser print dialog so
+   the visitor can save this page as a PDF. Never shown on the printed
+   output itself (see @media print rule below). ── */
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 22px; padding: 11px 20px;
+  background: var(--n-on-navy); color: var(--n-navy);
+  border: none; border-radius: 999px;
+  font-family: var(--n-font-body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.02em; cursor: pointer;
+}
+.dl-btn:hover { background: #ffffff; }
+.dl-modal-backdrop {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background: rgba(11,21,38,0.6);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.dl-modal { background: var(--n-paper); border-radius: 10px; max-width: 420px; width: 100%; padding: 32px; position: relative; }
+.dl-modal h3 { font-family: var(--n-font-head); font-size: 19px; color: var(--n-ink); margin: 0 0 8px; }
+.dl-modal p { font-size: 14px; color: var(--n-body); margin: 0 0 20px; }
+.dl-field { margin-bottom: 14px; }
+.dl-field label {
+  display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--n-muted-paper); margin-bottom: 6px;
+}
+.dl-field input {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--n-line);
+  border-radius: 6px; font-family: var(--n-font-body); font-size: 14px;
+  background: #fff; color: var(--n-ink); box-sizing: border-box;
+}
+.dl-modal button[type="submit"] {
+  width: 100%; padding: 12px; background: var(--n-navy); color: var(--n-on-navy);
+  border: none; border-radius: 999px; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+.dl-close {
+  position: absolute; top: 14px; right: 14px; background: none; border: none;
+  font-size: 20px; line-height: 1; color: var(--n-muted-paper); cursor: pointer; padding: 4px;
+}
+.dl-note { font-size: 11px; color: var(--n-muted-paper); margin-top: 12px; }
+@media print { .dl-btn, .dl-modal-backdrop { display: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="/project-profiles.html" class="lockup" style="text-decoration:none;">
+      <!-- inline SVG: nausicaa-lockup-horizontal-reversed.svg (on navy) -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="420" height="72" viewBox="0 0 420 72" role="img" aria-label="Nausicaa — Commercial Management for the Kimberley">
+        <title>Nausicaa — Commercial Management for the Kimberley</title>
+        <g transform="translate(4 4) scale(0.64)">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#F7F5F0" stroke-width="4.5"></circle>
+          <path d="M33 68 V32 L67 68 V32" fill="none" stroke="#F7F5F0" stroke-width="4.5"></path>
+        </g>
+        <text x="90" y="38" font-family="Jost, Helvetica, Arial, sans-serif" font-weight="500" font-size="32" letter-spacing="1.92" fill="#F7F5F0">Nausicaa</text>
+        <text x="91" y="58" font-family="Jost, Helvetica, Arial, sans-serif" font-weight="400" font-size="9" letter-spacing="1.80" fill="#A9B3C2">COMMERCIAL MANAGEMENT FOR THE KIMBERLEY</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="/project-profiles.html">All Profiles</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PROJECT CONTENT START -->
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Project Profile — Mining &amp; Civil Services / Organisational Scaling</p>
+    <h1>Building the Corporate Structure to Hold Three-Fold Growth</h1>
+    <p class="positioning">A 21-month general management tenure that took a Kimberley field-maintenance business into contract mining, civil construction and transport — and built the functions, systems and commercial discipline to make that growth hold.</p>
+    <button type="button" class="dl-btn" id="dl-open">Download this profile ↓</button>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <dl class="facts-grid">
+      <div class="fact"><dt>Sector</dt><dd>Mining &amp; civil services contracting</dd></div>
+      <div class="fact"><dt>Location</dt><dd>The Kimberley, WA</dd></div>
+      <div class="fact"><dt>Organisation</dt><dd>A Kimberley business</dd></div>
+      <div class="fact"><dt>Role</dt><dd>General Manager, reporting to the Managing Directors</dd></div>
+      <div class="fact"><dt>Period</dt><dd>December 2024 – September 2026 (~21 months)</dd></div>
+      <div class="fact"><dt>Workforce</dt><dd>46 → ~155 at peak → 80 permanent</dd></div>
+      <div class="fact"><dt>Capabilities added</dt><dd>Civil, transport, contract mining</dd></div>
+      <div class="fact"><dt>Scope</dt><dd>Whole-of-business structure, systems &amp; commercial ownership</dd></div>
+    </dl>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section id="summary">
+    <h2>Executive Summary</h2>
+    <div class="summary-box">
+      <p>The client is a Kimberley business working in mining, civil and maintenance contracting. In December 2024 it was a field-based maintenance labour business of roughly 46 people, run directly by its founders. Within three months of Callum joining it had won a waste mining package at Kimberley Mineral Sands' Thunderbird operation and scaled to around 155 people — growth arriving faster than the business had structure to absorb. Callum was brought in as General Manager specifically to build that structure: reporting lines and KPIs, commercial ownership, policy and HSEQ systems for disciplines the business had never delivered, and standalone HR, recruitment, commercial and marketing functions where none existed. He left in September 2026 with the business operating from a purpose-built Kimberley facility, running civil and transport divisions alongside its maintenance core, and holding multi-year contracts priced and negotiated under his commercial authority.</p>
+    </div>
+  </section>
+
+  <section id="challenge">
+    <h2>The Challenge</h2>
+    <p>When Callum joined, the business was built on one thing done well: supplying skilled tradespeople to remote mine sites. Its corporate infrastructure was minimal and entirely appropriate to that size — an office manager handling rostering, a director running payroll, and the Managing Director making most operating decisions directly. There was no HR function, no finance function separate from the family, no commercial function, and no defined reporting structure.</p>
+    <p>Then the growth arrived. A New Year's Eve 2024 bid for the waste mining package at Thunderbird was won, and the business scaled from roughly 46 people to around 155 within three months, hiring close to 100 operators and mobilising equipment from more than six suppliers. At the same time the business took on a tailings storage facility construction contract another contractor had left behind, entered civil construction, stood up a Main Roads-registered transport company, and moved into production mining — four disciplines it had not previously delivered.</p>
+    <p>The risk was structural rather than commercial. A business can win work faster than it can build the systems to price it, staff it, govern it and get paid for it. Rapid headcount growth without a corporate spine produces the failures that end contractors: unpriced risk in tenders, inconsistent pay and rostering, uncontrolled hiring, no HSEQ system for work outside the original scope, and no reliable view of project profitability.</p>
+  </section>
+
+  <section id="role">
+    <h2>Callum's Role</h2>
+    <p>Callum was General Manager, reporting to the company's two Managing Directors.</p>
+    <p>The role carried an unusually heavy commercial weight for a general management position. Callum held tender authority and hiring decisions, and owned profit forecasting, commercial modelling, and the commercial and account relationships across the client base.</p>
+    <p>His direct reports were the Operations Manager, the Recruitment and Talent Lead, the commercial function, site supervisors and external consultants. The Workshop and Asset Manager reported to him with a dotted line to the Directors. He led and managed the HR function without being its direct line manager — a deliberate separation, keeping employee relations independent of the executive making hiring and commercial decisions. Finance reported directly to the Directors as an internal family function.</p>
+  </section>
+
+  <section id="approach">
+    <h2>Approach</h2>
+    <div class="approach-theme">
+      <h3>Company structure, reporting lines and KPIs</h3>
+      <p>Callum designed and implemented the organisational structure the business had not previously needed: defined divisions, reporting lines, and KPIs against which functions and projects could be measured. He then led a RACI process across teams and projects to settle who was accountable for what — the necessary follow-on once a structure exists on paper.</p>
+    </div>
+    <div class="approach-theme">
+      <h3>Building functions from nothing</h3>
+      <p>Every corporate function the business now runs was built during this period. HR, recruitment and talent, commercial and marketing did not exist as functions in December 2024; the work was absorbed by an office manager, a director and the Managing Director. Callum built each as a discipline with its own ownership. HR and finance, previously handled internally within the family, now operate as standalone functions with dedicated hires.</p>
+    </div>
+    <div class="approach-theme">
+      <h3>Commercial ownership and contract renewal</h3>
+      <p>With tender authority, Callum owned pricing and commercial structure across the contract base. Three engagements show the scope: appointment as a Kimberley local government's tier-one plant and machinery maintenance provider on a three-year term; a three-year extension of the road maintenance contract at Thunderbird, where he led the contract review, pricing, commercial model and contract format; and the extension of the Ellendale engagement from a remote workshop into the supply of operators and equipment alongside the existing mobile workshops.</p>
+    </div>
+    <div class="approach-theme">
+      <h3>Policy, procedure and HSEQ for new disciplines</h3>
+      <p>Moving into mining, civil and transport meant operating under obligations the business's maintenance-focused systems did not cover. Callum led and implemented the operational policy suite, safe work procedures, competency assessment documents and project HSEQ functions the new work required.</p>
+    </div>
+    <div class="approach-theme">
+      <h3>Local workforce and training pathways</h3>
+      <p>The Kimberley labour market is small and heavily contested, and most major clients in the region carry local employment requirements. Rather than treat local content as a compliance line, Callum built the recruitment and talent function around it, and worked alongside one of the Managing Directors with North West Regional TAFE on training pathways based in the region. The business is Indigenous co-founded, and its workshop team is Indigenous-led under the Operations Manager, who reported to Callum.</p>
+    </div>
+    <div class="approach-theme">
+      <h3>Pay bands, systems and data discipline</h3>
+      <p>He developed a pay band calculator built on skills, experience and port of home, replacing case-by-case negotiated pay with a defensible, data-driven framework. In a labour market where the business competes with major resource projects for the same people, consistency in pay is both a retention tool and a cost control. On the finance side his role was to advise rather than own: the migration from MYOB to Xero and the establishment of general ledger cost tracking against projects were driven within the finance function, with Callum consulted on both.</p>
+    </div>
+  </section>
+
+  <section id="outcomes">
+    <h2>Outcomes</h2>
+    <ul class="outcomes-list">
+      <li><span class="mark">✓</span><span><strong>Workforce scaled, then right-sized.</strong> From 46 people to around 155 at peak, settling at 80 permanent full-time employees — scaling up for a fixed-term mining contract and back down to a sustainable base without a disorderly demobilisation.</span></li>
+      <li><span class="mark">✓</span><span><strong>Three new capabilities established.</strong> A civil construction division, a Main Roads-registered transport company, and roughly six months of production mining delivered at Thunderbird.</span></li>
+      <li><span class="mark">✓</span><span><strong>Multi-year contracts secured under his commercial authority.</strong> Local-government tier-one plant and machinery maintenance (three years); Thunderbird road maintenance extension (three years); Ellendale extended into operators and equipment.</span></li>
+      <li><span class="mark">✓</span><span><strong>Corporate functions now standing on their own.</strong> HR, recruitment, commercial and marketing established as functions; HR and finance moved out of internal family administration into standalone teams with dedicated hires.</span></li>
+      <li><span class="mark">✓</span><span><strong>Equipment availability sustained above 90%.</strong> Availability is the product the business sells — it is what keeps client projects running — so holding it above 90% through a period of tripled headcount and four new disciplines is a direct measure of whether the operating systems held.</span></li>
+      <li><span class="mark">✓</span><span><strong>Local and Indigenous employment held through the scale-up.</strong> The workforce at Thunderbird ran above 50% Kimberley-local and above 35% Indigenous during the period of fastest hiring — the point at which local content is hardest to hold — and the apprentice intake grew over the tenure.</span></li>
+      <li><span class="mark">✓</span><span><strong>A permanent home.</strong> The business relocated to a purpose-built workshop and headquarters on its own 13,000 m² site in the Kimberley.</span></li>
+    </ul>
+  </section>
+
+  <section id="why-matters" class="why-matters">
+    <h2>Why It Matters</h2>
+    <p>Growth is the easy thing to point at; whether a business survives it is a different question. This profile shows an executive hired specifically to build the structure that makes fast growth durable — organisational design, commercial control, governance systems and functional capability — in a business that had none of it and needed all of it at once.</p>
+    <p>The commercial weight of the role is the distinguishing feature. Tender authority, pricing, profit forecasting and account ownership sat with the same person accountable for building the operating structure, which is why the two stayed connected rather than drifting apart. And the more telling outcomes are not the peak headcount: they are that the workforce came back down to a sustainable base without disorder, and that equipment availability held above 90% throughout.</p>
+  </section>
+
+  <section id="capabilities">
+    <h2>Capabilities Demonstrated</h2>
+    <div class="chips">
+      <span class="chip">Organisational Design</span>
+      <span class="chip">Commercial Management</span>
+      <span class="chip">Tendering &amp; Contract Negotiation</span>
+      <span class="chip">Business Transformation</span>
+      <span class="chip">Workforce Scaling &amp; Talent</span>
+      <span class="chip">Governance, Policy &amp; HSEQ</span>
+      <span class="chip">Operations Management</span>
+      <span class="chip">Remote &amp; Regional Operations</span>
+      <span class="chip">Executive Leadership</span>
+    </div>
+    <p class="attribution-note">This profile describes Callum's contribution in his role as General Manager of a Kimberley business, reporting to that company's Managing Directors. It does not represent work delivered by Nausicaa Consulting. Individual project profiles for the Thunderbird tailings storage facility lift and the Kimberley District Support Facility cover those engagements in detail.</p>
+  </section>
+
+  <section id="sources" class="sources">
+    <h2>Sources</h2>
+    <p style="font-size:13px;color:var(--n-muted-paper);margin-bottom:16px;">The client is described here without being named. The material below is supplied on the authority of Callum's role as General Manager rather than drawn from published sources.</p>
+    <ol>
+      <li><span class="label">Company-supplied</span>Headcount figures, tenure dates, reporting structure, contract terms, equipment availability, local and Indigenous workforce proportions, and the scope of Callum's authority and functional builds — supplied on the authority of his role as General Manager. Not independently publicly verified.</li>
+      <li><span class="label">On request</span>The client is not named on this site. Company identification, published references and contactable referees are available on request, subject to the client's consent.</li>
+    </ol>
+  </section>
+
+</main>
+
+<!-- PROJECT CONTENT END -->
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="mark">
+      <!-- inline SVG: nausicaa-mark-reversed.svg -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 100 100" role="img" aria-label="Nausicaa mark, reversed">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#F7F5F0" stroke-width="4.5"></circle>
+        <path d="M33 68 V32 L67 68 V32" fill="none" stroke="#F7F5F0" stroke-width="4.5"></path>
+      </svg>
+    </span>
+    <span>&copy; Nausicaa Consulting. Prepared as an executive project profile for business development, executive search and capability-statement purposes.</span>
+  </div>
+</footer>
+
+<div class="dl-modal-backdrop" id="dl-modal-backdrop">
+  <div class="dl-modal">
+    <button type="button" class="dl-close" id="dl-close" aria-label="Close">&times;</button>
+    <h3>Download this profile</h3>
+    <p>Enter your work email and organisation and this profile will open as a PDF you can save.</p>
+    <form id="dl-form">
+      <div class="dl-field">
+        <label for="dl-email">Work email</label>
+        <input type="email" id="dl-email" name="email" required>
+      </div>
+      <div class="dl-field">
+        <label for="dl-org">Organisation</label>
+        <input type="text" id="dl-org" name="organisation" required>
+      </div>
+      <button type="submit">Continue to download</button>
+      <p class="dl-note">Used only to follow up on this download. See the privacy note on our <a href="/contact.html" target="_blank" rel="noopener">contact page</a>.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var STORAGE_KEY = 'nausicaaProfileUnlocked';
+  var FORMSPREE_URL = 'https://formspree.io/f/mbdebkdw';
+  var openBtn = document.getElementById('dl-open');
+  var backdrop = document.getElementById('dl-modal-backdrop');
+  var form = document.getElementById('dl-form');
+  var closeBtn = document.getElementById('dl-close');
+  if (!openBtn || !backdrop || !form) return;
+
+  var unlocked = false;
+  try { unlocked = sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) {}
+
+  function doPrint() { setTimeout(function () { window.print(); }, 150); }
+
+  openBtn.addEventListener('click', function () {
+    if (unlocked) { doPrint(); return; }
+    backdrop.style.display = 'flex';
+  });
+  if (closeBtn) closeBtn.addEventListener('click', function () { backdrop.style.display = 'none'; });
+  backdrop.addEventListener('click', function (e) { if (e.target === backdrop) backdrop.style.display = 'none'; });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Please wait…'; }
+    var data = new FormData(form);
+    data.append('form_name', 'Project profile download — lead capture');
+    data.append('profile', document.title);
+    data.append('source_page', window.location.pathname);
+    function after() {
+      try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e2) {}
+      unlocked = true;
+      backdrop.style.display = 'none';
+      doPrint();
+    }
+    fetch(FORMSPREE_URL, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data }).then(after, after);
+  });
+})();
+</script>
+
+</body>
+</html>
