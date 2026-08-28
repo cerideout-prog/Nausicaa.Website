@@ -49,3 +49,18 @@ not from this archive ref.** The two have drifted apart.
 
 The default branch is now `main`. Keep it that way: the divergence above was a
 direct consequence of the default and the published branch being different refs.
+
+## Running the cleanup
+
+`docs/branch-cleanup.sh` performs the branch deletions. It refuses to run until
+the default branch is `main`, and re-verifies that every branch tip is reachable
+from `main` or an `archive/*` ref before deleting anything.
+
+```
+./docs/branch-cleanup.sh
+```
+
+The archive refs above are branches rather than tags, because this repository's
+automation credentials could not push tags. Nothing prevents a force-push over a
+branch, so if the archives need to be immutable, re-cut them as tags from a clone
+with full push rights.
