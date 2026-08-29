@@ -271,7 +271,7 @@ strong { color: var(--ink); font-weight: 600; }
   display: block;
   font-size: 0.85rem;
   font-style: italic;
-  color: var(--blue-mid);
+  color: #8bb0df;
   margin-bottom: 10px;
 }
 .hero-quicklink .hql-desc {
