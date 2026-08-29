@@ -1518,15 +1518,6 @@ strong { color: var(--ink); font-weight: 600; }
   margin: 0 auto 40px;
 }
 
-.coming-soon-contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-}
-
 .coming-soon-access-toggle {
   background: none;
   border: none;
@@ -1548,6 +1539,7 @@ strong { color: var(--ink); font-weight: 600; }
   flex-wrap: wrap;
   margin-top: 16px;
 }
+.coming-soon-access-form[hidden] { display: none; }
 .coming-soon-access-form input {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.25);
@@ -1582,8 +1574,6 @@ strong { color: var(--ink); font-weight: 600; }
 .coming-soon-footer .dot { opacity: 0.6; }
 
 @media (max-width: 520px) {
-  .coming-soon-contact { flex-direction: column; }
-  .coming-soon-contact .btn { width: 100%; justify-content: center; }
   .coming-soon-access-form { flex-direction: column; }
   .coming-soon-access-form input { width: 100%; }
 }
