@@ -1,7 +1,7 @@
 User-agent: *
-Allow: /
+Allow: /$
+Disallow: /
 
-# Draft terms — built but not published, pending legal review.
-Disallow: /terms.html
-
-Sitemap: https://nausicaaconsulting.com.au/sitemap.xml
+# Site is pre-launch behind a coming-soon gate (index.html). Only the
+# gate page itself is crawlable. Restore the previous rules — Allow: /,
+# Disallow: /terms.html, and the Sitemap line below — at public launch.

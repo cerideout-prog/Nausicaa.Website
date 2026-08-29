@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{if(localStorage.getItem('nc_unlocked')==='1'){location.replace('/home.html');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nausicaa Consulting — Commercial capability for Kimberley projects</title>
-<meta name="description" content="Nausicaa Consulting works with contractors bringing work into the Kimberley, and with Kimberley businesses delivering it. Superintendent's Representative, contract administration and fractional commercial management. Broome-based.">
+<title>Nausicaa Consulting — Coming soon</title>
+<meta name="description" content="Nausicaa Consulting — commercial capability for Kimberley projects. The site is being finalised. Get in touch directly in the meantime.">
 <link rel="canonical" href="https://nausicaaconsulting.com.au/">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nausicaaconsulting.com.au/">
-<meta property="og:title" content="Nausicaa Consulting — Commercial capability for Kimberley projects">
+<meta property="og:title" content="Nausicaa Consulting — Coming soon">
 <meta property="og:image" content="https://nausicaaconsulting.com.au/png/og-image.png">
-<meta property="og:description" content="Two distinct services, governed by a published conflict policy. Superintendent's Representative and contract administration for contractors delivering in the Kimberley; fractional commercial management for Kimberley businesses.">
+<meta property="og:description" content="Commercial capability for Kimberley projects. The site is being finalised.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,517 +20,70 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/png/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/png/favicon-180.png">
 <link rel="stylesheet" href="css/styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Nausicaa Consulting",
-  "description": "Contract administration, Superintendent's Representative appointments, local content planning, supply chain intelligence and fractional commercial management in the Kimberley region of Western Australia.",
-  "url": "https://nausicaaconsulting.com.au/",
-  "telephone": "+61450137044",
-  "email": "callum.rideout@nausicaaconsulting.com.au",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Broome",
-    "addressRegion": "WA",
-    "postalCode": "6725",
-    "addressCountry": "AU"
-  },
-  "areaServed": [
-    { "@type": "Place", "name": "Kimberley, Western Australia" },
-    { "@type": "Place", "name": "Pilbara, Western Australia" },
-    { "@type": "Place", "name": "Gascoyne, Western Australia" }
-  ],
-  "knowsAbout": [
-    "Contract administration",
-    "Superintendent's Representative",
-    "Security of payment",
-    "WAIPS participation plans",
-    "Aboriginal Procurement Policy",
-    "Tender support"
-  ]
-}
-</script>
 </head>
-<body>
+<body class="coming-soon-body">
 
-<div class="utility-bar">
-  <div class="container">
-    <a data-entity-href="phoneHref" href="tel:+61450137044"><span data-entity="phone">0450 137 044</span></a>
-    <span class="util-sep">·</span>
-    <a href="mailto:callum.rideout@nausicaaconsulting.com.au"><span data-entity="email">callum.rideout@nausicaaconsulting.com.au</span></a>
+<div class="coming-soon-stage">
+  <div class="coming-soon-content">
+    <span class="coming-soon-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg>
+    </span>
+    <span class="coming-soon-wordmark">NAUSICAA CONSULTING</span>
+
+    <span class="eyebrow">Coming soon</span>
+    <h1>Commercial management for Kimberley projects.</h1>
+    <p class="lead">We're preparing to launch — Superintendent's Representative and contract administration for contractors delivering in the Kimberley, and fractional commercial management for Kimberley businesses. In the meantime, get in touch directly.</p>
+
+    <div class="coming-soon-contact">
+      <a href="tel:+61450137044" class="btn btn-primary">0450 137 044</a>
+      <a href="mailto:callum.rideout@nausicaaconsulting.com.au" class="btn btn-outline--white">Email us</a>
+    </div>
+
+    <div class="coming-soon-access">
+      <button type="button" class="coming-soon-access-toggle" id="access-toggle">Have a preview code?</button>
+      <form class="coming-soon-access-form" id="access-form" hidden>
+        <label for="access-code" class="sr-only">Preview code</label>
+        <input type="password" id="access-code" placeholder="Preview code" autocomplete="off">
+        <button type="submit" class="btn btn-outline--white">Enter</button>
+        <p class="coming-soon-access-error" id="access-error" hidden>That code isn't right.</p>
+      </form>
+    </div>
   </div>
 </div>
 
-<header class="site-header">
-  <nav class="nav container">
-    <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg></span>Nausicaa Consulting</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-    <div class="nav-links">
-      <a href="/delivering-in-the-kimberley.html">Kimberley Projects</a>
-      <a href="/kimberley-business.html">Kimberley Business</a>
-      <a href="/active-procurement.html">Upcoming Works</a>
-      <a href="/project-profiles.html">Project Profiles</a>
-      <a href="/about.html">About</a>
-      <a href="/conflict-policy.html">Conflict Policy</a>
-      <a href="/rates.html">Rates</a>
-    </div>
-    <div class="nav-cta">
-      <a href="/contact.html" class="btn btn-primary">Contact Us</a>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-  <!-- ── Hero ── -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow">Broome, Western Australia</span>
-          <h1>Commercial capability for Kimberley projects.</h1>
-          <p class="lead">Nausicaa Consulting works with contractors bringing work into the Kimberley, and with Kimberley businesses delivering it. Two distinct services, governed by a published conflict policy.</p>
-          <div class="hero-actions">
-            <a href="/contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-            <a href="/conflict-policy.html" class="btn btn-ghost btn-lg">Read the conflict policy</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Hero quick links — 5-second orientation ── -->
-      <div class="hero-quicklinks">
-        <a href="/active-procurement.html" class="hero-quicklink">
-          <span class="hql-title">Win Kimberley Tenders</span>
-          <span class="hql-tagline">Stop losing regional work to metro firms.</span>
-          <span class="hql-desc">Direct commercial support for local businesses to write, pitch, and win government and private contracts.</span>
-        </a>
-        <a href="/delivering-in-the-kimberley.html" class="hero-quicklink">
-          <span class="hql-title">Market Entry &amp; Local Content</span>
-          <span class="hql-tagline">Your on-ground compliance partner.</span>
-          <span class="hql-desc">Navigate WAIPS, Buy Local policies, and Aboriginal procurement targets seamlessly so your external project meets community expectations.</span>
-        </a>
-        <a href="/kimberley-business.html" class="hero-quicklink">
-          <span class="hql-title">Multi-Contractor Projects</span>
-          <span class="hql-tagline">Overcome remote project challenges.</span>
-          <span class="hql-desc">Overarching commercial, project scoping and contract management to coordinate multiple local trades across the Kimberley projects.</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Segment selector (§1.1) ── -->
-  <div class="segment-section">
-    <div class="container">
-      <div class="segment-grid">
-
-        <a href="/delivering-in-the-kimberley.html" class="segment-card">
-          <span class="seg-eyebrow">For contractors, principals and head contractors</span>
-          <h3>Delivering work in the Kimberley</h3>
-          <p>You've won work up here, or you're pricing it. Your commercial team is in Perth, Adelaide or further. We're the part that's on the ground.</p>
-          <ul>
-            <li>Superintendent's Representative and contract administration</li>
-            <li>Local content and participation planning (WAIPS / APP)</li>
-            <li>Verified supply chain and market sounding</li>
-            <li>On-ground scoping and requirements review</li>
-          </ul>
-          <span class="seg-go">See buy-side services <span>&rarr;</span></span>
-        </a>
-
-        <a href="/kimberley-business.html" class="segment-card">
-          <span class="seg-eyebrow">For Kimberley businesses</span>
-          <h3>Based in the Kimberley</h3>
-          <p>You can do the work. The paperwork, the pricing and the contract admin are what's holding you back — and you can't justify a full-time commercial manager.</p>
-          <ul>
-            <li>Fractional Commercial Manager</li>
-            <li>Multi-Trade Commercial Coordination</li>
-            <li>Broome Business Support: Capability &amp; Tendering</li>
-            <li>Tender support — fixed fee, capped hours</li>
-            <li>Getting paid properly and on time</li>
-          </ul>
-          <span class="seg-go">See services for local business <span>&rarr;</span></span>
-        </a>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Credibility tiles (§2.2 — reordered) ── -->
-  <section class="credibility-strip">
-    <div class="container">
-      <div class="cred-grid">
-        <div class="cred-item">
-          <strong>On the ground in Broome</strong>
-          <span>Not fly-in, not desktop. Based here, working here.</span>
-        </div>
-        <div class="cred-item">
-          <strong>Verified Kimberley supply chain</strong>
-          <span>Capability, capacity and rates confirmed first-hand — not directory listings.</span>
-        </div>
-        <div class="cred-item">
-          <strong>Claims answered on time</strong>
-          <span>Payment claims and notices handled inside the window, from the same time zone as the site.</span>
-        </div>
-        <div class="cred-item">
-          <!-- VERIFY: confirm the 16+ years figure before this stays published (brief §18) -->
-          <strong>16+ years, resources and civil</strong>
-          <span>Oil and gas, mining, earthworks, transport and government capital works.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Services, grouped by audience (§3) ── -->
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Services</span>
-        <h2>Two service lines, two audiences.</h2>
-        <p class="lead">Neither is secondary. The separation is structural — it is how the conflict framework is demonstrated, not just how the site is organised.</p>
-      </div>
-
-      <h3 style="margin-bottom:20px;">Delivering work in the Kimberley</h3>
-      <div class="services-grid" style="margin-bottom:56px;">
-
-        <a href="/superintendents-representative.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-          </span>
-          <h4>Superintendent's Representative</h4>
-          <p>Appointment under AS4000 or AS2124, or contractor-side contract administration. Claims, variations, extensions of time and certification, administered on the ground.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-        <a href="/local-content.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.3-.36-1.86m0 0A5 5 0 007 18v2m10-6a3 3 0 100-6 3 3 0 000 6zM7 14a3 3 0 100-6 3 3 0 000 6z"/></svg>
-          </span>
-          <h4>Local content &amp; participation</h4>
-          <p>WAIPS and APP participation plans, target-setting against a supplier base that has actually been verified, and reporting through delivery.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-        <a href="/supply-chain.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-          </span>
-          <h4>Verified supply chain &amp; market sounding</h4>
-          <p>A maintained register of Kimberley trades and suppliers — capability, tickets, insurances, plant, capacity and rate history confirmed first-hand.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-        <a href="/delivering-in-the-kimberley.html#scoping" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </span>
-          <h4>On-ground scoping &amp; requirements review</h4>
-          <p>Scoping done on site, with Traditional Owner representatives, Ranger groups and local businesses — not a desktop study and an overnight trip.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-      </div>
-
-      <h3 style="margin-bottom:20px;">Based in the Kimberley</h3>
-      <div class="services-grid">
-
-        <a href="/fractional-commercial-manager.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.66 0-3 .9-3 2s1.34 2 3 2 3 .9 3 2-1.34 2-3 2m0-8c1.11 0 2.08.4 2.6 1M12 8V6m0 12v-2m0 2c-1.11 0-2.08-.4-2.6-1"/><circle cx="12" cy="12" r="9"/></svg>
-          </span>
-          <h4>Fractional Commercial Manager</h4>
-          <p>The commercial manager you need but can't justify hiring full time. Pricing, claims, variations and getting paid — for a fraction of a salary.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-        <a href="/multi-trade-commercial-coordination.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6 8.5V11a3 3 0 003 3h1m5-5.5V11a3 3 0 01-3 3h-1"/></svg>
-          </span>
-          <h4>Multi-Trade Commercial Coordination</h4>
-          <p>Take on bigger, multi-trade packages as head contractor. We manage the subcontractor agreements, payment claims and principal reporting so you don't carry the risk alone.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-        <a href="/business-support.html" class="service-card">
-          <span class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          </span>
-          <h4>Broome Business Support: Capability &amp; Tendering</h4>
-          <p>Capability statements, tender responses and government procurement — written so a buyer can actually see what your business can do.</p>
-          <span class="svc-go">Read more &rarr;</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Security of payment — reframed as "Did you know?" (§4) ── -->
-  <section class="bg-off-white">
-    <div class="container--narrow">
-      <div class="didyouknow">
-        <span class="dyk-label">Did you know?</span>
-        <h2>If you don't reply to a payment claim in time, you can end up owing the full amount.</h2>
-        <p>If someone sends you a payment claim and you don't reply properly in time, you can end up owing the whole lot — even if you disagree with it.</p>
-        <p>The rules under WA's security of payment laws are strict, and the clock doesn't stop for site work, holidays or a busy week. Most businesses that get caught out weren't disputing the claim. They just missed the reply.</p>
-        <p>Getting this right is part of what a commercial manager does.</p>
-        <!-- VERIFY: statutory day counts live on the technical page only, where they can be dated and sourced (brief §4, §18) -->
-        <a href="/superintendents-representative.html#security-of-payment" class="dyk-link">The technical detail, for commercial teams &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Project value calculator (§5) ── -->
-  <section id="calculator">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Indicative figures</span>
-        <h2>How this could apply to your project.</h2>
-        <p class="lead">Every assumption below is yours to set. Change any input and the ranges move. Each result shows its workings — nothing is asserted that you can't check.</p>
-      </div>
-
-      <div class="calc-wrap" id="calc-wrap">
-
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <label for="c-value">Contract value</label>
-            <input type="text" id="c-value" value="8,000,000" inputmode="numeric">
-            <p class="calc-field-note">Total value of the works, excluding GST.</p>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-duration">Project duration (months)</label>
-            <input type="number" id="c-duration" value="12" min="1" max="120">
-          </div>
-
-          <div class="calc-field">
-            <label for="c-varpct">Expected variation volume</label>
-            <div class="calc-slider-row">
-              <input type="range" id="c-varpct" value="8" min="0" max="40" step="1" data-mirror="m-varpct">
-              <span class="calc-slider-val" id="m-varpct">8%</span>
-            </div>
-            <p class="calc-field-note">Variations as a percentage of contract value. Default 8% — adjust to your experience on this type of work.</p>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-markup">Variation markup you are currently charged (%)</label>
-            <input type="number" id="c-markup" placeholder="e.g. 45" min="0" max="300">
-            <p class="calc-field-note">Your figure, not ours. Leave blank if you'd rather not enter it. Nausicaa's own stated variation markup range is 20–30%.</p>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-premium">Typical Kimberley cost premium (adjust to your experience)</label>
-            <div class="calc-slider-row">
-              <input type="range" id="c-premium" value="22" min="0" max="60" step="1" data-mirror="m-premium">
-              <span class="calc-slider-val" id="m-premium">22%</span>
-            </div>
-            <p class="calc-field-note">The uplift you'd expect on Kimberley procurement against a southern equivalent. Default 22%.</p>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-procshare">Share of contract value that is procured or subcontracted</label>
-            <div class="calc-slider-row">
-              <input type="range" id="c-procshare" value="60" min="0" max="100" step="5" data-mirror="m-procshare">
-              <span class="calc-slider-val" id="m-procshare">60%</span>
-            </div>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-addressable">Share of that premium you'd expect verified sourcing to address</label>
-            <div class="calc-slider-row">
-              <input type="range" id="c-addressable" value="15" min="0" max="50" step="1" data-mirror="m-addressable">
-              <span class="calc-slider-val" id="m-addressable">15%</span>
-            </div>
-            <p class="calc-field-note">Your judgement, not our claim. Set it to zero if you don't accept the premise.</p>
-          </div>
-
-          <div class="calc-field">
-            <label for="c-days">On-ground engagement days per month</label>
-            <input type="number" id="c-days" value="3" min="0" max="22" step="0.5">
-          </div>
-
-          <div class="calc-field">
-            <label for="c-remoteday">Your current cost per site attendance day</label>
-            <input type="number" id="c-remoteday" placeholder="e.g. 2400" min="0">
-            <p class="calc-field-note">Including flights, accommodation, vehicle and lost office time. Leave blank to skip the comparison.</p>
-          </div>
-        </div>
-
-        <div class="calc-results">
-          <h3 style="color:#fff;margin-bottom:8px;">Indicative ranges</h3>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:20px;">Based on the assumptions you have entered on the left.</p>
-
-          <div class="calc-gate" id="calc-gate">
-            <h3>Enter your details to see the figures</h3>
-            <p>Work email and organisation, then see the indicative ranges these inputs produce.</p>
-            <form class="calc-gate-form" id="calc-gate-form">
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="calc-gate-email">Work email</label>
-                  <input type="email" id="calc-gate-email" name="email" required>
-                </div>
-                <div class="form-field">
-                  <label for="calc-gate-org">Organisation</label>
-                  <input type="text" id="calc-gate-org" name="organisation" required>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary">See my indicative figures</button>
-              <p class="calc-gate-note">Used only to follow up on the figures you request. Nothing is shared with a third party — see the privacy note on our <a href="/contact.html">contact page</a>.</p>
-            </form>
-          </div>
-
-          <div class="calc-gate-call">
-            <p>Prefer to talk it through? <a href="/contact.html">Book a call to discuss your project &rarr;</a></p>
-          </div>
-
-          <div class="calc-results-body is-locked" id="calc-results-body">
-            <div class="result-row">
-              <div class="result-label">Indicative variation cost difference</div>
-              <div class="result-value" id="r-var">—</div>
-              <p class="result-note" data-note-for="r-var"></p>
-              <details class="workings">
-                <summary>How this is calculated</summary>
-                <p>Variation value = contract value × your expected variation volume. That value is then priced at the markup you entered, and at each end of Nausicaa's stated 20–30% range. The result is the difference between the two, shown as a range. If you leave the markup field blank, no comparison is made. We do not assume what anyone else charges.</p>
-              </details>
-            </div>
-
-            <div class="result-row">
-              <div class="result-label">Indicative supply chain sourcing difference</div>
-              <div class="result-value" id="r-supply">—</div>
-              <p class="result-note" data-note-for="r-supply"></p>
-              <details class="workings">
-                <summary>How this is calculated</summary>
-                <p>Procured value = contract value × the subcontracted share you set. Premium exposure = that figure × the Kimberley premium you set. The range shown is the share of that exposure you nominated as addressable, plus or minus 30%. All three inputs are yours — set the addressable share to zero and this result goes to nil.</p>
-              </details>
-            </div>
-
-            <div class="result-row">
-              <div class="result-label">On-ground vs remote engagement</div>
-              <div class="result-value" id="r-engage">—</div>
-              <p class="result-note" data-note-for="r-engage"></p>
-              <details class="workings">
-                <summary>How this is calculated</summary>
-                <p>On-ground cost = engagement days per month × our day rate × project duration. Day and hourly rates are available on request, agreed after a discussion about the project. If you enter your current cost per site attendance day, the same day count is priced at your figure and the difference shown as a range of ±15%.</p>
-              </details>
-            </div>
-
-            <div class="result-row is-exposure">
-              <div class="result-label">Security of payment — amount at risk</div>
-              <div class="result-value" id="r-exposure">—</div>
-              <p class="result-note" data-note-for="r-exposure"></p>
-              <details class="workings">
-                <summary>How this is calculated</summary>
-                <p>This is an exposure figure, not a saving, and it is deliberately not presented as one. It is simply the contract value divided by the duration — the indicative size of one monthly progress claim. If a payment schedule is not issued within the statutory window, the amount at risk is the full amount claimed, regardless of merit. We make no estimate of how likely that is, because we cannot know.</p>
-              </details>
-            </div>
-
-            <div class="result-row">
-              <div class="result-label">Indicative engagement cost</div>
-              <div class="result-value" id="r-fee">—</div>
-              <p class="result-note" data-note-for="r-fee"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="calc-disclaimer">
-        <strong>Please read</strong>
-        <p>These figures are indicative only, based on the assumptions you have entered. They are not a quote, a forecast, or a guarantee of savings. Actual outcomes depend on project circumstances. Nausicaa Consulting makes no representation that any particular saving will be achieved.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Testimonials (§6 — placeholders only, never generated) ── -->
-  <section class="bg-off-white">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">References</span>
-        <h2>What clients say.</h2>
-      </div>
-      <div class="testimonials-grid">
-        <!-- Each requires a real name, role and organisation, with written
-             permission held before publication. Any testimonial referencing
-             a prior employer's work requires that company's written clearance
-             first. DO NOT generate, pad or composite testimonials. (brief §6) -->
-        <div class="testimonial-card">
-          <span class="placeholder-notice">Awaiting written permission</span>
-          <p>Client reference to be published here once written permission is held.</p>
-        </div>
-        <div class="testimonial-card">
-          <span class="placeholder-notice">Awaiting written permission</span>
-          <p>Client reference to be published here once written permission is held.</p>
-        </div>
-        <div class="testimonial-card">
-          <span class="placeholder-notice">Awaiting written permission</span>
-          <p>Client reference to be published here once written permission is held.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Conflict policy teaser (§13.1) ── -->
-  <section>
-    <div class="container--narrow">
-      <div class="conflict-block">
-        <h4>We act for both sides of this market. That is disclosed, not hidden.</h4>
-        <p>Nausicaa acts for contractors bringing work into the Kimberley and for Kimberley businesses delivering it. In a market this size, a blanket prohibition on acting for both would be unworkable — so instead there is a documented regime a probity officer can inspect: a small set of absolute prohibitions that apply regardless of consent, a conflict check performed and recorded before every engagement, and a withdrawal protocol decided in advance. Some engagements are declined.</p>
-        <p style="margin-top:14px;"><a href="/conflict-policy.html"><strong>Read the conflict policy &rarr;</strong></a></p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg></span>Nausicaa Consulting</div>
-        <p class="footer-tagline">Commercial capability for Kimberley projects — from either side of the contract.</p>
-        <p class="footer-abn"><span data-entity="abnLine">ABN 45 773 440 451 · Broome WA</span></p>
-      </div>
-      <div class="footer-col">
-        <h4>Delivering in the Kimberley</h4>
-        <ul>
-          <li><a href="/delivering-in-the-kimberley.html">Overview</a></li>
-          <li><a href="/superintendents-representative.html">Superintendent's Representative</a></li>
-          <li><a href="/local-content.html">Local Content &amp; Participation</a></li>
-          <li><a href="/supply-chain.html">Verified Supply Chain</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Kimberley Business</h4>
-        <ul>
-          <li><a href="/kimberley-business.html">Overview</a></li>
-          <li><a href="/fractional-commercial-manager.html">Fractional Commercial Manager</a></li>
-          <li><a href="/multi-trade-commercial-coordination.html">Multi-Trade Commercial Coordination</a></li>
-          <li><a href="/business-support.html">Capability &amp; Tendering</a></li>
-          <li><a href="/active-procurement.html">Upcoming Works</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/project-profiles.html">Project Profiles</a></li>
-          <li><a href="/conflict-policy.html">Conflict Policy</a></li>
-          <li><a href="/rates.html">Engagement Models</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a data-entity-href="phoneHref" href="tel:+61450137044"><span data-entity="phone">0450 137 044</span></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> Nausicaa Consulting.</span>
-      <span>nausicaaconsulting.com.au</span>
-    </div>
-  </div>
+<footer class="coming-soon-footer">
+  <span>Nausicaa Consulting</span>
+  <span class="dot" aria-hidden="true">&middot;</span>
+  <span>Broome, WA</span>
+  <span class="dot" aria-hidden="true">&middot;</span>
+  <span>ABN 45 773 440 451</span>
 </footer>
 
-<script src="js/config.js"></script>
-<script src="js/main.js"></script>
-<script src="js/calculator.js"></script>
-<script src="js/calc-gate.js"></script>
+<script>
+(function () {
+  var toggle = document.getElementById('access-toggle');
+  var form = document.getElementById('access-form');
+  var input = document.getElementById('access-code');
+  var error = document.getElementById('access-error');
+  if (!toggle || !form) return;
+
+  toggle.addEventListener('click', function () {
+    form.hidden = !form.hidden;
+    if (!form.hidden) input.focus();
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (input.value.trim().toLowerCase() === 'nausicaa') {
+      try { localStorage.setItem('nc_unlocked', '1'); } catch (err) {}
+      location.href = '/home.html';
+    } else {
+      error.hidden = false;
+      input.value = '';
+      input.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>
