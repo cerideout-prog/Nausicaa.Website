@@ -4,24 +4,64 @@ Read this and `docs/WEBSITE_RESTRUCTURE_PLAN.md` before starting any session.
 **Every session must update this file before it ends.** Newest entry at the top.
 
 **Branch:** `claude/cool-einstein-3ex6a0`
-**Decisions D-W1 to D-W7: all answered 2026-09-25.** Nothing is blocked.
-**Campaign runs w/c 2026-09-28** — Sessions 1 and 7 are brought forward and run first. See plan §4.0.
+**Decisions D-W1 to D-W8: all answered 2026-09-25.**
+**Campaign runs w/c 2026-09-28.**
+**D-W8 (2026-09-25): the gate comes off LAST**, not second — superseding D-W7's ordering. Session 1
+has shipped, so URLs are final and the churn risk that drove gate-second is gone. Accepted
+consequence: the site is not crawlable during the campaign, so organic search contributes nothing
+to it. See plan §4.0.
+
+**Two standing blocks — read before any copy session:**
+- **Plan §5.1** — the work record is a HARD BLOCK. No WAPOL/KDSF, Thunderbird, Kaynar, Crothers or
+  Kimberley Mineral Sands anywhere on the site. Kaynar clearance unresolved; D-W5 puts it in a
+  separate workstream; those names were already deliberately removed in `46f7f4e` / `608c9a0`.
+- **Testimonials** need a real name, role, organisation and written permission. Never generated,
+  padded or composited.
 
 ## Status — run in this order
 
 | Order | Session | Status | Date | Notes |
 | --- | --- | --- | --- | --- |
 | — | 0 — Stack audit & plan | ✅ Complete | 2026-09-25 | Stack audited, 23 pages inventoried, decisions answered |
-| **1st** | **1 — Structure & plumbing** | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
-| **2nd** | **7 — Launch** | 🟢 **Ready to start** | — | Gate off, robots.txt restored, merge to `main`. Time-critical. Also owed: the `home.html` redirect stub, and a decision on the two flags below. |
-| 3rd | 2 — Homepage | ⬜ Not started | — | |
-| 4th | 3 — Audience pages | ⬜ Not started | — | |
-| 5th | 4 — Service pages | ⬜ Not started | — | |
-| 6th | 5 — How to engage + conflict | ⬜ Not started | — | |
-| 7th | 6 — About | ⬜ Not started | — | |
-| — | Work record (KDSF + Thunderbird) | ⏸ Separate workstream | — | Out of scope per D-W5 |
+| — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
+| **1st** | **2 — Homepage + mobile fix** | 🟢 **Ready to start** | — | **Edit `home.html`, NOT `index.html`** (plan §4.2). Absorbs the alternate plan's sessions 2 and 3. Includes the one sitewide CSS fix: 129px horizontal overflow from `.nav-cta` at 390px. |
+| 2nd | 3 — Audience pages | ⬜ Not started | — | Multi-trade content to fold in: `git show 8000eb7:multi-trade-commercial-coordination.html` |
+| 3rd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
+| 4th | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
+| 5th | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
+| **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
+| — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-09-25 — Re-sequencing and plan reconciliation (no code change)
+
+**Decided**
+- **D-W8: the gate comes off last.** Session 7 moves from 2nd to LAST. Recorded in plan §4.0 and
+  §3.4 with the consequence stated: no organic search contribution to the campaign.
+
+**Reconciled**
+- A separate 6-session plan drafted outside the repo was folded into plan §4. Two of its sessions
+  are already complete (calculator extraction; redirect stubs and nav), two are absorbed into
+  Session 2 (homepage audiences and services), one becomes Session 7, and **one is blocked**.
+  Full disposition table at plan §4.3, so no future session re-runs or re-litigates it.
+
+**Written into the plan as standing constraints**
+- **§5.1 — HARD BLOCK on the work record.** The alternate plan's session 4 instructed hardcoding
+  WAPOL and Thunderbird detail. That is prohibited on three independent grounds: Kaynar clearance
+  unresolved (§5), D-W5 putting the work record in a separate workstream, and those names having
+  already been deliberately removed from the site. Where a session calls for a work-record teaser,
+  the only outcomes are fully anonymised or a marked placeholder.
+- **§4.2 — two corrections that apply to every remaining session.** The homepage is `home.html`
+  until Session 7, not `index.html`. And the existing responsive grid classes (`region-grid`,
+  `services-grid`, `segment-grid`) already cover every layout the remaining sessions need — writing
+  parallel grid rules would create a second source of truth.
+- **§2.2 corrected** — the gate script is inline in the `<head>` of all 27 HTML files, not in a JS
+  bundle. Removing it is a 27-file edit.
+
+**Carried, unchanged**
+- The 129px mobile overflow is now scoped into Session 2 rather than left floating.
+- `terms.html` footer decision and the dead conflict-framework PDF link remain open.
 
 ### 2026-09-25 — Session 1: Structure & plumbing
 

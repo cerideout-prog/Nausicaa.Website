@@ -64,7 +64,9 @@ the whole site; the audit is in §3 below.
 - The site is **gated**. `index.html` is a coming-soon page with a localStorage gate
   (`nc_unlocked`, code `nausicaa`); `home.html` is the real homepage and redirects back if not
   unlocked. `robots.txt` is currently `Disallow: /`.
-  **All three must be reversed before the campaign — hard launch blocker (Session 7).**
+  **All three must be reversed at launch (Session 7, now LAST per D-W8).** The gate script is
+  inline in the `<head>` of **all 27** HTML files — it is not in `js/`, so removing it is a 27-file
+  edit, not a bundle change.
 - `contract-administration.html` and `business-capability.html` are ~50-word redirect stubs for
   pre-v2 URLs.
 - `terms.html` is marked **DRAFT — NOT FOR USE**, excluded from the sitemap, pending legal review.
@@ -161,7 +163,8 @@ Conflict Policy and Terms sit in the footer. Session 1 may adjust this if it doe
 | D-W4 | Nav shape | **Two section landing pages** as nav items — no dropdowns |
 | D-W5 | KDSF + Thunderbird work record | **Handled as a separate workstream**, outside Sessions 1–7. Not built in this restructure. |
 | D-W6 | The four existing profiles | **Keep.** They remain the content of `project-profiles.html` for now; presented as earlier-career work, not in the nav. |
-| D-W7 | Launch timing | **Campaign runs the week commencing 2026-09-28.** Gate must come off before then — see §4 re-sequencing. |
+| D-W7 | Launch timing | **Campaign runs the week commencing 2026-09-28.** ~~Gate must come off before then.~~ **Ordering superseded by D-W8** — the campaign date stands, the gate timing does not. |
+| D-W8 | Gate timing, revised 2026-09-25 | **Gate comes off LAST**, after all copy is aligned — superseding D-W7's ordering. Session 1 has shipped, so URLs are final and the churn risk that drove gate-second is gone. Accepted consequence: the site is not crawlable during the campaign, so organic search contributes nothing to it. See §4.0. |
 
 **Consequence of D-W5 + D-W6:** `project-profiles.html` and `/profiles/*` are unchanged by this
 restructure. The corroboration gap identified in §3.2 — the capability statement's two proof
@@ -176,43 +179,95 @@ oversight.
 Each session is scoped to be completable without reading the whole site. **Every session must end by
 updating `docs/PROGRESS.md`.** Do not start a session until the previous one is marked complete there.
 
+**Re-sequenced 2026-09-25 (D-W8): the gate now comes off LAST, not second.** See §4.0.
+
 | Order | # | Session | Scope | Files touched | Done when |
 | --- | --- | --- | --- | --- | --- |
 | — | 0 | **Stack audit & plan** | This document | `docs/` | ✅ complete 2026-09-25 |
-| 1st | 1 | **Structure & plumbing** | No copywriting. Create/rename/delete page files per §3.3. Write the two section landing pages. Rewrite nav + footer across every page. Update `js/main.js` SECTION map, `sitemap.xml`, and redirect stubs for all retired URLs. | all `*.html`, `js/main.js`, `sitemap.xml` | Every page loads, nav identical everywhere, no 404 from any retired URL, active-link state correct |
-| 2nd | 7 | **Launch** | Remove the gate: `home.html` → `index.html`, delete the localStorage gate, restore `robots.txt` (`Allow: /`, `Disallow: /terms.html`, `Sitemap:` line), sweep canonical + OG tags, regenerate `sitemap.xml`, full link check. Merge to `main`. | `index.html`, `robots.txt`, all `*.html` heads | Site is public and crawlable, no dead links, no gate code remaining |
-| 3rd | 2 | **Homepage** | Rewrite the homepage to the capability statement structure: hero, value chain, 3 audiences, 4 services, how to engage, work record teaser. | `index.html` | Homepage reads as the capability statement on one page |
-| 4th | 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their capability statement cards. Lead each with the quoted buyer question. Fold multi-trade content into Audience 1. | 3 audience pages + `who-we-work-with.html` | Each page opens on its capability statement quote and promise |
-| 5th | 4 | **Service pages** | Realign 4 WHAT WE DO pages. Merge `local-content` + `supply-chain` into Service 4. Refocus `business-support` → Tendering & Estimating. | 4 service pages + `what-we-do.html` | Four services, one page each, wording matches the capability statement |
-| 6th | 5 | **How to engage + conflict** | Trim `rates.html` → `how-to-engage.html`, matching the capability statement's 3-stage fee model. Cross-link and trim `conflict-policy.html`. | `how-to-engage.html`, `conflict-policy.html` | Fee model matches the capability statement table |
-| 7th | 6 | **About** | Trim `about.html` to the capability statement bio. Add the "as at" date to `active-procurement.html`. | `about.html`, `active-procurement.html` | Bio matches the capability statement; Upcoming Works shows its currency date |
-| — | — | *Work record* | KDSF + Thunderbird — **separate workstream per D-W5**, not scheduled here | — | — |
+| — | 1 | **Structure & plumbing** | Renames, section landings, Audience 3, redirect stubs, nav + footer sweep, SECTION map, sitemap. Calculator extracted to `calculator.html`. | all `*.html`, `js/main.js`, `sitemap.xml` | ✅ complete 2026-09-25 |
+| **1st** | 2 | **Homepage + mobile fix** | Rewrite the homepage to the capability statement structure: hero, value chain, 3 audiences, 4 services, how to engage, work record teaser. Drop the testimonial placeholders. Replace the long conflict paragraph with the one-line version. **Plus the one sitewide CSS fix** — see §4.2. | **`home.html`** (not `index.html` — see below), `css/styles.css` **for the `.nav-cta` fix only** | Homepage reads as the capability statement on one page, and no page overflows horizontally at 390px |
+| 2nd | 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their capability statement cards. Lead each with the quoted buyer question. Fold multi-trade content into Audience 1. | 3 audience pages + `who-we-work-with.html` | Each page opens on its capability statement quote and promise |
+| 3rd | 4 | **Service pages** | Realign the 4 WHAT WE DO pages. Merge the retired `local-content` content into Service 4. | 4 service pages + `what-we-do.html` | Four services, one page each, wording matches the capability statement |
+| 4th | 5 | **How to engage + conflict** | Trim `how-to-engage.html` to the capability statement's 3-stage fee model. Cross-link and trim `conflict-policy.html`. | `how-to-engage.html`, `conflict-policy.html` | Fee model matches the capability statement table |
+| 5th | 6 | **About** | Trim `about.html` to the capability statement bio. Add the "as at" date to `active-procurement.html`. | `about.html`, `active-procurement.html` | Bio matches the capability statement; Upcoming Works shows its currency date |
+| **LAST** | 7 | **Launch** | Remove the gate: `home.html` → `index.html`, delete the inline gate script from **all 27** HTML files, restore `robots.txt`, sweep canonical + OG tags, regenerate `sitemap.xml`, full link check. Merge to `main`. | `index.html`, `robots.txt`, all `*.html` heads, `sitemap.xml` | Site is public and crawlable, no dead links, no gate code remaining |
+| — | — | *Work record* | KDSF + Thunderbird — **separate workstream per D-W5**, not scheduled here. **Blocked on Kaynar clearance — see §5.1.** | — | — |
 
-### 4.0 Re-sequencing — why Session 7 runs second
+### 4.0 Re-sequencing — the gate now comes off last (D-W8, 2026-09-25)
 
-The campaign runs the week commencing 2026-09-28, so the site must be public and indexable within
-days. Sessions 1 and 7 are therefore brought forward and run **before** any copywriting.
+The original plan ran Session 7 second, so that URLs were final before Google indexed them. **Session 1
+has now shipped, so that reason is spent:** the URLs are final, the redirect stubs are in place, and
+the gate can come off at any point without churn.
 
-The order matters: structure first, then gate removal. If the gate came off before Session 1, the
-first crawl would index the old 23-page structure and the URLs would then change underneath it.
-Running Session 1 first means the URLs are final before indexing begins, with redirect stubs
-catching anything that slips through.
+The user has decided the gate comes off **last**, after all copy is aligned. Recorded as **D-W8**.
 
-Sessions 2–6 are copy-only. Because this is a static site with push-to-deploy and no build step,
-that copy can land incrementally after the campaign starts without breaking anything.
+**Consequence, stated plainly.** The campaign runs w/c 2026-09-28. Gate-last means the site is not
+crawlable for the duration of the campaign, so **organic search contributes nothing to it** and paid
+and direct traffic carry it entirely. This is a deliberate trade — a fully aligned site at launch,
+against no organic contribution — not an oversight.
 
-**Risk, stated plainly:** even on this order there is roughly a week between the gate coming off and
-the campaign running. That is thin for Google to crawl and index sixteen pages, several of them new
-URLs. Expect paid and direct traffic to carry the campaign initially, and organic search to lag by
-two to four weeks. If organic search matters to the campaign, the gate should come off immediately
-after Session 1 — do not wait for the copy.
+Two things this does **not** require, and which should not be bundled into Session 7 by reflex:
+
+- **Merging to `main` is not the same as un-gating.** `main` is already live and gated. Merging this
+  branch at any time puts the new structure on the real domain, still behind the gate — useful for
+  real-domain preview with no exposure. Nothing from Session 1 is live yet.
+- **If organic search later turns out to matter**, the gate can come off after any session from
+  Session 2 onward. The homepage is where campaign traffic lands, so after Session 2 is the first
+  sensible point. Copy can land incrementally afterwards: static site, push-to-deploy, no build step.
 
 ### 4.1 Session prompt template
 
 > Read `docs/WEBSITE_RESTRUCTURE_PLAN.md` and `docs/PROGRESS.md` first — do not re-audit the site.
 > Execute **Session N** only. Stay inside the "Files touched" column; do not touch any other file.
-> Obey the hard rules in §2.1. Align all copy to `docs/CAPABILITY_STATEMENT.md`.
+> Obey the hard rules in §2.1 and the standing constraints in §5. Align all copy to
+> `docs/CAPABILITY_STATEMENT.md`.
 > Commit to `claude/cool-einstein-3ex6a0`, then update `docs/PROGRESS.md` and stop.
+
+### 4.2 Two standing corrections for every remaining session
+
+**1. The homepage is `home.html`, not `index.html`, until Session 7.** Session 2's file was listed as
+`index.html` on the assumption that Session 7 had already run. It has not. `index.html` is the
+coming-soon gate. Do not edit it before Session 7.
+
+**2. Use the existing responsive grid classes. Do not write new ones.** `css/styles.css` already
+carries grids that do exactly what the audience and service layouts need, with breakpoints already
+set:
+
+| Class | Desktop | ≤960px | ≤640px |
+| --- | --- | --- | --- |
+| `region-grid` | 3 cols | 2 | 1 |
+| `services-grid` | 4 cols | 2 | 1 |
+| `segment-grid` | 2 cols | 1 | 1 |
+
+Pair them with `segment-card`. Writing parallel grid rules creates a second source of truth for the
+same layout.
+
+**The one CSS change that IS needed** — and it is a real, measured defect, not a refinement. Every
+page overflows horizontally by **129px at 390px viewport width**, because the header `.nav-cta`
+"Contact Us" button is never hidden or reflowed at phone width. Verified against commit `8000eb7`,
+so it predates the restructure. It is scoped to Session 2 because that is the session that looks at
+mobile. Fix it with the existing `:root` custom properties and existing breakpoints, and verify at
+390px on `home.html` plus at least two other pages. A campaign lands mostly on phones.
+
+### 4.3 Reconciliation with the alternate 6-session plan (2026-09-25)
+
+A separate 6-session plan was drafted outside this repo and supplied alongside it. It is **not** a
+second plan to follow — it is reconciled into §4 above and recorded here so no session re-runs work
+that is already done, or runs work that is blocked. If that plan is pasted into a session again,
+this table governs.
+
+| Its session | Disposition |
+| --- | --- |
+| 1 — Calculator extraction & analytics | **Done** (Session 1). Its analytics step is void: there is no `gtag.js`, Meta Pixel or any other tracking on any page, and §6 rules analytics out of scope. Nothing was added. |
+| 2 — Audience architecture | **Absorbed into Session 2.** The 3 audiences already exist on `who-we-work-with.html`; what remains is the homepage, which still carries the old 2-card selector. Its CSS step is superseded by §4.2 — do not write new grid rules. |
+| 3 — Service consolidation & conflict line | **Absorbed into Session 2.** Same reasoning: the 4 pillars already exist on `what-we-do.html`; the homepage still says "Two service lines, two audiences." Its one-line conflict replacement is kept. |
+| 4 — Social proof / work record | **BLOCKED — do not run.** It instructs hardcoding WAPOL and Thunderbird detail, which §5.1 prohibits on three independent grounds. |
+| 5 — Redirect stubs & navigation | **Done** (Session 1), and more completely: 8 stubs rather than the 5 it lists — it missed `multi-trade-commercial-coordination.html` and the two pre-existing stubs whose targets had gone stale. Pages were `git mv`'d rather than recreated, so history follows. Note it calls the nav map `navSections`; the actual identifier in `js/main.js` is `SECTION`. |
+| 6 — Un-gating | **Becomes Session 7, now LAST per D-W8.** Three corrections: the gate is inline in the `<head>` of all 27 HTML files, not in a JS bundle; the only remaining `home.html` link is inside the gate page itself, which is deleted anyway; and the sitemap is already rebuilt apart from the `index.html` rename. |
+
+**What that plan does not cover**, and this one does: the audience detail pages (Session 3), the four
+service detail pages (Session 4), `how-to-engage` (Session 5) and `about` (Session 6). Following it
+alone would launch sixteen pages of which roughly ten still carry pre-restructure copy.
 
 ---
 
@@ -235,6 +290,41 @@ From `PROJECT_MD.md` and the 2026-09-21 Handoff — these apply to website copy 
   **Do not publish an unverified figure on the website.**
 
 ---
+
+### 5.1 HARD BLOCK — the work record and Kaynar clearance
+
+**No session in this restructure publishes the work record.** This is a standing constraint, not a
+preference, and it overrides any session brief that says otherwise.
+
+Do **not** publish, anywhere on the site:
+
+- **WAPOL Kimberley District Support Facility** / **KDSF**
+- **Thunderbird Tailings Storage Facility** / Waterbank
+- **Kaynar Group**, or any Kaynar-attributed project detail
+- **Crothers**, **Kimberley Mineral Sands**, or any other client or head-contractor name
+- Package values, tonnages, volumes or durations tied to the above
+
+Three separate reasons, each sufficient on its own:
+
+1. **Kaynar written clearance is unresolved** (§5). It decides ALT-A (named) vs ALT-B (anonymised).
+   Until it lands, neither form is cleared.
+2. **D-W5 puts the work record in a separate workstream**, outside Sessions 1–7.
+3. **These names were deliberately removed from the site already** — commits `46f7f4e` and `608c9a0`.
+   Reinstating them would undo a decision that was taken on purpose.
+
+Where a session brief calls for a "work record teaser" or "social proof" — the homepage session
+does — the only two acceptable outcomes are a **fully anonymised** teaser that names nothing above,
+or a **marked placeholder** with the gap flagged in `PROGRESS.md`. Do not improvise a third option.
+
+The mandatory attribution footnote (§5) applies wherever the work record is eventually published:
+
+> Recent work record described above was delivered by Callum Rideout in a recent role.
+> It does not represent work delivered by Nausicaa.
+
+**Related:** testimonials are also blocked. The three `home.html` placeholders read "Awaiting written
+permission". Each real testimonial needs a name, role, organisation and written permission held
+before publication. Do not generate, pad or composite them. The homepage session removes the
+placeholders; it does not fill them.
 
 ## 6. Out of scope
 
