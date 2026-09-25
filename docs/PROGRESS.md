@@ -26,13 +26,236 @@ to it. See plan §4.0.
 | — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
 | — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Responsive layout fixed sitewide: **zero horizontal overflow on all 27 HTML files at 25 viewport widths from 320px to 1440px**, including the tablet/laptop band and the 320px residuals. |
 | — | 3 — Audience pages | ✅ Complete | 2026-09-25 | Three audience pages realigned to their capability statement cards and led by the quoted buyer question. Multi-trade folded into `kimberley-business.html#multi-trade` per D-W9; its service card and its redirect stub both repointed. `principals-and-asset-owners.html` shell replaced with real copy, 455 → 879 words. `who-we-work-with.html` checked, no drift, unchanged. |
-| **1st** | **4 — Service pages** | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
-| 2nd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
+| — | 4 — Service pages | ✅ Complete | 2026-09-25 | Four service pages realigned to their capability statement cards; `local-content` merged into Service 4; all four stale eyebrows replaced; `what-we-do.html` given connective copy (166 → 304 words) with its four cards left verbatim. |
+| **1st** | **5 — How to engage + conflict** | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. **Session 3's day-rate/travel gap is CLOSED** — `how-to-engage.html` already carries both; see the Session 4 entry. |
 | 3rd | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
 | **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-09-25 — Session 4: Service pages
+
+**Files touched:** `superintendents-representative.html`, `fractional-commercial-manager.html`,
+`tendering-and-estimating.html`, `local-supply-chain.html`, `what-we-do.html`, `docs/PROGRESS.md`.
+Nothing else. **No CSS written, `css/styles.css` never opened**, `index.html` and `home.html`
+untouched, `local-content.html` verified only. Every layout reuses `roles-grid` / `role-card` /
+`plain-note` / `segment-grid` / `container--narrow`, all already in use on sibling pages.
+
+**Container note:** this session started on `claude/zen-ptolemy-hozkmh`, which carries none of
+Sessions 0–3 — no `docs/`, no restructure. Same failure Session 3 hit. Checked out
+`claude/cool-einstein-3ex6a0` from origin before reading anything.
+
+#### Each page now leads with its card's promise, verbatim
+
+| Page | `<h1>` | Lead | Words |
+| --- | --- | --- | --- |
+| `superintendents-representative.html` | Contract administration and Superintendent's Representative. | card promise verbatim + one clause | 1070 → **1645** |
+| `fractional-commercial-manager.html` | Fractional commercial management. | card promise verbatim + one clause | 1039 → **1406** |
+| `tendering-and-estimating.html` | Tendering and estimating. | card promise **verbatim** | 710 → **1376** |
+| `local-supply-chain.html` | Regional mobilisation and local supply chain. | card promise **verbatim** | 820 → **1545** |
+| `what-we-do.html` | *(unchanged)* | *(unchanged)* | 166 → **304** |
+
+`<title>`, `meta description` and both OG tags were realigned on all four detail pages.
+
+**Deviation, declared: the h1s are not byte-identical to the card `<h3>`s.** Session 3 made the
+audience h1s byte-match their cards. Here they do not, deliberately. The card labels are verbatim
+capability statement and use its abbreviations — "Contract Administration & Superintendent's Rep",
+"&" for "and", title case. Those work as a label in a grid; as a sentence at the top of a page they
+read clipped. The h1s carry the same words in the site's existing h1 convention (sentence case, "and"
+for "&", "Representative" for "Rep", trailing full stop). **The cards were not changed to match** —
+they are capability statement copy and moving them to fit a page would be the wrong way round. The
+divergence is typographic, not substantive.
+
+#### Service 1 — the two promises that were not argued
+
+The card promises four things. Claims certified and variations tested were already argued well.
+**Alternate pricing options and acquittal reporting for grants were not on the page at all.** Both
+are now full sections, and both were added to the Scope of service list.
+
+- **Alternate pricing options** — the argument is that accept/reject is a false binary, and the third
+  response is to price the alternative on the same basis so the comparison is real. Methodology,
+  buildability, rates vs lump sum vs dayworks, scope splits, and the assumptions recorded in writing.
+- **Acquittal reporting for grants** — grant funding agreement and construction contract run side by
+  side with different reporting categories. A claim is organised the way the works are built; an
+  acquittal is organised the way the money was approved. Reconciling the two at close-out from
+  records never kept for it is where funding gets clawed back.
+
+Also added a cross-audience paragraph under "Two distinct roles", because this page is sold to
+principals *and* to contractors — see the eyebrow note below.
+
+#### Service 2 — restructured onto the card's own four words
+
+The page argued pricing and quote-to-cash under other names; **margin and forecasting were absent.**
+The opening section was an eight-bullet list of what a commercial manager does; it is now four
+subsections headed **Pricing · Margin · Forecasting · Quote-to-cash**, which is the card's own
+sequence. Forecasting is new copy (cash in/out mapped forward, work in hand against capacity,
+forecast margin at completion). "How it works day to day" became "How the retainer works day to day",
+since "on a retainer" is in the card and was only implied.
+
+**Content moved out:** the "What's included in tender support" list is Service 3's subject matter and
+now lives there. Stage 1 cross-links to it rather than restating it.
+
+#### Service 3 — rebuilt; this was the furthest from its card
+
+The page argued capability statements and supplier registrations. The card is about **pricing bids on
+real regional cost**. Rebuilt around the card's four named drivers, one section each —
+**Mobilisation · Seasonality · Haulage · Availability** — followed by market sounding, how the estimate
+is built, and the submission itself. The registrations material is kept but demoted to a single
+section ("Before you can price it, you have to be invited"), which is the honest relationship: it is
+pre-tender work, not the service.
+
+**Content moved in:** the rate-build and market-sounding argument from `local-supply-chain.html`
+("The cost of pricing Kimberley rates from Perth", "Market sounding is not a desktop exercise") — that
+is Service 3's card, not Service 4's — plus the tender-support inclusions list from Service 2.
+
+#### Service 4 — the local-content merge
+
+**The merge arithmetic, stated plainly.** 820 + 744 = 1,564 words of source. The page is now 1,545 —
+but that includes roughly **500 words of new copy the card required and neither source had**: the
+unbundling argument and the WAIPS/APP/IPP section. So about **1,045 words of the 1,564 source words
+survive** — roughly a third consolidated away. It is not 1,564 words of two arguments bolted together.
+
+**The card gave the spine and the page now follows it:** unbundle the scope → who can actually deliver
+it → participation targets → what a credible plan contains → reporting.
+
+- **"Unbundling the scope" is new.** It is the card's lead idea and *neither* source page argued it.
+  Package size, boundaries, risk allocation, payment terms, sequencing, and what should stay bundled.
+- **Overlap consolidated.** Both sources discussed the supplier market: supply-chain's directory-vs-register
+  grid and local-content's genuine-depth/thin-or-absent grid now sit in one section, "Who can actually
+  deliver it", as two halves of one point. Both sources had an engagement-models list and a conflict
+  block; each is now one list and one block.
+- **Cut:** local-content's 10-item "Scope of service" list. After 1,200 words of detail it restated the
+  section headings above it, and the sidebar Deliverables list does the scanning job. Its two items not
+  covered in prose (subcontract formation, ITT coordination) were moved into the sidebar so nothing is
+  lost. Pre-qualification's five bullets became one paragraph for the same reason.
+- **IPP is new to the site.** The card names WAIPS, APP and IPP; neither source page mentioned IPP.
+  It is described as the Commonwealth Indigenous Procurement Policy, applying where the funding or
+  contract is Commonwealth. **No threshold, percentage or target figure is published** — the section
+  says explicitly that thresholds change and are confirmed against current published policy per
+  engagement, rather than asserting numbers that are on nobody's verified list.
+- **Kept deliberately:** the Capability Register IP block, the weekly-reporting callout ("the part most
+  plans miss"), and the Traditional Owner / Ranger group engagement material, which is the most
+  distinctive content either source held.
+- Its fee link pointed at `/rates.html`, retired in Session 1; it now points at `/how-to-engage.html`.
+
+**`local-content.html` stub verified, not changed.** Canonical, meta refresh, `noindex`, title, body
+sentence and Continue button all already point at `/local-supply-chain.html`. Confirmed in the browser:
+it lands on `/local-supply-chain.html`.
+
+#### Eyebrows — the judgement call the brief asked for
+
+All four carried pre-restructure audience labels. The format is now uniform (`label · Service N`), but
+**the label is not an audience label on two of the four, and that is deliberate.**
+
+| Page | Eyebrow now | Why |
+| --- | --- | --- |
+| Service 1 | **What we do** · Service 1 | **False pairing removed.** It read "Delivering in the Kimberley". This service is sold to principals *and* to contractors — the capability statement's own Audience 3 card is literally "Superintendent's Representative and contract administration", while contractor-side administration is half the page. No single audience label is true. |
+| Service 2 | **Kimberley Businesses** · Service 2 | Correct as-is. The copy is written squarely for local businesses that need the function before they can carry the salary. |
+| Service 3 | **What we do** · Service 3 | **False pairing removed.** It read "For Kimberley businesses". But Audience 1's card promises "Regional cost priced honestly" and Audience 2's promises "Estimating discipline" — both are this service. Either label would be half right. |
+| Service 4 | **Entering the Kimberley** · Service 4 | Correct. Unbundling a head-contract scope is sold to whoever holds the head contract, and Audience 1's card promises "a subcontract panel that holds through a wet season". |
+
+Where the eyebrow no longer names an audience, the page body carries the cross-links instead — Service 1
+now has a paragraph naming both audiences and linking to both pages, which is more informative than a
+single label was.
+
+#### Carried item 1 — security of payment: DECIDED
+
+**`superintendents-representative.html#security-of-payment` is the single canonical treatment.** An
+HTML comment now says so at the anchor, so a later session does not re-split it.
+
+The "three places" framing in Session 3's note overstates it. On inspection it is one treatment plus two
+things that are not treatments:
+
+| Where | What it actually is | Verdict |
+| --- | --- | --- |
+| `superintendents-representative.html#security-of-payment` | ~250 words: the Act, the payment-schedule mechanism, statutory debt, the exposure panel, the statutory "as at" date, the not-legal-advice disclaimer | **Canonical. Keep.** |
+| `kimberley-business.html` "Did you know?" | ~110 words, plain English, no statute named, **no as-at date, no legal-advice disclaimer** | Legitimate audience explainer — but it must link to the canonical anchor and does not |
+| `kimberley-business.html` `#multi-trade` "Commercial protection" card | one 18-word capability bullet | Fine as-is |
+
+So the defect is not duplication of detail. It is that **the statutory currency date and the
+not-legal-advice disclaimer exist on only one of the three**, and neither of the other two gives the
+reader a path to them.
+
+**Done here:** Service 2's quote-to-cash section refers to the payment legislation and links to the
+canonical anchor rather than restating it.
+
+**➡️ ACTION FOR A LATER SESSION (`kimberley-business.html` — this session may not touch it).** Add a
+link to `/superintendents-representative.html#security-of-payment` from the "Did you know?" block. One
+sentence at the end of it, e.g. *"The statutory position is set out in full on the contract
+administration page."* Do **not** move the statute name, the day counts, the as-at date or the
+disclaimer onto that page — that is what would create a second treatment to keep in sync.
+
+#### Carried item 2 — day rate and travel disbursement: CLOSED, no gap
+
+Session 3 asked this session to check. **`how-to-engage.html` carries both**, so nothing was lost when
+the fee table came off `entering-the-kimberley.html`, and **nothing needs to be added in Session 5**:
+
+- Day rate — line 63–65: *"Day and hourly rates … A day or hourly rate and any minimum commitment are
+  agreed after a discussion about the project and its scope"*, applying to *"supervision, site
+  attendance, project administration and discrete short-form assignments"*. There is also a "Day rate"
+  row in the fee table at line 100.
+- Travel — lines 65 and 165: *"Client travel and accommodation recovered as a disbursement at cost"*,
+  and again *"not marked up"* in the fee notes.
+
+`superintendents-representative.html` independently carries both in its Engagement models section and
+its "Day rate" sidebar. **`how-to-engage.html` was not edited** — it is Session 5's file and needed
+nothing.
+
+#### `what-we-do.html` — cards unchanged, connective copy added
+
+**The four cards were checked against the rewritten detail pages and not one needed to move.** Each
+card's promise is now the detail page's lead, verbatim. The cards stay verbatim capability statement.
+
+The brief allowed connective copy on a 166-word page. Added one `plain-note` mapping the four services
+onto the capability statement's own value chain (estimate → tender → mobilise → deliver → claim and vary
+→ bill and close), plus the one-line conflict statement with a link to `/conflict-policy.html`. 166 → 304
+words. No card text touched, no new CSS, `container--narrow` and `plain-note` both already in use.
+
+#### Verification — in Chromium against `python3 -m http.server 8000`, gate unlocked
+
+- All five pages **HTTP 200**, **exactly one `<h1>`**, **five nav items**, active state resolving to
+  **"What We Do"** on all five.
+- **`config.js` substitutions all resolving — zero empty `data-entity` elements.** No contact detail
+  hardcoded outside a `data-entity` attribute on any of the four service pages. `piCover` / `plCover`
+  left null; the insurance block on Service 1 stays suppressed.
+- **Zero console errors.** The `ERR_CERT_AUTHORITY_INVALID` for the Google Fonts CDN is filtered — this
+  container's egress proxy blocks `fonts.googleapis.com`, it reproduces on untouched pages, and it is an
+  environment artefact.
+- **164 internal links and anchors checked, all resolve**, including `#security-of-payment`.
+- `local-content.html` still lands on `/local-supply-chain.html`.
+- **Zero horizontal overflow at 320 / 390 / 768 / 1024 / 1025 / 1180 / 1181 / 1440px** — both sides of
+  every Session 2 breakpoint. Session 2's CSS is untouched and nothing added here reintroduces overflow.
+- **Nav and footer byte-identical** — header `a124380a`, footer `f2b378a6` across all five pages and
+  matching every other chrome-bearing page. (`contact.html` and `terms.html` differ as they did before,
+  pre-existing and intentional.) Verified by hash before committing.
+- All five files tag-balanced.
+
+**Hard constraints checked, not assumed.** A scan of all five files **including HTML comments** finds no
+WAPOL, KDSF, Thunderbird, Kaynar, Crothers, Kimberley Mineral Sands or Waterbank, and no package value,
+tonnage, volume, duration or subcontractor count. **No Superintendent's Representative appointment is
+claimed** — the "On appointments" note is unchanged and still says plainly that no register of prior
+formal appointments is claimed. The only digits in body copy on the four pages are two pre-existing
+strings: "2,000 kilometres away" (rhetorical, Service 1) and the "80% of it is used up" hours-cap rule
+(Service 2), which matches `how-to-engage.html` exactly.
+
+#### Found, not fixed
+
+1. **`kimberley-business.html` needs a one-sentence link to the canonical security-of-payment anchor.**
+   Full instruction above. Out of this session's files.
+2. **Service 1 is now the longest page on the site at 1,645 words.** That is the cost of arguing all four
+   of its card promises where only two were argued before. Flagged rather than trimmed, because trimming
+   would mean dropping one of the four things the capability statement sells. Worth a look if page length
+   becomes a campaign concern.
+3. **Service 3's sell-side / Service 4's buy-side split is now load-bearing and should not be "tidied".**
+   Helping a local business win work under WAIPS/APP/IPP (Service 3) and advising a head contractor on
+   meeting those targets (Service 4) are opposite sides of the same requirement. Both pages say so and
+   cross-link. Merging that material onto one page would describe a conflict of interest the conflict
+   policy forbids.
+4. **`what-we-do.html` uses `segment-grid` (2 → 1) for four cards, not `services-grid` (4 → 2 → 1).**
+   Pre-existing from Session 1, renders fine at every width tested, left alone — changing it is a layout
+   decision, not a copy fix.
+
 
 ### 2026-09-25 — Capability statement verified against the source PDF
 
