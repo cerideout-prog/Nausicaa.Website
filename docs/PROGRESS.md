@@ -24,7 +24,7 @@ to it. See plan §4.0.
 | --- | --- | --- | --- | --- |
 | — | 0 — Stack audit & plan | ✅ Complete | 2026-09-25 | Stack audited, 23 pages inventoried, decisions answered |
 | — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
-| — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Mobile overflow fixed sitewide: 129px → 0 at 360/390/414 on all 25 chrome-bearing files. |
+| — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Responsive layout fixed sitewide: **zero horizontal overflow on all 27 HTML files at 25 viewport widths from 320px to 1440px**, including the tablet/laptop band and the 320px residuals. |
 | **1st** | **3 — Audience pages** | 🟢 **Ready to start** | — | Multi-trade content to fold in: `git show 8000eb7:multi-trade-commercial-coordination.html` |
 | 2nd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
 | 3rd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
@@ -33,6 +33,67 @@ to it. See plan §4.0.
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-09-25 — Session 2 follow-up: the two carried defects, fixed
+
+User asked for both defects recorded in the Session 2 entry below to be fixed. **`css/styles.css`
+is the only file touched.** No HTML changed; nav and footer blocks re-verified byte-identical.
+
+**1. The 781–1135px tablet / small-laptop overflow — fixed by making the nav three-tier.**
+
+The cause was a mismatch between two numbers. The drawer engaged at ≤780px, but laid out
+horizontally the row needs **1163px** (measured: brand 273 + links 648 + CTA 138 + 2×24 gap +
+56 container padding). Everything between those two numbers got a desktop nav in a viewport
+too narrow to hold it.
+
+| Tier | Nav | Why |
+| --- | --- | --- |
+| ≤1024px | Burger drawer | Was ≤780px. Covers phones, tablets, iPad landscape at 1024. |
+| 1025–1180px | Tightened row | Wordmark 1.15rem, nav gap 16px, link gap 10px, link padding 6/8px. Brings the required width from 1163px down to ~996px, so it fits from 1025px. |
+| ≥1181px | Full row unchanged | 1163px needed, 1181px available. |
+
+Typeface, weight, tracking and every brand colour are untouched — only sizes and spacing move,
+per Brand Guide v1.0 §04.
+
+Also grouped the burger with the Contact Us button (`margin-left: auto`). With three items and
+`space-between`, the burger was being stranded in the middle of the header across the whole
+641–1024px band. Below 640px the button is hidden and it resolves to the same right edge as
+before, so nothing changes on phones.
+
+**2. The 320px residuals — fixed, and they turned out to be one bug, not three.**
+
+`home.html` 37px, `calculator.html` 33px and `contact.html` 4px all traced to the same string:
+`callum.rideout@nausicaaconsulting.com.au` renders 335px wide with nothing able to break it.
+On the contact page it was doing something less obvious — setting a **306px min-content floor on
+a grid track inside a 284px grid**, which is why that page overflowed by 4px with no visibly
+long text anywhere.
+
+Fixed with two rules keyed off the `data-entity` hooks `js/config.js` already fills, so they
+follow the address and the number wherever those appear:
+
+- `[data-entity="email"] { overflow-wrap: anywhere; }` — **`anywhere`, not `break-word`,
+  deliberately.** Only `anywhere` is taken into account when intrinsic min-content widths are
+  computed, and that is exactly what the contact-page grid case needed. `break-word` would have
+  fixed the two visible overflows and left the contact page broken.
+- `[data-entity="phone"] { white-space: nowrap; }` — the number was breaking across three lines
+  in the utility bar at 320px.
+
+Scoping to the two attribute selectors rather than `body` keeps intrinsic sizing unchanged
+everywhere else on the site.
+
+**Verification**
+
+Every one of the **27 HTML files** — 17 live pages, 8 redirect stubs, the gate and the draft
+terms page — measured at **25 viewport widths** (320, 360, 375, 390, 414, 480, 520, 560, 640,
+641, 700, 768, 800, 900, 1000, 1024, 1025, 1100, 1133, 1180, 1181, 1194, 1280, 1366, 1440).
+**675 measurements, zero horizontal overflow.** Breakpoint boundaries checked individually at
+640/641, 1024/1025 and 1180/1181: the handover is clean in both directions, the row fits inside
+the container at every one, and the drawer opens with all five items at 1024px. `home.html`
+re-checked for console errors (none), `config.js` substitutions and burger toggle.
+
+**Still open, unchanged by this follow-up:** canonical and OG URLs point at `/` pending the
+Session 7 sweep; `terms.html` remains unlinked pending the footer decision; the dead
+conflict-framework PDF link on `conflict-policy.html` is Session 5's.
 
 ### 2026-09-25 — Session 2: Homepage + mobile fix
 
@@ -133,7 +194,7 @@ sweep — that is a nav change, so it belongs in a nav session.
 byte-identical to their pre-session state and to the other pages'. (`contact.html`'s nav
 differs by the `active` class on its own CTA — pre-existing and intentional.)
 
-**Two real defects found while verifying, NOT fixed — both need a decision**
+**Two real defects found while verifying.** Both were recorded here as needing a decision, then **fixed on request in the follow-up entry above** (2026-09-25, Session 2 follow-up). Kept below for the diagnosis.
 
 1. **Every page overflows between 781px and ~1135px, by up to 354px.** This is the tablet and
    small-laptop band. It is **pre-existing** — measured at the same magnitude before this
