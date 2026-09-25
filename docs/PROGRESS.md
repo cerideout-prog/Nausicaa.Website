@@ -4,7 +4,7 @@ Read this and `docs/WEBSITE_RESTRUCTURE_PLAN.md` before starting any session.
 **Every session must update this file before it ends.** Newest entry at the top.
 
 **Branch:** `claude/cool-einstein-3ex6a0`
-**Decisions D-W1 to D-W8: all answered 2026-09-25.**
+**Decisions D-W1 to D-W9: all answered 2026-09-25.**
 **Campaign runs w/c 2026-09-28.**
 **D-W8 (2026-09-25): the gate comes off LAST**, not second — superseding D-W7's ordering. Session 1
 has shipped, so URLs are final and the churn risk that drove gate-second is gone. Accepted
@@ -25,7 +25,7 @@ to it. See plan §4.0.
 | — | 0 — Stack audit & plan | ✅ Complete | 2026-09-25 | Stack audited, 23 pages inventoried, decisions answered |
 | — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
 | — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Responsive layout fixed sitewide: **zero horizontal overflow on all 27 HTML files at 25 viewport widths from 320px to 1440px**, including the tablet/laptop band and the 320px residuals. |
-| **1st** | **3 — Audience pages** | 🟢 **Ready to start** | — | Multi-trade content to fold in: `git show 8000eb7:multi-trade-commercial-coordination.html` |
+| **1st** | **3 — Audience pages** | 🟢 **Ready to start** | — | **D-W9: multi-trade folds into `kimberley-business.html` (Audience 2), NOT `entering-the-kimberley.html`** — D-W2 mis-assigned it. Stub target changes too. Recover content: `git show 8000eb7:multi-trade-commercial-coordination.html` |
 | 2nd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
 | 3rd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
 | 4th | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
@@ -94,6 +94,36 @@ re-checked for console errors (none), `config.js` substitutions and burger toggl
 **Still open, unchanged by this follow-up:** canonical and OG URLs point at `/` pending the
 Session 7 sweep; `terms.html` remains unlinked pending the footer decision; the dead
 conflict-framework PDF link on `conflict-policy.html` is Session 5's.
+
+### 2026-09-25 — D-W9: multi-trade folds into Audience 2, not Audience 1 (no code change)
+
+**D-W2 was wrong about the target.** It said fold
+`multi-trade-commercial-coordination.html` into `entering-the-kimberley.html` (Audience 1). The
+content is Audience 2. Corrected as **D-W9** before Session 3 runs, so the session reads one
+consistent instruction instead of a prompt contradicting a recorded decision.
+
+**Evidence**
+- The retired page's own eyebrow: *"For Kimberley businesses · Service"*.
+- Its copy: *"Local single-trade businesses often pass on lucrative multi-trade packages…"* —
+  written for local businesses stepping up to head contract, not for contractors bringing work
+  into the region.
+- The pre-restructure `home.html` filed it under the "Based in the Kimberley" segment card; the
+  old footer filed it under the "Kimberley Business" column.
+- `kimberley-business.html` already carries a Multi-Trade Commercial Coordination service card.
+
+**Live symptom this leaves behind.** Session 1 rewrote internal links faithfully to D-W2, so
+`kimberley-business.html` line ~106 has its Multi-Trade service card pointing at
+`/entering-the-kimberley.html` — a Kimberley-business service linking to the page for interstate
+contractors. Session 3 fixes it.
+
+**Changed in the plan:** §3.1 audit row, §3.3 structure tree, §3.4 (D-W2 struck and D-W9 added
+with the evidence), §4 Session 3 scope and files-touched column. The fold itself was never in
+doubt — only its destination.
+
+**Consequence for Session 3:** it also edits
+`multi-trade-commercial-coordination.html`, changing the redirect from
+`/entering-the-kimberley.html` to `/kimberley-business.html`. That is a one-line change, and it
+is the only file outside the four audience pages that the session may touch.
 
 ### 2026-09-25 — Session 2: Homepage + mobile fix
 
@@ -330,13 +360,13 @@ the calculator.**
   - **Session 4** — `local-supply-chain.html` currently holds *only* the old `supply-chain.html`
     content. The `local-content.html` material is **not yet merged in**; that merge is Session 4's
     job, as planned.
-  - **Session 3** — the multi-trade content is **not yet folded** into
-    `entering-the-kimberley.html`; D-W2's fold is Session 3's job. The stub redirects there now so
-    the URL does not 404 in the meantime.
+  - **Session 3** — the multi-trade content is **not yet folded** in. ~~Into
+    `entering-the-kimberley.html` per D-W2.~~ **Corrected 2026-09-25 by D-W9: it folds into
+    `kimberley-business.html`** (Audience 2), and the stub target changes with it.
 - **Copy oddity for Session 2/3:** `home.html`'s "Based in the Kimberley" card still lists
   "Multi-Trade Commercial Coordination", which the link rewrite now points at
-  `entering-the-kimberley.html`. Correct plumbing, odd copy. It resolves when Session 3 folds
-  that content in.
+  `entering-the-kimberley.html`. **Resolved on the homepage by Session 2**, which rewrote it. The
+  same mis-target survives on `kimberley-business.html` and is Session 3's to fix — see D-W9.
 - **No analytics exists on this site** — no `gtag.js`, no Meta Pixel, nothing, on any page. Noted
   because a competing session brief assumed there was tracking to preserve. Plan §6 puts
   analytics out of scope, so nothing was added. If the campaign needs to measure anything, that

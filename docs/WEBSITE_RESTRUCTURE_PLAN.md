@@ -93,7 +93,7 @@ the whole site; the audit is in §3 below.
 | `business-capability.html` | 52 | — | CUT (redirect stub) |
 | `local-content.html` | 814 | Service 4 — Regional Mobilisation & Local Supply Chain | MERGE → Service 4 |
 | `supply-chain.html` | 891 | Service 4 | MERGE TARGET → Service 4 |
-| `multi-trade-commercial-coordination.html` | 534 | *not in cap statement* | CUT or fold into Audience 1 |
+| `multi-trade-commercial-coordination.html` | 534 | *not in cap statement* | ~~Fold into Audience 1~~ → **fold into Audience 2** per D-W9 |
 | `rates.html` | 1491 | HOW TO ENGAGE | KEEP, heavy trim to 3-stage model |
 | `conflict-policy.html` | 1265 | Conflict paragraph | KEEP (differentiator; cap statement references it) |
 | `about.html` | 910 | Callum bio | KEEP, trim to cap statement bio |
@@ -127,8 +127,10 @@ per D-W3, so the count is 16 rather than the 13 first proposed.
 index.html                                  Home — capability statement on one page
 who-we-work-with.html                       Section landing                        NEW
 ├─ entering-the-kimberley.html              Audience 1 (was delivering-in-the-kimberley,
-│                                             with multi-trade folded in per D-W2)
-├─ kimberley-business.html                  Audience 2
+│                                             D-W2's multi-trade fold moved to
+│                                             Audience 2 per D-W9)
+├─ kimberley-business.html                  Audience 2 (receives the multi-trade
+│                                             fold per D-W9)
 └─ principals-and-asset-owners.html         Audience 3                             NEW
 what-we-do.html                             Section landing                        NEW
 ├─ superintendents-representative.html      Service 1 — Contract Admin & Sup Rep
@@ -158,12 +160,13 @@ Conflict Policy and Terms sit in the footer. Session 1 may adjust this if it doe
 | ID | Decision | Answer |
 | --- | --- | --- |
 | D-W1 | Adopt the target structure | **Yes**, as §3.3 |
-| D-W2 | `multi-trade-commercial-coordination.html` | **Fold** into `entering-the-kimberley.html`, redirect stub at the old URL |
+| D-W2 | `multi-trade-commercial-coordination.html` | **Fold**, redirect stub at the old URL. ~~Into `entering-the-kimberley.html`.~~ **Target corrected by D-W9** — the fold itself stands. |
 | D-W3 | Keep `active-procurement.html` | **Keep.** User confirmed the weekly KDC update will be maintained. Add a visible "as at" date. |
 | D-W4 | Nav shape | **Two section landing pages** as nav items — no dropdowns |
 | D-W5 | KDSF + Thunderbird work record | **Handled as a separate workstream**, outside Sessions 1–7. Not built in this restructure. |
 | D-W6 | The four existing profiles | **Keep.** They remain the content of `project-profiles.html` for now; presented as earlier-career work, not in the nav. |
 | D-W7 | Launch timing | **Campaign runs the week commencing 2026-09-28.** ~~Gate must come off before then.~~ **Ordering superseded by D-W8** — the campaign date stands, the gate timing does not. |
+| D-W9 | Multi-trade fold target, corrected 2026-09-25 | **Into `kimberley-business.html`** (Audience 2), not `entering-the-kimberley.html`. D-W2 mis-assigned it. Evidence: the retired page's own eyebrow read *"For Kimberley businesses · Service"*; its copy addresses *"local single-trade businesses"* stepping up to head contract; the pre-restructure `home.html` filed it under the "Based in the Kimberley" card and the old footer under the "Kimberley Business" column; and `kimberley-business.html` already carries a Multi-Trade Commercial Coordination service card. Folding it into Audience 1 would put local-business copy on the page written for contractors entering the region. **Stub target changes too.** |
 | D-W8 | Gate timing, revised 2026-09-25 | **Gate comes off LAST**, after all copy is aligned — superseding D-W7's ordering. Session 1 has shipped, so URLs are final and the churn risk that drove gate-second is gone. Accepted consequence: the site is not crawlable during the campaign, so organic search contributes nothing to it. See §4.0. |
 
 **Consequence of D-W5 + D-W6:** `project-profiles.html` and `/profiles/*` are unchanged by this
@@ -186,7 +189,7 @@ updating `docs/PROGRESS.md`.** Do not start a session until the previous one is 
 | — | 0 | **Stack audit & plan** | This document | `docs/` | ✅ complete 2026-09-25 |
 | — | 1 | **Structure & plumbing** | Renames, section landings, Audience 3, redirect stubs, nav + footer sweep, SECTION map, sitemap. Calculator extracted to `calculator.html`. | all `*.html`, `js/main.js`, `sitemap.xml` | ✅ complete 2026-09-25 |
 | **1st** | 2 | **Homepage + mobile fix** | Rewrite the homepage to the capability statement structure: hero, value chain, 3 audiences, 4 services, how to engage, work record teaser. Drop the testimonial placeholders. Replace the long conflict paragraph with the one-line version. **Plus the one sitewide CSS fix** — see §4.2. | **`home.html`** (not `index.html` — see below), `css/styles.css` **for the `.nav-cta` fix only** | Homepage reads as the capability statement on one page, and no page overflows horizontally at 390px |
-| 2nd | 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their capability statement cards. Lead each with the quoted buyer question. Fold multi-trade content into Audience 1. | 3 audience pages + `who-we-work-with.html` | Each page opens on its capability statement quote and promise |
+| 2nd | 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their capability statement cards. Lead each with the quoted buyer question. Fold multi-trade content into **Audience 2** (`kimberley-business.html`) per D-W9, and repoint its stub. | 3 audience pages + `who-we-work-with.html` + `multi-trade-commercial-coordination.html` (stub target only) | Each page opens on its capability statement quote and promise |
 | 3rd | 4 | **Service pages** | Realign the 4 WHAT WE DO pages. Merge the retired `local-content` content into Service 4. | 4 service pages + `what-we-do.html` | Four services, one page each, wording matches the capability statement |
 | 4th | 5 | **How to engage + conflict** | Trim `how-to-engage.html` to the capability statement's 3-stage fee model. Cross-link and trim `conflict-policy.html`. | `how-to-engage.html`, `conflict-policy.html` | Fee model matches the capability statement table |
 | 5th | 6 | **About** | Trim `about.html` to the capability statement bio. Add the "as at" date to `active-procurement.html`. | `about.html`, `active-procurement.html` | Bio matches the capability statement; Upcoming Works shows its currency date |
