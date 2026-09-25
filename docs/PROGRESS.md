@@ -25,10 +25,10 @@ to it. See plan §4.0.
 | — | 0 — Stack audit & plan | ✅ Complete | 2026-09-25 | Stack audited, 23 pages inventoried, decisions answered |
 | — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
 | — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Responsive layout fixed sitewide: **zero horizontal overflow on all 27 HTML files at 25 viewport widths from 320px to 1440px**, including the tablet/laptop band and the 320px residuals. |
-| **1st** | **3 — Audience pages** | 🟢 **Ready to start** | — | **D-W9: multi-trade folds into `kimberley-business.html` (Audience 2), NOT `entering-the-kimberley.html`** — D-W2 mis-assigned it. Stub target changes too. Recover content: `git show 8000eb7:multi-trade-commercial-coordination.html` |
-| 2nd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
-| 3rd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
-| 4th | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
+| — | 3 — Audience pages | ✅ Complete | 2026-09-25 | Three audience pages realigned to their capability statement cards and led by the quoted buyer question. Multi-trade folded into `kimberley-business.html#multi-trade` per D-W9; its service card and its redirect stub both repointed. `principals-and-asset-owners.html` shell replaced with real copy, 455 → 879 words. `who-we-work-with.html` checked, no drift, unchanged. |
+| **1st** | **4 — Service pages** | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
+| 2nd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
+| 3rd | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
 | **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
@@ -139,6 +139,139 @@ re-checked for console errors (none), `config.js` substitutions and burger toggl
 **Still open, unchanged by this follow-up:** canonical and OG URLs point at `/` pending the
 Session 7 sweep; `terms.html` remains unlinked pending the footer decision; the dead
 conflict-framework PDF link on `conflict-policy.html` is Session 5's.
+
+### 2026-09-25 — Session 3: Audience pages
+
+**Files touched:** `entering-the-kimberley.html`, `kimberley-business.html`,
+`principals-and-asset-owners.html`, `multi-trade-commercial-coordination.html` (stub target),
+`docs/PROGRESS.md`. **`who-we-work-with.html` was checked and needed no change** — see below.
+Nothing else. No CSS written, `css/styles.css` never opened, `index.html` and `home.html`
+untouched.
+
+**Each page now opens on its capability statement quote and promise**
+
+| Page | `<h1>` | Lead |
+| --- | --- | --- |
+| `entering-the-kimberley.html` | *"We can win the work. Who runs it up there?"* | the card promise, verbatim |
+| `kimberley-business.html` | *"The commercial skills are the constraint."* | the card promise, verbatim |
+| `principals-and-asset-owners.html` | *"Who can see what a contractor is claiming?"* (already correct) | card promise + one explanatory clause |
+
+Each page's eyebrow now carries the capability statement's own audience label
+("Entering the Kimberley", "Kimberley Businesses", "Principals & Asset Owners") rather than the
+prose descriptors that were there before. `<title>`, `meta description` and both OG tags were
+realigned on the two pages whose h1 changed; the principals page's head was already correct from
+Session 1 and was left alone.
+
+**`entering-the-kimberley.html` — 837 → 851 words**
+The "structural problem" section was rebuilt as **the three parts of that answer**, so the page
+body now argues the three things the capability statement card actually promises — regional cost
+priced honestly, a subcontract panel that holds through a wet season, a commercial lead in Broome
+— instead of three loosely related exposures. The service cards were re-labelled to the
+capability statement's own four service names where they correspond, and the second card was
+repointed from a duplicate `/local-supply-chain.html` link to `/tendering-and-estimating.html`,
+which is what it describes. **Two cards previously pointed at the same page**; now all four
+destinations are distinct. The on-ground scoping section is unchanged — it was already the
+strongest thing on the page.
+
+**Fee detail removed in favour of a cross-link (brief instruction, plan §4 Session 5).**
+The "How buy-side engagements are structured" section carried a four-row rates table. That is
+`how-to-engage.html`'s content and Session 5 owns it, so the table is gone and the section is now
+a short prose summary in capability statement terms (fee-for-service or fee-at-award upfront;
+project cost thereafter) plus a link to `/how-to-engage.html`. **Nothing was deleted that does
+not already live there or is not Session 5's to write.** Worth knowing: the day-rate row and the
+"client travel recovered as a disbursement at cost" line existed only here, so **Session 5 should
+confirm `how-to-engage.html` carries both.**
+
+**`kimberley-business.html` — 1086 → 1332 words, multi-trade folded in per D-W9**
+The retired page's content is recovered from `8000eb7` and now sits as a `#multi-trade` section
+between the services grid and the security-of-payment block. All of its substance is carried:
+why the work gets left on the table, what we bring, the four things we manage, the plain-note
+call to action, what it costs, and the good-fit / not-a-fit lists. Rebuilt from `roles-grid` +
+`role-card` + `plain-note` — classes already in use on this page and its siblings — because the
+original's `page-content` / `page-content-sidebar` two-column layout has no equivalent in this
+page's structure.
+
+Three things from the original were **deliberately not carried**:
+- the **insurance sidebar block**, because plan §5 keeps `piCover` / `plCover` null until cover is
+  bound, and the block is suppressed sitewide anyway;
+- the **entity sidebar block** (trading name, ABN, address) — it duplicates the footer on a page
+  that already has one;
+- its fee link pointed at `/rates.html`, a URL retired in Session 1. It now points at
+  `/how-to-engage.html`.
+
+**The live mis-target from Session 1 is fixed.** The Multi-Trade Commercial Coordination service
+card at line ~106 pointed at `/entering-the-kimberley.html` — a Kimberley-business service linking
+to the page for interstate contractors. It now points at `#multi-trade` on its own page. The hero
+note for the same service also gained an anchor link. `entering-the-kimberley.html` is now
+referenced from this page **only** from the footer, which is correct.
+
+**`principals-and-asset-owners.html` — 455 → 879 words, shell replaced**
+The `STRUCTURAL SHELL` comment is deleted and the placeholder copy replaced. The page now argues
+**the asymmetry** — a claim prepared monthly by people who do it professionally, read by someone
+with a dozen other responsibilities — and lists the five predictable ways that shows up. The four
+`role-card`s became six `segment-card`s in `region-grid` (3 → 2 → 1), covering claims, variations,
+statutory time, reporting, contract review and market pricing. A dedicated Superintendent's
+Representative section states the impartiality duty plainly and says engagement is **not**
+conditional on the appointment. Now at parity with its siblings: **851 / 1332 / 879** body words.
+
+**`who-we-work-with.html` — checked, unchanged.** All three cards were compared against the
+detail pages after the rewrite. Every card `<h3>` is now byte-identical to its detail page's
+`<h1>`, and cards 1 and 2 carry the detail leads verbatim. Card 3's promise is the capability
+statement text and the detail lead extends it with one clause — that is the detail page adding
+explanation, not the card drifting. **No edit was made**, per the brief's "do not rewrite it
+wholesale". The cards are capability statement copy; changing them to advertise the new
+`#multi-trade` section would trade alignment for cross-promotion, which is the wrong way round.
+
+**Deviation from the brief, declared.** The brief scoped the stub to "2 lines — meta refresh AND
+canonical". The file actually names the old target in **five** places: title, canonical, meta
+refresh, body sentence and the Continue button's `href`. Changing only the two named would have
+left a stub whose visible button still sent the reader to the wrong audience page. **All five were
+changed.** The refresh and the button also carry the `#multi-trade` fragment, so the reader lands
+on the folded content rather than the top of a 1,332-word page.
+
+**Verified in Chromium against `python3 -m http.server 8000`**, gate unlocked via
+`localStorage.nc_unlocked='1'`:
+- all four pages HTTP 200, **exactly one `<h1>`**, five nav items, active state resolving to
+  **"Who We Work With"** on all four;
+- `config.js` substitutions all resolving — phone, `phoneHref`, email and ABN populated, **zero
+  empty `data-entity` elements**; no contact detail hardcoded outside a `data-entity` attribute;
+- **zero console errors.** The one error Chromium does report on every page is
+  `ERR_CERT_AUTHORITY_INVALID` for the Google Fonts CDN, which this container's egress proxy
+  blocks. It is an environment artefact, not a page defect — it reproduces on untouched pages;
+- **87 internal links and anchors checked, all resolve**, including `#multi-trade` and `#scoping`;
+- the stub lands on `/kimberley-business.html#multi-trade`;
+- **nav and footer byte-identical** — header `ab55eecc`, footer `802eb5c1` on all four pages,
+  matching their pre-session hashes and each other;
+- all five files tag-balanced;
+- **zero horizontal overflow at 360 / 390 / 414 / 768px** on all four pages — Session 2's fix
+  holds and nothing added here reintroduces it.
+
+**Hard constraints checked, not assumed.** A scan of all five files including HTML comments finds
+**no** WAPOL, KDSF, Thunderbird, Kaynar, Crothers, Kimberley Mineral Sands or Waterbank, and no
+package value, tonnage, volume, duration or subcontractor count. No unverified figure was
+published — no years-of-experience claim, no volume. **No past Superintendent's Representative
+appointment is claimed anywhere**; the principals page says "offers … as a service" and the
+entering page says "where the appointment is made".
+
+**Found, not fixed**
+1. ~~The 781–1135px overflow band and the 320px residuals.~~ **Both were fixed by the Session 2
+   follow-up above**, which landed on the branch while this session was running and is merged in
+   here. This session's pages were re-verified against that new CSS after the merge — see the
+   note at the end of this entry. The two items originally recorded here are closed.
+2. **Session 5 input:** `entering-the-kimberley.html` no longer publishes a day rate or the travel
+   disbursement line. Confirm `how-to-engage.html` covers both, or they are lost from the site.
+3. **The security-of-payment treatment now appears in three places** — `kimberley-business.html`'s
+   "Did you know?" block, the new `#multi-trade` commercial-protection card, and
+   `superintendents-representative.html#security-of-payment`. Not consolidated, because two of the
+   three are on pages this session could not touch. **Session 4 should decide whether the detail
+   lives once and is linked to.**
+
+**Post-merge re-verification.** The Session 2 follow-up (three-tier nav, drawer moved to ≤1024px)
+landed on the branch while this session was running, so this session's pages were checked again
+against that CSS after merging. All four pages: **zero horizontal overflow at 16 widths** — 320,
+360, 390, 414, 600, 640, 641, 768, 900, 1024, 1025, 1100, 1180, 1181, 1280 and 1440px, including
+both sides of every new breakpoint. Active nav state still resolves to "Who We Work With", still
+five nav items, still exactly one `<h1>`, at both 1280px (full row) and 1024px (drawer).
 
 ### 2026-09-25 — D-W9: multi-trade folds into Audience 2, not Audience 1 (no code change)
 
