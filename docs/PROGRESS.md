@@ -24,15 +24,147 @@ to it. See plan §4.0.
 | --- | --- | --- | --- | --- |
 | — | 0 — Stack audit & plan | ✅ Complete | 2026-09-25 | Stack audited, 23 pages inventoried, decisions answered |
 | — | 1 — Structure & plumbing | ✅ Complete | 2026-09-25 | 17 live pages, 8 redirect stubs, nav/footer identical everywhere |
-| **1st** | **2 — Homepage + mobile fix** | 🟢 **Ready to start** | — | **Edit `home.html`, NOT `index.html`** (plan §4.2). Absorbs the alternate plan's sessions 2 and 3. Includes the one sitewide CSS fix: 129px horizontal overflow from `.nav-cta` at 390px. |
-| 2nd | 3 — Audience pages | ⬜ Not started | — | Multi-trade content to fold in: `git show 8000eb7:multi-trade-commercial-coordination.html` |
-| 3rd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
-| 4th | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
-| 5th | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
+| — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Mobile overflow fixed sitewide: 129px → 0 at 360/390/414 on all 25 chrome-bearing files. |
+| **1st** | **3 — Audience pages** | 🟢 **Ready to start** | — | Multi-trade content to fold in: `git show 8000eb7:multi-trade-commercial-coordination.html` |
+| 2nd | 4 — Service pages | ⬜ Not started | — | `local-content` content to merge in: `git show 8000eb7:local-content.html` |
+| 3rd | 5 — How to engage + conflict | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. |
+| 4th | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
 | **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-09-25 — Session 2: Homepage + mobile fix
+
+**Files touched:** `home.html`, `css/styles.css` (one change), `docs/PROGRESS.md`. Nothing else.
+
+**Homepage rewritten to the capability statement structure**
+Six sections, in the order the brief set: hero · value chain · 3 audiences · 4 services ·
+how to engage · work record teaser. Verified in the browser as exactly those six, one `<h1>`.
+
+- **Hero** — the capability statement's own hero line as the `<h1>`, the positioning statement
+  as the lead, and the credential line (MBA, BCom, BSc, four years in the Kimberley) as body
+  copy so it survives at phone width. The right-hand panel uses `.hero-art` / `.hero-art-stat`,
+  two classes that were already in the stylesheet and used by no page. It is hidden ≤960px by
+  the existing breakpoint, so all three points in it are restated in the page body.
+- **Value chain** — the six stages, as six `.stage-card`s in `.region-grid` (3 → 2 → 1).
+- **3 audiences** — `.region-grid` + `.segment-card`, copy mirroring `who-we-work-with.html`.
+- **4 services** — `.services-grid` (4 → 2 → 1) + `.segment-card`, copy mirroring
+  `what-we-do.html`.
+- **How to engage** — the capability statement's three fee stages as `.stage-card`s, with the
+  fee basis in `.stage-meta`.
+- **Work record teaser** — see the block below.
+
+**No new grid rules were written** (plan §4.2). Every layout uses `region-grid`,
+`services-grid`, `segment-grid` or an existing card class.
+
+**Removed, and why**
+- **The three testimonial placeholders** — as instructed. Not filled, not composited.
+- **The long "structural separation" conflict paragraph** — replaced by the single line
+  *"Conflicts are declared and managed in writing before work starts."*, linked to
+  `/conflict-policy.html`, sitting in the How to Engage section where the capability statement
+  puts it.
+- **The credibility strip** — it carried the `16+ years, resources and civil` figure, which is
+  on the §5 VERIFY list and therefore unpublishable. Its verified content (Broome-based,
+  either side of the contract, conflicts in writing) is now in the hero panel.
+- **The "Did you know?" security-of-payment section** — not in the brief's six-section
+  structure. **No content is lost:** the full treatment already lives at
+  `superintendents-representative.html#security-of-payment`, which is where its link pointed.
+- **The three hero quick-link buttons** (added in `f0d8a34` / PR #9) — superseded by the
+  3-audience section, which does the same 5-second-orientation job with capability statement
+  copy and correct destinations. The old buttons pointed "Multi-Contractor Projects" at
+  `kimberley-business.html` and "Win Kimberley Tenders" at `active-procurement.html`.
+  **Flagged because this removes a previously user-requested feature** — say if it should come
+  back.
+
+**Kept, deliberately, though not in the brief's six sections**
+- **The calculator CTA.** Session 1 extracted the calculator to `calculator.html` with the
+  user's approval and left a CTA in both former locations. Dropping the homepage CTA would
+  orphan the campaign's only lead-capture page from its landing page, so it was folded into
+  the How to Engage section as a secondary button rather than given a section of its own. The
+  "indicative only" disclaimer travels with it.
+
+**Work record teaser — the anonymised option (plan §5.1)**
+Plan §5.1 allows exactly two outcomes. **The fully anonymised one was taken**, not the
+placeholder. The teaser:
+- names no client, head contractor, principal, project, asset or former employer;
+- carries no package value, tonnage, volume, duration or subcontractor count;
+- carries the mandatory §5 attribution note verbatim;
+- links to `project-profiles.html` under a label that says plainly those records are from
+  **earlier roles in mining, technology and governance** — so the reader is not sent looking
+  for corroboration that is not there.
+
+**One thing worth knowing for future sessions:** the warning comment in that section was first
+written enumerating the blocked names so nobody would re-add them. That is self-defeating — an
+HTML comment is served with the page, so it would have published the very names §5.1 forbids.
+It now points at plan §5.1 instead of repeating them. **A scan confirms no blocked name appears
+anywhere in `home.html`, comments included, and none appears on any other page of the site.**
+
+**The corroboration gap in plan §3.2 remains open**, as D-W5 intends. The campaign launches
+with it open.
+
+**The one CSS change — measured, not asserted**
+`css/styles.css`, a single block added inside the **existing** `@media (max-width: 640px)`
+rule. Three declarations: `.nav-cta { display: none }`, `.nav { gap: 12px }`,
+`.brand { font-size: 1.1rem }`. No new breakpoint, no new custom property, no change to brand
+colour, weight, tracking or family.
+
+| Viewport | Before | After |
+| --- | --- | --- |
+| 320px | 199px over | 0 (see residual note) |
+| 360px | 159px over | **0** |
+| 375px | 144px over | **0** |
+| 390px | **129px over** | **0** |
+| 414px | 105px over | **0** |
+
+Verified at 360/390/414 on **all 25 chrome-bearing files**, not just the three required —
+every one now reports zero horizontal overflow. `home.html` additionally checked for console
+errors (none), `config.js` substitutions (all resolving), burger-menu open/close (works) and
+internal links (19, all resolve).
+
+**Consequence, stated plainly:** the header "Contact Us" button is gone below 640px. Contact
+is still one tap away in the utility bar directly above it (phone and email, both live links),
+in the hero, and in the footer. It cannot be moved into the burger drawer from CSS, because
+the nav block is byte-identical across 17 pages and this session must not touch it. **If the
+button is wanted on phones, Session 7 can add a Contact item to the drawer** as part of its
+sweep — that is a nav change, so it belongs in a nav session.
+
+**Nav and footer are untouched.** Verified by hash: `home.html`'s header and footer blocks are
+byte-identical to their pre-session state and to the other pages'. (`contact.html`'s nav
+differs by the `active` class on its own CTA — pre-existing and intentional.)
+
+**Two real defects found while verifying, NOT fixed — both need a decision**
+
+1. **Every page overflows between 781px and ~1135px, by up to 354px.** This is the tablet and
+   small-laptop band. It is **pre-existing** — measured at the same magnitude before this
+   session's CSS change — and has a **different cause** from the phone defect: the mobile
+   drawer only engages at ≤780px, but the full horizontal nav (brand 273px + links 648px +
+   CTA 138px + gaps) needs about 1163px. So between those two widths the desktop nav is laid
+   out in a viewport too narrow to hold it. Measured: 781px → 354 over, 900px → 235,
+   1000px → 135, 1100px → 35, 1150px → 0.
+   **Not fixed because** this session was scoped to one CSS change and the phone defect, and
+   the sensible fix — raising the drawer breakpoint from 780px to ~1140px — puts a burger menu
+   on small laptops. That is a design call, not a bug fix. **Recommend it be taken before
+   launch**; it is a worse defect than the one just fixed and affects iPads in landscape.
+2. **320px residuals.** `home.html` 37px, `calculator.html` 33px, `contact.html` 4px. Cause is
+   not the nav: it is the unbreakable email address string
+   (`callum.rideout@nausicaaconsulting.com.au`) in body copy, plus contact-card padding maths.
+   Pre-existing — `calculator.html` was not touched this session and shows it. The utility bar
+   also wraps the phone number across three lines at 320px. All 320px-only; 360px and up are
+   clean. Fixing needs `overflow-wrap` on the affected links, which would be a second CSS
+   change.
+
+**Left alone on purpose**
+- **Canonical and OG URLs still point at `/`**, which is the gate. Plan §2.2 assigns the
+  canonical sweep to Session 7; changing it here would leave the site half-swept.
+- `index.html` not touched. The gate script at the top of `home.html` is intact.
+
+**One wording deviation from the capability statement, declared.** The positioning statement
+reads "Broome-based commercial and project-delivery working across the Kimberley" in the
+source PDF, which is missing a noun. The homepage says "commercial and project-delivery
+**support**, working across the Kimberley". The capability statement itself was not edited —
+`docs/CAPABILITY_STATEMENT.md` is a verbatim extract and stays that way. Flagging it so the
+next issue of the PDF can fix it at source if wanted.
 
 ### 2026-09-25 — Re-sequencing and plan reconciliation (no code change)
 

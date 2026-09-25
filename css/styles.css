@@ -1393,6 +1393,21 @@ strong { color: var(--ink); font-weight: 600; }
   .didyouknow { padding: 26px 22px; }
   .proc-toolbar { flex-direction: column; align-items: stretch; }
   .proc-updated { margin-left: 0; }
+
+  /* ── Header row overflow fix ──────────────────────────────────────
+     The header row is brand + burger + "Contact Us", and all three were
+     flex-shrink:0 with a 24px gap, so below roughly 537px the row was
+     wider than the viewport and shoved every page sideways — a measured
+     129px of horizontal overflow at 390px, on all 17 pages.
+
+     The CTA steps out of the row at phone width. Contact stays one tap
+     away in the utility bar directly above it (phone and email) and in
+     the footer below, and the wordmark is allowed to scale so the row
+     still fits a 320px screen. Weight, tracking and family are
+     untouched, per Brand Guide v1.0 §04 — only the size changes. */
+  .nav { gap: 12px; }
+  .nav-cta { display: none; }
+  .brand { font-size: 1.1rem; }
 }
 
 /* Keep the primary nav on a single line at desktop widths */
