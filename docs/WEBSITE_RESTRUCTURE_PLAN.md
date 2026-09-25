@@ -115,45 +115,59 @@ currently lands visitors on a project record that does not corroborate the state
 This is a content gap, not a code gap. It blocks Session 6 and is subject to the Kaynar clearance
 constraint already recorded in the project (ALT-A named vs ALT-B anonymised).
 
-### 3.3 Proposed target structure — 13 pages (from 23)
+### 3.3 Target structure — DECIDED 2026-09-25
+
+**16 top-level pages** (from 19), plus the 4 profile pages, plus `terms.html` (unlinked) and
+redirect stubs for retired URLs. Two section landing pages per D-W4, and Upcoming Works retained
+per D-W3, so the count is 16 rather than the 13 first proposed.
 
 ```
-index.html                              Home (cap statement on one page)
-├─ WHO WE WORK WITH
-│  ├─ entering-the-kimberley.html       Audience 1 (was delivering-in-the-kimberley)
-│  ├─ kimberley-business.html           Audience 2
-│  └─ principals-and-asset-owners.html  Audience 3  ← NEW
-├─ WHAT WE DO
-│  ├─ superintendents-representative.html   Service 1
-│  ├─ fractional-commercial-manager.html    Service 2
-│  ├─ tendering-and-estimating.html         Service 3 (was business-support)
-│  └─ local-supply-chain.html               Service 4 (local-content + supply-chain merged)
-├─ how-to-engage.html                   HOW TO ENGAGE (was rates.html, trimmed)
-├─ project-profiles.html                RECENT PROJECT WORK RECORD + /profiles/*
-├─ about.html
-├─ conflict-policy.html
-└─ contact.html
+index.html                                  Home — capability statement on one page
+who-we-work-with.html                       Section landing                        NEW
+├─ entering-the-kimberley.html              Audience 1 (was delivering-in-the-kimberley,
+│                                             with multi-trade folded in per D-W2)
+├─ kimberley-business.html                  Audience 2
+└─ principals-and-asset-owners.html         Audience 3                             NEW
+what-we-do.html                             Section landing                        NEW
+├─ superintendents-representative.html      Service 1 — Contract Admin & Sup Rep
+├─ fractional-commercial-manager.html       Service 2 — Fractional Commercial Mgmt
+├─ tendering-and-estimating.html            Service 3 (was business-support)
+└─ local-supply-chain.html                  Service 4 (local-content + supply-chain merged)
+how-to-engage.html                          (was rates.html, trimmed to the 3-stage model)
+project-profiles.html                       + /profiles/* — see D-W5/D-W6
+active-procurement.html                     Upcoming Works — KEPT per D-W3
+about.html
+conflict-policy.html
+contact.html
 ```
 
-Proposed nav — 5 items, down from 7: **Who We Work With · What We Do · Project Record · About · Contact**,
-with Contact Us as the CTA button. Three audiences and four services are too many for a flat nav;
-either use two dropdowns or make the two section landing pages the nav items.
+**Retired URLs needing redirect stubs:** `home.html`, `delivering-in-the-kimberley.html`,
+`multi-trade-commercial-coordination.html`, `business-support.html`, `local-content.html`,
+`supply-chain.html`, `rates.html`. Plus the two existing stubs `contract-administration.html`
+and `business-capability.html`, which stay.
 
-### 3.4 Decisions required before Session 1
+**Nav — 5 items plus CTA:**
+`Who We Work With · What We Do · How to Engage · Upcoming Works · About` + **Contact Us** button.
+Project Record is linked prominently from the homepage and About rather than the nav.
+Conflict Policy and Terms sit in the footer. Session 1 may adjust this if it does not fit.
 
-These are blocking. They follow the D1–D10 convention already used in this project.
+### 3.4 Decisions — ANSWERED 2026-09-25
 
-- **D-W1** Adopt the 13-page target structure in §3.3? (Y / amend)
-- **D-W2** Cut `multi-trade-commercial-coordination.html`, or fold its content into Audience 1?
-- **D-W3** Keep `active-procurement.html`? It is not in the capability statement but is the site's
-  only recurring-value page and a plausible campaign lead magnet. Keeping it means keeping the
-  weekly KDC parsing routine running.
-- **D-W4** Flat nav with dropdowns, or two section landing pages as nav items?
-- **D-W5** Commission KDSF + Thunderbird profile pages (subject to Kaynar clearance), or publish
-  the work record only as cards on `project-profiles.html` with the mandatory attribution footnote?
-- **D-W6** Retire the four existing profiles from the nav path, or keep them as a secondary
-  "earlier career" section?
-- **D-W7** Launch date for removing the coming-soon gate and restoring `robots.txt`.
+| ID | Decision | Answer |
+| --- | --- | --- |
+| D-W1 | Adopt the target structure | **Yes**, as §3.3 |
+| D-W2 | `multi-trade-commercial-coordination.html` | **Fold** into `entering-the-kimberley.html`, redirect stub at the old URL |
+| D-W3 | Keep `active-procurement.html` | **Keep.** User confirmed the weekly KDC update will be maintained. Add a visible "as at" date. |
+| D-W4 | Nav shape | **Two section landing pages** as nav items — no dropdowns |
+| D-W5 | KDSF + Thunderbird work record | **Handled as a separate workstream**, outside Sessions 1–7. Not built in this restructure. |
+| D-W6 | The four existing profiles | **Keep.** They remain the content of `project-profiles.html` for now; presented as earlier-career work, not in the nav. |
+| D-W7 | Launch timing | **Campaign runs the week commencing 2026-09-28.** Gate must come off before then — see §4 re-sequencing. |
+
+**Consequence of D-W5 + D-W6:** `project-profiles.html` and `/profiles/*` are unchanged by this
+restructure. The corroboration gap identified in §3.2 — the capability statement's two proof
+projects having no presence on the site — **remains open** and is carried to the separate
+workstream. The campaign will launch with it open. This is a recorded, accepted position, not an
+oversight.
 
 ---
 
@@ -162,16 +176,36 @@ These are blocking. They follow the D1–D10 convention already used in this pro
 Each session is scoped to be completable without reading the whole site. **Every session must end by
 updating `docs/PROGRESS.md`.** Do not start a session until the previous one is marked complete there.
 
-| # | Session | Scope | Files touched | Done when |
-| --- | --- | --- | --- | --- |
-| 0 | **Stack audit & plan** | This document | `docs/` | ✅ complete 2026-09-25 |
-| 1 | **Structure & plumbing** | No copywriting. Create/rename/delete page files per D-W1. Rewrite nav + footer across all pages. Update `js/main.js` SECTION map, `sitemap.xml`, redirect stubs for retired URLs. | all `*.html`, `js/main.js`, `sitemap.xml` | Every page loads, nav is identical everywhere, no 404 from an old URL, active-link state correct |
-| 2 | **Homepage** | Rewrite `home.html` to the capability statement structure: hero, value chain, 3 audiences, 4 services, how to engage, work record teaser. | `home.html` | Homepage reads as the capability statement on one page |
-| 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their cap statement cards. Lead each with the quoted buyer question. | 3 audience pages | Each page opens on its cap statement quote and promise |
-| 4 | **Service pages** | Realign 4 WHAT WE DO pages. Merge `local-content` + `supply-chain` into Service 4. Refocus `business-support` → Tendering & Estimating. | 4 service pages | Four services, one page each, wording matches the cap statement |
-| 5 | **How to engage + conflict** | Trim `rates.html` to the 3-stage fee model. Cross-link the conflict statement; trim `conflict-policy.html`. | `rates.html` → `how-to-engage.html`, `conflict-policy.html` | Fee model matches the cap statement table |
-| 6 | **Work record + about** | Per D-W5/D-W6: KDSF + Thunderbird cards or profiles with the mandatory attribution footnote. Trim `about.html` to the cap statement bio. | `project-profiles.html`, `profiles/`, `about.html` | Work record corroborates the capability statement; attribution footnote present on every instance |
-| 7 | **Launch** | Remove the gate: `home.html` → `index.html`, delete the localStorage gate, restore `robots.txt` (`Allow: /`, `Disallow: /terms.html`, `Sitemap:` line), sweep canonical URLs and OG tags, regenerate `sitemap.xml`, full link check. | `index.html`, `robots.txt`, all `*.html` heads | Site is public, crawlable, no dead links, no gate code remaining |
+| Order | # | Session | Scope | Files touched | Done when |
+| --- | --- | --- | --- | --- | --- |
+| — | 0 | **Stack audit & plan** | This document | `docs/` | ✅ complete 2026-09-25 |
+| 1st | 1 | **Structure & plumbing** | No copywriting. Create/rename/delete page files per §3.3. Write the two section landing pages. Rewrite nav + footer across every page. Update `js/main.js` SECTION map, `sitemap.xml`, and redirect stubs for all retired URLs. | all `*.html`, `js/main.js`, `sitemap.xml` | Every page loads, nav identical everywhere, no 404 from any retired URL, active-link state correct |
+| 2nd | 7 | **Launch** | Remove the gate: `home.html` → `index.html`, delete the localStorage gate, restore `robots.txt` (`Allow: /`, `Disallow: /terms.html`, `Sitemap:` line), sweep canonical + OG tags, regenerate `sitemap.xml`, full link check. Merge to `main`. | `index.html`, `robots.txt`, all `*.html` heads | Site is public and crawlable, no dead links, no gate code remaining |
+| 3rd | 2 | **Homepage** | Rewrite the homepage to the capability statement structure: hero, value chain, 3 audiences, 4 services, how to engage, work record teaser. | `index.html` | Homepage reads as the capability statement on one page |
+| 4th | 3 | **Audience pages** | Realign the 3 WHO WE WORK WITH pages to their capability statement cards. Lead each with the quoted buyer question. Fold multi-trade content into Audience 1. | 3 audience pages + `who-we-work-with.html` | Each page opens on its capability statement quote and promise |
+| 5th | 4 | **Service pages** | Realign 4 WHAT WE DO pages. Merge `local-content` + `supply-chain` into Service 4. Refocus `business-support` → Tendering & Estimating. | 4 service pages + `what-we-do.html` | Four services, one page each, wording matches the capability statement |
+| 6th | 5 | **How to engage + conflict** | Trim `rates.html` → `how-to-engage.html`, matching the capability statement's 3-stage fee model. Cross-link and trim `conflict-policy.html`. | `how-to-engage.html`, `conflict-policy.html` | Fee model matches the capability statement table |
+| 7th | 6 | **About** | Trim `about.html` to the capability statement bio. Add the "as at" date to `active-procurement.html`. | `about.html`, `active-procurement.html` | Bio matches the capability statement; Upcoming Works shows its currency date |
+| — | — | *Work record* | KDSF + Thunderbird — **separate workstream per D-W5**, not scheduled here | — | — |
+
+### 4.0 Re-sequencing — why Session 7 runs second
+
+The campaign runs the week commencing 2026-09-28, so the site must be public and indexable within
+days. Sessions 1 and 7 are therefore brought forward and run **before** any copywriting.
+
+The order matters: structure first, then gate removal. If the gate came off before Session 1, the
+first crawl would index the old 23-page structure and the URLs would then change underneath it.
+Running Session 1 first means the URLs are final before indexing begins, with redirect stubs
+catching anything that slips through.
+
+Sessions 2–6 are copy-only. Because this is a static site with push-to-deploy and no build step,
+that copy can land incrementally after the campaign starts without breaking anything.
+
+**Risk, stated plainly:** even on this order there is roughly a week between the gate coming off and
+the campaign running. That is thin for Google to crawl and index sixteen pages, several of them new
+URLs. Expect paid and direct traffic to carry the campaign initially, and organic search to lag by
+two to four weeks. If organic search matters to the campaign, the gate should come off immediately
+after Session 1 — do not wait for the copy.
 
 ### 4.1 Session prompt template
 
