@@ -69,6 +69,21 @@ button, input, textarea, select { font-family: var(--font); font-size: 1rem; }
 .container--narrow { max-width: 800px; margin: 0 auto; padding: 0 28px; }
 section { padding: 88px 0; }
 
+/* ── Entity strings: the email is 40 unbreakable characters ──────────
+   `callum.rideout@nausicaaconsulting.com.au` renders 335px wide and, with
+   nothing allowed to break it, set a 306px min-content floor on whatever
+   box contained it. Below about 340px that pushed the page sideways, and
+   on the contact page it forced a one-column grid track wider than the
+   grid itself. `anywhere` rather than `break-word` is deliberate: only
+   `anywhere` is taken into account when intrinsic min-content widths are
+   computed, which is what the grid case needs. Both rules key off the
+   data-entity hooks that js/config.js already fills, so they follow the
+   address and the number wherever those appear, and neither touches
+   intrinsic sizing anywhere else on the site.
+   A phone number is never broken across lines. */
+[data-entity="email"] { overflow-wrap: anywhere; }
+[data-entity="phone"] { white-space: nowrap; }
+
 /* ── Type ── */
 /* Weights below follow Brand Guide v1.0 §04, which defines four settings
    for one family (Jost) rather than a bold/regular split:
@@ -1372,8 +1387,19 @@ strong { color: var(--ink); font-weight: 600; }
   .pledge-block { padding: 32px 28px; }
 }
 
-@media (max-width: 780px) {
-  .nav-toggle { display: block; }
+/* The drawer threshold is 1024px, not 780px, and the number is measured
+   rather than chosen: laid out horizontally, brand + five links + the
+   Contact Us button need a 1163px viewport. Between 781px and ~1135px the
+   old threshold therefore handed the desktop nav to a viewport too narrow
+   to hold it, overflowing every page by up to 354px — worst at the low end,
+   which is iPad-landscape territory. Below 1025px the nav is a drawer;
+   between 1025px and 1180px it is the tightened row set further down. */
+@media (max-width: 1024px) {
+  /* margin-left:auto absorbs the free space so the burger sits beside the
+     Contact Us button rather than stranded mid-header, which is how
+     space-between would place three items. Below 640px the button is
+     hidden and this resolves to the same right edge as before. */
+  .nav-toggle { display: block; margin-left: auto; }
   .nav-links {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     background: var(--white); border-bottom: 1px solid var(--border);
@@ -1410,10 +1436,23 @@ strong { color: var(--ink); font-weight: 600; }
   .brand { font-size: 1.1rem; }
 }
 
-/* Keep the primary nav on a single line at desktop widths */
-@media (min-width: 781px) {
+/* Keep the primary nav on a single line at desktop widths. Starts at
+   1025px, where the drawer above hands over. */
+@media (min-width: 1025px) {
   .nav-links a { white-space: nowrap; font-size: 0.88rem; }
   .nav-links { gap: 20px; }
+}
+
+/* Between the drawer and a comfortable desktop the row fits, but only
+   just: at its full size it needs 1163px. Tightening the wordmark, the
+   link gaps and the link padding brings that down to about 996px, so the
+   row fits from 1025px up. Typeface, weight and tracking are untouched,
+   per Brand Guide v1.0 §04 — only sizes and spacing move. */
+@media (min-width: 1025px) and (max-width: 1180px) {
+  .nav { gap: 16px; }
+  .brand { font-size: 1.15rem; }
+  .nav-links { gap: 10px; }
+  .nav-links a { padding: 6px 8px; font-size: 0.82rem; }
 }
 
 /* Service card headings read as titles, not as the uppercase LABEL/TAGLINE
