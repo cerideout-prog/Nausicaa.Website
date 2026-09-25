@@ -12,7 +12,28 @@ Extracted 2026-09-25 with `pypdf` (1 page, text layer intact).
 
 **Revision note:** re-extracted 2026-09-25 from a corrected PDF. Three typos present in the
 first issue ("across across", "with a focusing on", "userful reporting") have been fixed at
-source. A full text diff confirms those three corrections are the only changes.
+source.
+
+**Correction, 2026-09-25 (second pass).** Re-verified fragment-by-fragment against the source
+PDF (`sha256:a84c4d20…`, 1 page, text layer intact). The extract was **not** verbatim: the word
+**"working"** had been inserted into the positioning statement, which read here as "commercial
+and project-delivery *working* across the Kimberley". The PDF says "commercial and
+project-delivery across the Kimberley". A full stop had also been added after "Governance".
+Both are now corrected, and every other fragment was confirmed to match the PDF exactly.
+The earlier claim that a full text diff had confirmed the extract was clean did not hold —
+hence this note rather than a silent edit.
+
+**Known quirks in the source PDF — these are the source's, not extraction errors.
+Do not "fix" them here:**
+- No space before the em dash in "your supervision— estimating".
+- No full stop after "…a focus on Commercial Risk and Governance".
+- The work record's bullets are `●` in the PDF; rendered as `-` below for Markdown only.
+- The HOW TO ENGAGE row is a four-cell flow in the PDF joined by `→`, with the stage labels
+  carrying trailing full stops ("Upfront commercial support."); rendered below as a table.
+
+**On the website:** `home.html` carries the positioning statement with correct typography
+(a spaced em dash), not the source's unspaced one. Prose on a web page is set properly; this
+file preserves the source. That is the only intentional divergence.
 
 ---
 
@@ -22,7 +43,7 @@ Commercial management for Kimberley projects — from someone who has priced, wo
 
 **Callum Rideout — Commercial Manager**
 A career across mining, energy, civil and technology. MBA, BCom (Finance), BSc (Geology).
-Four years in the Kimberley with a focus on Commercial Risk and Governance.
+Four years in the Kimberley with a focus on Commercial Risk and Governance
 
 m: 0450 137 044
 e: callum.rideout@nausicaaconsulting.com.au
@@ -31,8 +52,8 @@ a: PO BOX 3170 Broome WA 6725 · abn: 45 773 440 451
 
 ## Positioning statement
 
-Broome-based commercial and project-delivery working across the Kimberley. We run the
-commercial layer of a project alongside your supervision — estimating, tendering, contract
+Broome-based commercial and project-delivery across the Kimberley. We run the
+commercial layer of a project alongside your supervision— estimating, tendering, contract
 administration, claims and variations, through to billing.
 
 **Value chain:** Estimate → Tender → Mobilise → Deliver → Claim & Vary → Bill & Close

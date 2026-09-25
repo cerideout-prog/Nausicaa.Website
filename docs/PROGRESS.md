@@ -34,6 +34,51 @@ to it. See plan §4.0.
 
 ## Log
 
+### 2026-09-25 — Capability statement verified against the source PDF
+
+The user supplied the source PDF (`Nausicaa Capability Statement_A4L_2026-09-21.pdf`,
+`sha256:a84c4d20…`, 1 page, text layer intact). Extracted it and checked it fragment-by-fragment
+against `docs/CAPABILITY_STATEMENT.md` and against the homepage copy, in both directions.
+
+**The repo's "verbatim extract" was not verbatim.** One substantive insertion and one
+punctuation change, neither of them in the PDF:
+
+| | Source PDF | `CAPABILITY_STATEMENT.md` (was) |
+| --- | --- | --- |
+| Positioning | "commercial and project-delivery **across** the Kimberley" | "commercial and project-delivery **working across** the Kimberley" |
+| Credentials | "…Commercial Risk and Governance" | "…Commercial Risk and Governance**.**" |
+
+**This matters beyond the two words.** Sessions 3, 4, 5 and 6 are all instructed to align copy
+to that file, so an error in it propagates to every remaining page. It had also already
+propagated once: Session 2 read "project-delivery working across the Kimberley", correctly
+judged it ungrammatical, and wrote around it on the homepage with an added "support" — a
+declared deviation from a source that never said it. The withdrawn note is struck below rather
+than deleted.
+
+**Corrected**
+- `docs/CAPABILITY_STATEMENT.md` — both errors fixed; the revision note replaced, since it had
+  asserted that a full text diff confirmed the extract was clean, which did not hold; and a
+  **"Known quirks in the source"** list added so nobody re-introduces an error by tidying the
+  PDF's own punctuation (no space in "supervision— estimating", no full stop after
+  "Governance", `●` bullets, the HOW TO ENGAGE flow rendered as a table).
+- `home.html` — positioning statement and meta description now read "Broome-based commercial
+  and project-delivery across the Kimberley"; fee basis corrected to "Fee-at-award" to match
+  the source's capitalisation.
+
+**One intentional divergence, recorded in both files.** The PDF has no space before the em dash
+in "your supervision— estimating". The extract preserves that, because the extract's job is
+fidelity. `home.html` sets it properly as "supervision — estimating", because prose on a web
+page is typeset, not transcribed.
+
+**Verified after correcting:** every content fragment of the PDF now appears in the extract,
+and all 15 checked homepage fragments — hero, three audience quotes and promises, four service
+descriptions, the value chain, the fee basis, the conflict line and the attribution note —
+match the source exactly. The only remaining PDF-to-extract differences are the four documented
+rendering conventions.
+
+**Not changed:** nothing in the work record. The PDF carries the blocked names and figures in
+full; plan §5.1 still governs, and none of it has gone anywhere near the site.
+
 ### 2026-09-25 — Session 2 follow-up: the two carried defects, fixed
 
 User asked for both defects recorded in the Session 2 entry below to be fixed. **`css/styles.css`
@@ -250,12 +295,14 @@ differs by the `active` class on its own CTA — pre-existing and intentional.)
   canonical sweep to Session 7; changing it here would leave the site half-swept.
 - `index.html` not touched. The gate script at the top of `home.html` is intact.
 
-**One wording deviation from the capability statement, declared.** The positioning statement
-reads "Broome-based commercial and project-delivery working across the Kimberley" in the
-source PDF, which is missing a noun. The homepage says "commercial and project-delivery
-**support**, working across the Kimberley". The capability statement itself was not edited —
-`docs/CAPABILITY_STATEMENT.md` is a verbatim extract and stays that way. Flagging it so the
-next issue of the PDF can fix it at source if wanted.
+**One wording deviation from the capability statement, declared.** ~~The positioning statement
+reads "commercial and project-delivery working across the Kimberley" in the source PDF, which
+is missing a noun, so the homepage says "project-delivery **support**, working across".~~
+**Withdrawn 2026-09-25 — this was wrong, and wrong in a way worth reading.** The source PDF
+does not say "working" at all; that word had been inserted by the repo's extract. The PDF
+reads "Broome-based commercial and project-delivery across the Kimberley", which needs no
+noun added. The homepage and the extract are both corrected. See the verification entry at
+the top of this log.
 
 ### 2026-09-25 — Re-sequencing and plan reconciliation (no code change)
 
