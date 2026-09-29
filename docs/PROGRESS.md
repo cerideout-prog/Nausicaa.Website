@@ -27,12 +27,93 @@ to it. See plan §4.0.
 | — | 2 — Homepage + mobile fix | ✅ Complete | 2026-09-25 | `home.html` rewritten to the capability statement structure. Responsive layout fixed sitewide: **zero horizontal overflow on all 27 HTML files at 25 viewport widths from 320px to 1440px**, including the tablet/laptop band and the 320px residuals. |
 | — | 3 — Audience pages | ✅ Complete | 2026-09-25 | Three audience pages realigned to their capability statement cards and led by the quoted buyer question. Multi-trade folded into `kimberley-business.html#multi-trade` per D-W9; its service card and its redirect stub both repointed. `principals-and-asset-owners.html` shell replaced with real copy, 455 → 879 words. `who-we-work-with.html` checked, no drift, unchanged. |
 | — | 4 — Service pages | ✅ Complete | 2026-09-25 | Four service pages realigned to their capability statement cards; `local-content` merged into Service 4; all four stale eyebrows replaced; `what-we-do.html` given connective copy (166 → 304 words) with its four cards left verbatim. |
-| **1st** | **5 — How to engage + conflict** | ⬜ Not started | — | Note: `how-to-engage.html` no longer holds the calculator. Dead PDF link to resolve. **Session 3's day-rate/travel gap is CLOSED** — `how-to-engage.html` already carries both; see the Session 4 entry. |
-| 3rd | 6 — About | ⬜ Not started | — | Plus the "as at" date on `active-procurement.html` |
+| — | 5 — How to engage + conflict | ✅ Complete | 2026-09-29 | Fee model on `how-to-engage.html` rebuilt to the capability statement's three stages, verbatim-identical to the homepage's. Fee-at-award added — it was missing sitewide. Body cross-links added both ways; there were none. `conflict-policy.html` cross-linked but **deliberately not trimmed** — see the entry. |
+| **1st** | **6 — About** | 🟢 **Ready to start** | — | Plus the "as at" date on `active-procurement.html` |
 | **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-09-29 — Session 5: How to engage + conflict
+
+**Files touched:** `how-to-engage.html`, `conflict-policy.html`, `docs/PROGRESS.md`. Nothing else.
+No CSS written; every layout uses existing classes.
+
+**The fee model now matches the capability statement**
+`how-to-engage.html` is rebuilt around the capability statement's HOW TO ENGAGE table — three
+stages with their fee bases, as `.stage-card`s in `region-grid`:
+
+| Stage | Fee basis |
+| --- | --- |
+| Upfront commercial support *(before award)* | Fee-for-service, or Fee-at-award |
+| Mobilisation and delivery *(after award)* | As a project cost |
+| From variations to close *(through to close)* | As a project cost |
+
+Verified in the browser that these three cards are **verbatim-identical** to the last three
+`.stage-card`s on `home.html` — same headings, same fee bases. The homepage's first six
+`.stage-card`s are the value chain, which is why a naive selector comparison shows nine.
+
+**Two real alignment gaps closed**
+
+1. **Fee-at-award did not exist anywhere on the site.** The capability statement offers upfront
+   support as *"Fee-for-service, or Fee-at-award"*. The page described only the at-risk option
+   ("Funded by the client, at risk"). The contingent option is now stated as a peer choice, in
+   a two-card block before the deliverable list.
+2. **The old three stages were not the capability statement's three stages.** The page had
+   Stage 1 tender support → Stage 2 ongoing management → Stage 3 buy-out. Stage 3 is an
+   *exception* — what declining Stage 2 costs — not a phase of the work. The capability
+   statement's third stage is the claims-to-close phase, which the page had no stage for. The
+   three stages are now the capability statement's; the buy-out is kept as an exception noted
+   under "after award", where it belongs.
+
+**Cross-links — there were none**
+Neither page linked to the other in the body; the only connections were the shared footer.
+Added: `how-to-engage` → conflict policy twice (in the capability statement's own "Either side
+of the same contract" note, and on the conflict-check sentence in the fee box);
+`conflict-policy` → how to engage twice (on the pre-engagement check, and on the
+commission/disbursement terms that live on the fee page).
+
+**Trimmed**
+- The "What to include in your enquiry" bullet list. `contact.html` already collects project
+  stage, location, contract value, duration and role as **structured form fields**. A prose list
+  telling people to mention what the form already asks for is duplication; replaced with one
+  sentence and a button.
+- The day-rate row in the buy-side table, which restated the day-rate panel directly below it.
+- The disbursements/GST/no-commissions sentence, which appeared twice.
+
+**Word count, measured properly:** `how-to-engage` 889 → 920, `conflict-policy` 1160 → 1199
+(`<main>` only, HTML comments stripped). Both are up slightly. The brief said "trim", and on
+`how-to-engage` the duplication was removed but the capability statement's model and the
+fee-at-award option are net additions, so the count is roughly flat for materially more content.
+Stated rather than dressed up.
+
+**`conflict-policy.html` was NOT trimmed, deliberately — this needs a decision**
+The cross-links were added; no content was removed. This is a published conflict-management
+framework, the full version is pending legal review (§18), and it is the page a probity officer
+reads. Removing items from it is a legal call, not a copy call.
+
+**The trim that is available, if you want it:** the "What Nausicaa will not do" pledge block
+(four blockquotes) and the Tier 1 absolute-prohibitions list say the same thing twice. Four of
+Tier 1's six bullets restate the four pledges in substance — roughly 90 words of duplication.
+Collapsing them changes what a probity officer sees in the section headed "Absolute
+prohibitions", so it is not a change to make unilaterally. Options: keep both (current), drop
+the pledge block and rely on Tier 1, or keep the pledges and cut Tier 1 to the two unique items
+(confidential-information use; acting against a former retained client).
+
+**Already resolved before this session:** the dead `/docs/nausicaa-conflict-framework.pdf`
+download button. It is commented out with a "Request the full framework" contact CTA in its
+place, and the browser confirms zero rendered links to it. The PROGRESS note listing it as
+outstanding for Session 5 was stale.
+
+**Verified**
+- Both pages 200, one `<h1>` each, zero console errors.
+- Active nav resolves to "How to Engage" on `how-to-engage.html`. `conflict-policy.html` has no
+  active nav — correct, it is footer-only per D-W4, not a nav item.
+- Nav and footer blocks still hash identically across all 17 chrome-bearing pages; neither was
+  touched.
+- Zero horizontal overflow on both pages at 320, 360, 390, 768, 900, 1024 and 1280px.
+- Both files tag-balanced. No broken internal links (the only regex hit is the PDF href inside
+  the HTML comment, which does not render).
 
 ### 2026-09-25 — Session 4: Service pages
 
