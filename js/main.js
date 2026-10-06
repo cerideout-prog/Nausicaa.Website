@@ -3,16 +3,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // Active nav link. Service pages sit at the top level rather than under
-  // their section, so each one names the nav item it belongs to.
+  // Active nav link. The nav carries five section items; the pages beneath a
+  // section sit at the top level rather than under it, so each one names the
+  // nav item it belongs to. Any page rename, merge or deletion must update
+  // this map (plan §2.1 rule 3).
   const SECTION = {
-    '/superintendents-representative': '/delivering-in-the-kimberley',
-    '/local-content':                  '/delivering-in-the-kimberley',
-    '/supply-chain':                   '/delivering-in-the-kimberley',
-    '/contract-administration':        '/delivering-in-the-kimberley',
-    '/fractional-commercial-manager':  '/kimberley-business',
-    '/business-support':               '/kimberley-business',
-    '/business-capability':            '/kimberley-business'
+    // Who We Work With
+    '/entering-the-kimberley':         '/who-we-work-with',
+    '/kimberley-business':             '/who-we-work-with',
+    '/principals-and-asset-owners':    '/who-we-work-with',
+    // What We Do
+    '/superintendents-representative': '/what-we-do',
+    '/fractional-commercial-manager':  '/what-we-do',
+    '/tendering-and-estimating':       '/what-we-do',
+    '/local-supply-chain':             '/what-we-do',
+    // How to Engage
+    '/calculator':                     '/how-to-engage'
   };
 
   const path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';

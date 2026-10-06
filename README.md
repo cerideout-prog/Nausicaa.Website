@@ -6,7 +6,8 @@ Landing page for Nausicaa Consult — business capability and tendering consulta
 
 - `index.html` — single-page site (hero, about, services, regions, case study request, contact)
 - `css/styles.css` — styling
-- `js/main.js` — smooth scroll + footer year
+- `js/main.js` — nav state, mobile nav, smooth scroll, footer year
+- `docs/WEBSITE_RESTRUCTURE_PLAN.md` — **read this first** before any structural or copy change
 
 ## Before going live
 
