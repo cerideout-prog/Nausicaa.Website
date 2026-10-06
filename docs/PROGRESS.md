@@ -34,6 +34,55 @@ to it. See plan §4.0.
 
 ## Log
 
+### 2026-10-06 — Terms reframed, and the procurement list refreshed
+
+**`terms.html` banner reframed (option 3) — copy only, no clause touched**
+It led with "DRAFT — NOT FOR USE", which read as an internal warning label on a page now linked
+from every footer. It now leads with the reason: that since November 2023 an unfair term in a
+standard-form small-business contract is unlawful to *propose*, not only to enforce, so the
+exposed clauses are deliberately left open pending advice. Every protective statement is intact
+and verified present — *not in force*, *not offered to any client*, *must not be relied on*, the
+nine `[AWAITING ADVICE]` markers, and `noindex`. The `<title>`, meta description (which still said
+"not published" — false since D-W10) and footer line were brought into line.
+
+**Not changed, and worth a decision:** `.draft-banner` is still deep red (`#7f1d1d`) with a warning
+triangle. That styling now reads at odds with the calmer copy. Changing it to navy is a one-line
+CSS edit; it was left alone because option 3 was scoped to copy.
+
+**`data/tenders.json` refreshed — Upcoming Works is live again**
+Source: the KDC public weekly PDF for **30 September 2026**, supplied by the user. Note this is the
+**public PDF, not the email** the documented routine expects, so `tools/parse-kdc-email.js` could
+not be used directly. The data was generated with a script that **reuses the repo's own exported
+helpers** — `KDC.parseDate`, `KDC.kdcPdfUrl`, `KDC.applyOverrides`, `KDC.build` and `KDC.scrub` —
+so the output matches what the email routine would produce.
+
+- **28 opportunities**: 15 with real closing dates (4 "new", 11 "current"), 13 KDC "future
+  opportunities".
+- **Future opportunities carry `closes: null`**, with the estimated advertising date in `notes`.
+  The table column is headed *Closes*; putting an advertising date there would have rendered as
+  "2 Oct 2026 (closed)" for a tender that has not been advertised yet. They render "—" and sort
+  last, which is correct.
+- **Nothing dropped.** The oldest closing date is 1 Oct, five days back, inside the README's
+  7-day grace. Two entries render "(closed)" by design.
+- **Scrub passed.** The source PDF contains three email addresses and a named KDC officer; none
+  were carried across. Notes were rewritten to keep the actionable fact and drop the contact.
+  Verified: no `@` anywhere in the file.
+- All 28 entries link to the KDC public weekly PDF, never a personalised link.
+
+**Verified in the browser:** no stale notice, "Last updated 30 Sept 2026" in the toolbar, table and
+toolbar visible, 28 rows, closing badges rendering `(closed)` / `(today)` / `(1d)`, category filter
+populated from the data, search working, 28 links to the KDC PDF, zero console errors.
+
+**One possible source error, left as published:** *"Derby Main Roads Department - Bindara Donga -
+Refurbishment"* is listed with location **Fitzroy Crossing**. That may be the issuer/location
+transposition `data/README.md` warns about, but the correct value is not knowable from the PDF, so
+it was reproduced faithfully. If Derby is right, the fix belongs in `data/overrides.json` under
+`derby-main-roads-department-bindara-donga-refurbishment`.
+
+**Also noted:** the PDF prints *"Provision of Occupational Vaccination Program … 7 Oct 2016"* — a
+year typo. It is a future opportunity, so the date went into `notes` as 2026, which is plainly what
+was meant.
+
 ### 2026-10-06 — Settlements (D-W10, D-W11) and Session 7: Launch
 
 **Three open decisions settled first**
