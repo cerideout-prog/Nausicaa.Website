@@ -69,7 +69,10 @@ the whole site; the audit is in §3 below.
   edit, not a bundle change.
 - `contract-administration.html` and `business-capability.html` are ~50-word redirect stubs for
   pre-v2 URLs.
-- `terms.html` is marked **DRAFT — NOT FOR USE**, excluded from the sitemap, pending legal review.
+- `terms.html` is marked **DRAFT — NOT FOR USE** and is pending legal review. Since D-W10 it **is**
+  linked from the footer on every page, but stays `noindex, nofollow`, out of `sitemap.xml`, and
+  `Disallow:`ed in `robots.txt`. The draft banner and [AWAITING ADVICE] markers must not be removed
+  until a lawyer has reviewed it.
 - `home.html` currently sets `<link rel="canonical">` to `https://nausicaaconsulting.com.au/` —
   which is `index.html`, the gate. Canonical URLs need a sweep at launch.
 
@@ -166,6 +169,8 @@ Conflict Policy and Terms sit in the footer. Session 1 may adjust this if it doe
 | D-W5 | KDSF + Thunderbird work record | **Handled as a separate workstream**, outside Sessions 1–7. Not built in this restructure. |
 | D-W6 | The four existing profiles | **Keep.** They remain the content of `project-profiles.html` for now; presented as earlier-career work, not in the nav. |
 | D-W7 | Launch timing | **Campaign runs the week commencing 2026-09-28.** ~~Gate must come off before then.~~ **Ordering superseded by D-W8** — the campaign date stands, the gate timing does not. |
+| D-W10 | `terms.html` in the footer, 2026-10-06 | **Link it.** Added to the Company column on all 17 chrome-bearing pages. It stays `noindex, nofollow`, stays out of `sitemap.xml`, and keeps `Disallow: /terms.html` in `robots.txt` — linked and reachable, but not indexed. The draft banner and the **[AWAITING ADVICE]** markers STAY until a WA construction lawyer has reviewed it. The banner's claim that the page "is not linked from the site" was corrected, since this decision made it false. Raised twice before the decision: the page states it is not in force and that several clauses carry live legal risk if adopted unreviewed. |
+| D-W11 | Conflict-policy duplication, 2026-10-06 | **Remove it.** The four published pledges and the Tier 1 list stated the same four prohibitions twice. The pledge block is kept as the public commitment; Tier 1 now incorporates those four by reference and lists only its two additional items. Nothing left the framework — 1199 → 1144 body words. |
 | D-W9 | Multi-trade fold target, corrected 2026-09-25 | **Into `kimberley-business.html`** (Audience 2), not `entering-the-kimberley.html`. D-W2 mis-assigned it. Evidence: the retired page's own eyebrow read *"For Kimberley businesses · Service"*; its copy addresses *"local single-trade businesses"* stepping up to head contract; the pre-restructure `home.html` filed it under the "Based in the Kimberley" card and the old footer under the "Kimberley Business" column; and `kimberley-business.html` already carries a Multi-Trade Commercial Coordination service card. Folding it into Audience 1 would put local-business copy on the page written for contractors entering the region. **Stub target changes too.** |
 | D-W8 | Gate timing, revised 2026-09-25 | **Gate comes off LAST**, after all copy is aligned — superseding D-W7's ordering. Session 1 has shipped, so URLs are final and the churn risk that drove gate-second is gone. Accepted consequence: the site is not crawlable during the campaign, so organic search contributes nothing to it. See §4.0. |
 
@@ -334,5 +339,6 @@ placeholders; it does not fill them.
 - Any change to `/tools` or the weekly KDC procurement parsing routine.
 - Rebuilding `/profiles/*.html` to use the shared stylesheet.
 - Image optimisation of the base64 data URIs in the profile pages.
-- `terms.html` — remains draft, pending legal review.
+- `terms.html` — its **content** remains out of scope, draft and pending legal review. D-W10 changed
+  only whether it is linked, not what it says.
 - Analytics, forms backend, or any third-party script.

@@ -29,10 +29,65 @@ to it. See plan §4.0.
 | — | 4 — Service pages | ✅ Complete | 2026-09-25 | Four service pages realigned to their capability statement cards; `local-content` merged into Service 4; all four stale eyebrows replaced; `what-we-do.html` given connective copy (166 → 304 words) with its four cards left verbatim. |
 | — | 5 — How to engage + conflict | ✅ Complete | 2026-09-29 | Fee model on `how-to-engage.html` rebuilt to the capability statement's three stages, verbatim-identical to the homepage's. Fee-at-award added — it was missing sitewide. Body cross-links added both ways; there were none. `conflict-policy.html` cross-linked but **deliberately not trimmed** — see the entry. |
 | — | 6 — About | ✅ Complete | 2026-10-06 | `about.html` bio aligned to the capability statement and now matches the homepage word-for-word; "Principal Consultant" corrected to "Commercial Manager" sitewide. `active-procurement.html` **unchanged — D-W3 was already satisfied** by existing code. **But its data is 56 days stale and the table is self-suppressing: the page renders empty.** See the entry. |
-| **1st / LAST** | **7 — Launch** | 🟢 **Ready to start** | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
+| — | 7 — Launch | ✅ Complete **on the branch** | 2026-10-06 | Gate removed from **31** files (27 root + 4 profiles — the plan's count missed the profiles, which would have been unreachable). `home.html` → `index.html` with a stub at the old URL. `robots.txt` restored, canonicals and OG swept, sitemap regenerated. **NOT yet merged to `main` — awaiting confirmation.** |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-10-06 — Settlements (D-W10, D-W11) and Session 7: Launch
+
+**Three open decisions settled first**
+1. **Upcoming Works data** — user will supply the updated KDC list. `data/tenders.json` is untouched
+   and still dated 11 Aug, so the table stays self-suppressed until that lands. **The site goes
+   public with Upcoming Works showing its "not currently being maintained" notice.**
+2. **D-W10 — `terms.html` is now linked** from the Company footer column on all 17 chrome-bearing
+   pages. It keeps `noindex, nofollow`, stays out of `sitemap.xml`, and keeps `Disallow: /terms.html`.
+   Its banner claimed the page "is not linked from the site" — corrected, since this decision made
+   it false. The standing "do not link" comment was rewritten to record the reversal. **The draft
+   banner and the [AWAITING ADVICE] markers stay.**
+3. **D-W11 — conflict-policy duplication removed.** The pledge block is kept as the public
+   commitment; Tier 1 now incorporates those four prohibitions by reference and lists only its two
+   additional items. Nothing left the framework. 1199 → 1144 body words.
+
+**Session 7 — launch, executed on the branch**
+- **Gate removed from 31 files, not 27.** The plan counted root pages only. `profiles/*.html` carry
+  the same inline gate, and all four are linked from `project-profiles.html` and `about.html` — left
+  in, every profile would have bounced visitors to `/` and been unreachable. Verified: zero
+  `nc_unlocked` references remain anywhere in the repo.
+- **`home.html` → `index.html`** via `git mv`, old gate `index.html` deleted, and a redirect stub
+  left at `home.html` so the pre-launch URL still resolves.
+- **`robots.txt` restored** — `Allow: /`, `Disallow: /terms.html`, and the `Sitemap:` line.
+- **Canonical and OG swept.** Canonicals were already right on the real pages; the sweep found and
+  fixed what was missing rather than what was wrong:
+  - `og:url` was absent from **every** page except the homepage — Session 1 built the subpage head
+    from a template that never had one. Added to 16 pages.
+  - `terms.html` had **no canonical at all**. Added.
+  - The four profile pages had **no canonical and no OG tags**, despite being in the sitemap and
+    therefore indexable. Added canonical, `og:type`, `og:url`, `og:title`, `og:image`,
+    `og:description` and `twitter:card`, derived from each page's own title and description.
+  - The nine redirect stubs keep canonicals pointing at their **targets** — correct for a stub, and
+    deliberately left alone.
+- **`sitemap.xml` regenerated** from the filesystem rather than by hand: 21 URLs, stubs and
+  `terms.html` excluded, exclusions documented in the file.
+
+**Verified as a first-time visitor with no `localStorage`** — the real post-launch condition:
+- All 22 real pages return 200 with exactly one `<h1>` and **no redirect to the gate**.
+- All 9 redirect stubs resolve correctly. The multi-trade stub lands on
+  `kimberley-business.html#multi-trade`, the anchor Session 3 created.
+- Zero console errors on any page.
+- Nav and footer still hash identically across all 17 chrome-bearing pages.
+- **Zero horizontal overflow** across 12 pages at 320, 360, 390, 414, 768, 900, 1024, 1140, 1280
+  and 1440px.
+- No broken internal links. All 27 root pages tag-balanced. `sitemap.xml` valid XML with every URL
+  resolving to a file on disk.
+
+**NOT DONE — the merge to `main`**
+Everything above is on `claude/cool-einstein-3ex6a0`. The merge is the moment the site becomes
+public and crawlable, and it was held back for explicit confirmation because two things are still
+open at the time of writing: the Upcoming Works list has not arrived, so that nav item will launch
+empty; and `terms.html` is now linked from every page while still carrying its DRAFT — NOT FOR USE
+banner and unreviewed clauses. Neither blocks a merge — both are recorded decisions — but they are
+the state the site will go live in.
 
 ### 2026-10-06 — Session 6: About
 

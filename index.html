@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>(function(){try{if(localStorage.getItem('nc_unlocked')==='1'){location.replace('/home.html');}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nausicaa Consulting — Coming soon</title>
-<meta name="description" content="Nausicaa Consulting — commercial capability for Kimberley projects. The site is being finalised.">
+<title>Nausicaa Consulting — Commercial management for Kimberley projects</title>
+<meta name="description" content="Broome-based commercial and project-delivery across the Kimberley. We run the commercial layer of a project alongside your supervision — estimating, tendering, contract administration, claims and variations, through to billing.">
+<!-- CANONICAL / OG URL: still points at "/", which is currently the coming-soon
+     gate. Left as-is deliberately — the canonical and OG sweep is Session 7's
+     job (plan §2.2), and changing it here would leave the site half-swept. -->
 <link rel="canonical" href="https://nausicaaconsulting.com.au/">
-<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nausicaaconsulting.com.au/">
-<meta property="og:title" content="Nausicaa Consulting — Coming soon">
+<meta property="og:title" content="Nausicaa Consulting — Commercial management for Kimberley projects">
 <meta property="og:image" content="https://nausicaaconsulting.com.au/png/og-image.png">
-<meta property="og:description" content="Commercial capability for Kimberley projects. The site is being finalised.">
+<meta property="og:description" content="Commercial management for Kimberley projects — from someone who has priced, won and delivered. Estimate, tender, mobilise, deliver, claim and close.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,65 +21,392 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/png/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/png/favicon-180.png">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nausicaa Consulting",
+  "description": "Contract administration and Superintendent's Representative services, fractional commercial management, tendering and estimating, and regional mobilisation and local supply chain support in the Kimberley region of Western Australia.",
+  "url": "https://nausicaaconsulting.com.au/",
+  "telephone": "+61450137044",
+  "email": "callum.rideout@nausicaaconsulting.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Broome",
+    "addressRegion": "WA",
+    "postalCode": "6725",
+    "addressCountry": "AU"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Kimberley, Western Australia" },
+    { "@type": "Place", "name": "Pilbara, Western Australia" },
+    { "@type": "Place", "name": "Gascoyne, Western Australia" }
+  ],
+  "knowsAbout": [
+    "Contract administration",
+    "Superintendent's Representative",
+    "Tendering and estimating",
+    "Fractional commercial management",
+    "Security of payment",
+    "WAIPS participation plans",
+    "Aboriginal Procurement Policy",
+    "Local supply chain development"
+  ]
+}
+</script>
 </head>
-<body class="coming-soon-body">
+<body>
 
-<div class="coming-soon-stage">
-  <div class="coming-soon-content">
-    <span class="coming-soon-mark" aria-hidden="true">
-      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg>
-    </span>
-    <span class="coming-soon-wordmark">NAUSICAA CONSULTING</span>
-
-    <span class="eyebrow">Coming soon</span>
-    <h1>Commercial management for Kimberley projects.</h1>
-    <p class="lead">We're preparing to launch — Superintendent's Representative and contract administration for contractors delivering in the Kimberley, and fractional commercial management for Kimberley businesses.</p>
-
-    <div class="coming-soon-access">
-      <button type="button" class="coming-soon-access-toggle" id="access-toggle">Have a preview code?</button>
-      <form class="coming-soon-access-form" id="access-form" hidden>
-        <label for="access-code" class="sr-only">Preview code</label>
-        <input type="password" id="access-code" placeholder="Preview code" autocomplete="off">
-        <button type="submit" class="btn btn-outline--white">Enter</button>
-        <p class="coming-soon-access-error" id="access-error" hidden>That code isn't right.</p>
-      </form>
-    </div>
+<div class="utility-bar">
+  <div class="container">
+    <a data-entity-href="phoneHref" href="tel:+61450137044"><span data-entity="phone">0450 137 044</span></a>
+    <span class="util-sep">·</span>
+    <a href="mailto:callum.rideout@nausicaaconsulting.com.au"><span data-entity="email">callum.rideout@nausicaaconsulting.com.au</span></a>
   </div>
 </div>
 
-<footer class="coming-soon-footer">
-  <span>Nausicaa Consulting</span>
-  <span class="dot" aria-hidden="true">&middot;</span>
-  <span>Broome, WA</span>
-  <span class="dot" aria-hidden="true">&middot;</span>
-  <span>ABN 45 773 440 451</span>
+<header class="site-header">
+  <nav class="nav container">
+    <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg></span>Nausicaa Consulting</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="/who-we-work-with.html">Who We Work With</a>
+      <a href="/what-we-do.html">What We Do</a>
+      <a href="/how-to-engage.html">How to Engage</a>
+      <a href="/active-procurement.html">Upcoming Works</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ══ Hero — capability statement hero + positioning statement ══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Broome, Western Australia</span>
+          <h1>Commercial management for Kimberley projects — from someone who has priced, won and delivered.</h1>
+          <p class="lead">Broome-based commercial and project-delivery across the Kimberley. We run the commercial layer of a project alongside your supervision — estimating, tendering, contract administration, claims and variations, through to billing.</p>
+          <p class="lead">Callum Rideout, Commercial Manager. A career across mining, energy, civil and technology. MBA, BCom (Finance), BSc (Geology). Four years in the Kimberley with a focus on commercial risk and governance.</p>
+          <div class="hero-actions">
+            <a href="/contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+            <a href="/what-we-do.html" class="btn btn-ghost btn-lg">See what we do</a>
+          </div>
+        </div>
+        <!-- Desktop-only reinforcement panel (.hero-art is hidden ≤960px by the
+             existing breakpoint). Every point below is restated in the page body,
+             so nothing here is lost on a phone. -->
+        <div class="hero-art">
+          <div class="hero-art-stat">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </span>
+            <div>
+              <strong>On the ground in Broome</strong>
+              <span>A commercial lead in the same time zone as the site, not a fly-in visit.</span>
+            </div>
+          </div>
+          <div class="hero-art-stat">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 8h18M6 8l-3 6h6zM18 8l-3 6h6z"/></svg>
+            </span>
+            <div>
+              <strong>Either side of the same contract</strong>
+              <span>For the principal verifying what is claimed, or for the contractor making the claim.</span>
+            </div>
+          </div>
+          <div class="hero-art-stat">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
+            </span>
+            <div>
+              <strong>Conflicts declared in writing</strong>
+              <span>Checked and recorded before an engagement starts. Some are declined.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Value chain — the six stages from the capability statement ══
+       Six cards in .region-grid (3 → 2 → 1 at the existing breakpoints),
+       paired with the existing .stage-card. No new grid rules. -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The commercial layer</span>
+        <h2>Estimate → Tender → Mobilise → Deliver → Claim &amp; Vary → Bill &amp; Close.</h2>
+        <p class="lead">The same six stages sit behind every project. We can run all of them, or step in at the one that is hurting.</p>
+      </div>
+      <div class="region-grid">
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 01</span>
+          <h4>Estimate</h4>
+          <p>Scope built and priced on real regional cost — mobilisation, seasonality, haulage and the availability of those actually positioned to deliver.</p>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 02</span>
+          <h4>Tender</h4>
+          <p>Bids written and priced to win without buying the job, behind a subcontract panel that holds through a wet season.</p>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 03</span>
+          <h4>Mobilise</h4>
+          <p>Head-contract scope unbundled into packages local businesses can actually deliver, with WAIPS, APP and IPP targets set against a real supplier base.</p>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 04</span>
+          <h4>Deliver</h4>
+          <p>Senior commercial oversight alongside your supervision: pricing, margin, forecasting and reporting you can rely on.</p>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 05</span>
+          <h4>Claim &amp; Vary</h4>
+          <p>Claims certified or built, variations tested, alternate pricing options put on the table rather than left on it.</p>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Stage 06</span>
+          <h4>Bill &amp; Close</h4>
+          <p>Quote-to-cash through to final account, with acquittal reporting for grants that survives scrutiny.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ Who we work with — three audiences ══
+       Cards mirror /who-we-work-with.html (built by Session 1 from the
+       capability statement). Keep the two in step. -->
+  <section class="bg-off-white">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who we work with</span>
+        <h2>Three positions on the same contract.</h2>
+        <p class="lead">Contractors bringing work into the Kimberley, Kimberley businesses delivering it, and the principals and asset owners paying for it.</p>
+      </div>
+      <div class="region-grid">
+
+        <a href="/entering-the-kimberley.html" class="segment-card">
+          <span class="seg-eyebrow">Entering the Kimberley</span>
+          <h3>&ldquo;We can win the work. Who runs it up there?&rdquo;</h3>
+          <p>Regional cost priced honestly, a subcontract panel that holds through a wet season, and a commercial lead in Broome.</p>
+          <span class="seg-go">See what this covers <span>&rarr;</span></span>
+        </a>
+
+        <a href="/kimberley-business.html" class="segment-card">
+          <span class="seg-eyebrow">Kimberley Businesses</span>
+          <h3>&ldquo;The commercial skills are the constraint.&rdquo;</h3>
+          <p>Estimating discipline, claims and variations recovered, and useful reporting you can trust.</p>
+          <span class="seg-go">See what this covers <span>&rarr;</span></span>
+        </a>
+
+        <a href="/principals-and-asset-owners.html" class="segment-card">
+          <span class="seg-eyebrow">Principals &amp; Asset Owners</span>
+          <h3>&ldquo;Who can see what a contractor is claiming?&rdquo;</h3>
+          <p>Superintendent&rsquo;s Representative and contract administration from someone who has won tenders, reviewed contracts and built claims.</p>
+          <span class="seg-go">See what this covers <span>&rarr;</span></span>
+        </a>
+
+      </div>
+      <p style="margin-top:32px;"><a href="/who-we-work-with.html"><strong>All three, side by side &rarr;</strong></a></p>
+    </div>
+  </section>
+
+  <!-- ══ What we do — four services ══
+       Cards mirror /what-we-do.html. .services-grid is 4 → 2 → 1 at the
+       existing breakpoints. -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we do</span>
+        <h2>The commercial layer, four ways.</h2>
+        <p class="lead">Four service lines, engaged individually or together.</p>
+      </div>
+      <div class="services-grid">
+
+        <a href="/superintendents-representative.html" class="segment-card">
+          <span class="seg-eyebrow">Service 1</span>
+          <h3>Contract Administration &amp; Superintendent&rsquo;s Rep</h3>
+          <p>Claims certified, variations tested, alternate pricing options, and acquittal reporting for grants that survives scrutiny.</p>
+          <span class="seg-go">See the service <span>&rarr;</span></span>
+        </a>
+
+        <a href="/fractional-commercial-manager.html" class="segment-card">
+          <span class="seg-eyebrow">Service 2</span>
+          <h3>Fractional Commercial Management</h3>
+          <p>Senior commercial oversight on a retainer: pricing, margin, forecasting and quote-to-cash.</p>
+          <span class="seg-go">See the service <span>&rarr;</span></span>
+        </a>
+
+        <a href="/tendering-and-estimating.html" class="segment-card">
+          <span class="seg-eyebrow">Service 3</span>
+          <h3>Tendering &amp; Estimating</h3>
+          <p>Bids priced on real regional cost — mobilisation, seasonality, haulage, availability from those positioned to deliver your project.</p>
+          <span class="seg-go">See the service <span>&rarr;</span></span>
+        </a>
+
+        <a href="/local-supply-chain.html" class="segment-card">
+          <span class="seg-eyebrow">Service 4</span>
+          <h3>Regional Mobilisation &amp; Local Supply Chain</h3>
+          <p>Head-contract scope unbundled into packages local businesses can actually deliver. Including advice on WAIPS, APP and IPP targets.</p>
+          <span class="seg-go">See the service <span>&rarr;</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ How to engage — the fee model from the capability statement ══ -->
+  <section class="bg-off-white">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How to engage</span>
+        <h2>We fit your business.</h2>
+        <p class="lead">Commercial support is paid for up front, then carried as a project cost once the work is running.</p>
+      </div>
+      <div class="region-grid">
+
+        <div class="stage-card">
+          <span class="stage-num">Before award</span>
+          <h4>Upfront commercial support</h4>
+          <p>Estimating, tendering and the commercial work that has to happen before there is a contract to charge against.</p>
+          <div class="stage-meta">Fee-for-service, or Fee-at-award</div>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">After award</span>
+          <h4>Mobilisation and delivery</h4>
+          <p>Subcontract packaging, contract administration and commercial oversight through the build.</p>
+          <div class="stage-meta">As a project cost</div>
+        </div>
+
+        <div class="stage-card">
+          <span class="stage-num">Through to close</span>
+          <h4>From variations to close</h4>
+          <p>Claims, variations, final account, acquittal reporting and contract close-out.</p>
+          <div class="stage-meta">As a project cost</div>
+        </div>
+
+      </div>
+
+      <div class="plain-note">
+        <p><strong>Either side of the same contract.</strong> We work for the principal verifying what is claimed, or for a contractor making sure the claim is done once, and done right.
+        <a href="/conflict-policy.html">Conflicts are declared and managed in writing before work starts.</a></p>
+      </div>
+
+      <div class="hero-actions" style="margin-top:32px;">
+        <a href="/how-to-engage.html" class="btn btn-primary">How to engage</a>
+        <a href="/calculator.html" class="btn btn-outline">Indicative project savings calculator</a>
+      </div>
+      <p class="calc-field-note" style="margin-top:14px;">The calculator is indicative only — not a quote, a forecast, or a guarantee of savings.</p>
+      <p style="margin-top:14px;">
+        Would rather just talk it through? Call
+        <a data-entity-href="phoneHref" href="tel:+61450137044"><strong><span data-entity="phone">0450 137 044</span></strong></a>
+        or email
+        <a href="mailto:callum.rideout@nausicaaconsulting.com.au"><strong><span data-entity="email">callum.rideout@nausicaaconsulting.com.au</span></strong></a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ Work record teaser ══════════════════════════════════════════
+       PLAN §5.1 IS A HARD BLOCK. This is the fully anonymised option —
+       one of only two the plan permits (the other is a marked placeholder).
+
+       It names no client, head contractor, principal, project, asset or
+       employer, and carries no package value, tonnage, volume, duration
+       or subcontractor count. Do not reinstate any of the names or
+       figures listed in plan §5.1 here — they are deliberately not
+       repeated in this comment, because an HTML comment is served with
+       the page and would publish them. Three independent reasons, each
+       sufficient on its own: written clearance from the former employer
+       is unresolved; D-W5 puts the named work record in a separate
+       workstream; and those names were deliberately removed from the
+       site in commits 46f7f4e and 608c9a0.
+
+       The attribution note below is mandatory wherever the work record
+       appears (plan §5) and must travel with any future version of this
+       section. The corroboration gap in plan §3.2 remains open: the four
+       published profiles are from earlier roles and do not evidence the
+       Kimberley delivery described here. The link label says so. ══ -->
+  <section>
+    <div class="container--narrow">
+      <div class="section-head">
+        <span class="eyebrow">Work record</span>
+        <h2>Priced, won and delivered — not advised from a distance.</h2>
+        <p class="lead">Civil and earthworks delivery in the Kimberley: scope and estimate built from the ground up, the contract negotiated directly, regional subcontractors engaged on terms that held through delivery, then claims, variations and closure run through to final account.</p>
+      </div>
+      <div class="plain-note">
+        <p><strong>Attribution.</strong> Recent work record described above was delivered by Callum Rideout in a recent role. It does not represent work delivered by Nausicaa.</p>
+      </div>
+      <p style="margin-top:24px;">Written-up records from earlier roles in mining, technology and governance are published in full: <a href="/project-profiles.html"><strong>project profiles &rarr;</strong></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4.5"><circle cx="50" cy="50" r="45"/><path d="M33 68 V32 L67 68 V32"/></svg></span>Nausicaa Consulting</div>
+        <p class="footer-tagline">Commercial capability for Kimberley projects — from either side of the contract.</p>
+        <p class="footer-abn"><span data-entity="abnLine">ABN 45 773 440 451 · Broome WA</span></p>
+      </div>
+      <div class="footer-col">
+        <h4>Who We Work With</h4>
+        <ul>
+          <li><a href="/who-we-work-with.html">Overview</a></li>
+          <li><a href="/entering-the-kimberley.html">Entering the Kimberley</a></li>
+          <li><a href="/kimberley-business.html">Kimberley Businesses</a></li>
+          <li><a href="/principals-and-asset-owners.html">Principals &amp; Asset Owners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>What We Do</h4>
+        <ul>
+          <li><a href="/what-we-do.html">Overview</a></li>
+          <li><a href="/superintendents-representative.html">Contract Administration &amp; Superintendent's Rep</a></li>
+          <li><a href="/fractional-commercial-manager.html">Fractional Commercial Management</a></li>
+          <li><a href="/tendering-and-estimating.html">Tendering &amp; Estimating</a></li>
+          <li><a href="/local-supply-chain.html">Regional Mobilisation &amp; Local Supply Chain</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/how-to-engage.html">How to Engage</a></li>
+          <li><a href="/project-profiles.html">Project Profiles</a></li>
+          <li><a href="/active-procurement.html">Upcoming Works</a></li>
+          <li><a href="/conflict-policy.html">Conflict Policy</a></li>
+          <li><a href="/terms.html">Terms of Engagement</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a data-entity-href="phoneHref" href="tel:+61450137044"><span data-entity="phone">0450 137 044</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Nausicaa Consulting.</span>
+      <span>nausicaaconsulting.com.au</span>
+    </div>
+  </div>
 </footer>
 
-<script>
-(function () {
-  var toggle = document.getElementById('access-toggle');
-  var form = document.getElementById('access-form');
-  var input = document.getElementById('access-code');
-  var error = document.getElementById('access-error');
-  if (!toggle || !form) return;
-
-  toggle.addEventListener('click', function () {
-    form.hidden = !form.hidden;
-    if (!form.hidden) input.focus();
-  });
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (input.value.trim().toLowerCase() === 'nausicaa') {
-      try { localStorage.setItem('nc_unlocked', '1'); } catch (err) {}
-      location.href = '/home.html';
-    } else {
-      error.hidden = false;
-      input.value = '';
-      input.focus();
-    }
-  });
-})();
-</script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

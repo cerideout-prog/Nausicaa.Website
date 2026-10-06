@@ -3,96 +3,23 @@
      page add, rename or removal.
 
      Deliberately excluded:
-       terms.html                  draft, pending legal review
-       redirect stubs              noindex, follow — they exist only to keep
-                                   pre-restructure URLs alive
-       home.html                   still the gated homepage; becomes
-                                   index.html in Session 7, which regenerates
-                                   this file -->
+       terms.html        draft pending legal review. Linked from the footer
+                         (D-W10) but noindex, nofollow and Disallow:ed in
+                         robots.txt — reachable, not indexed.
+       redirect stubs    noindex, follow. They exist only to keep
+                         pre-restructure URLs alive, home.html among them. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nausicaaconsulting.com.au/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Who We Work With -->
-  <url>
-    <loc>https://nausicaaconsulting.com.au/who-we-work-with.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/entering-the-kimberley.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/kimberley-business.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/principals-and-asset-owners.html</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- What We Do -->
-  <url>
-    <loc>https://nausicaaconsulting.com.au/what-we-do.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/superintendents-representative.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/fractional-commercial-manager.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/tendering-and-estimating.html</loc>
+    <loc>https://nausicaaconsulting.com.au/about.html</loc>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/local-supply-chain.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- How to engage -->
-  <url>
-    <loc>https://nausicaaconsulting.com.au/how-to-engage.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/calculator.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Company -->
   <url>
     <loc>https://nausicaaconsulting.com.au/active-procurement.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nausicaaconsulting.com.au/project-profiles.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/profiles/micromine-pitram.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/profiles/pitram-prominent-hill.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/profiles/ministry-of-data.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/profiles/governance-community-volunteer.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nausicaaconsulting.com.au/about.html</loc>
-    <priority>0.8</priority>
+    <loc>https://nausicaaconsulting.com.au/calculator.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://nausicaaconsulting.com.au/conflict-policy.html</loc>
@@ -101,5 +28,69 @@
   <url>
     <loc>https://nausicaaconsulting.com.au/contact.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/entering-the-kimberley.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/fractional-commercial-manager.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/how-to-engage.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/kimberley-business.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/local-supply-chain.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/principals-and-asset-owners.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/project-profiles.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/superintendents-representative.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/tendering-and-estimating.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/what-we-do.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/who-we-work-with.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/profiles/governance-community-volunteer.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/profiles/micromine-pitram.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/profiles/ministry-of-data.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nausicaaconsulting.com.au/profiles/pitram-prominent-hill.html</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>
