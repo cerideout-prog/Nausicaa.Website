@@ -28,11 +28,94 @@ to it. See plan §4.0.
 | — | 3 — Audience pages | ✅ Complete | 2026-09-25 | Three audience pages realigned to their capability statement cards and led by the quoted buyer question. Multi-trade folded into `kimberley-business.html#multi-trade` per D-W9; its service card and its redirect stub both repointed. `principals-and-asset-owners.html` shell replaced with real copy, 455 → 879 words. `who-we-work-with.html` checked, no drift, unchanged. |
 | — | 4 — Service pages | ✅ Complete | 2026-09-25 | Four service pages realigned to their capability statement cards; `local-content` merged into Service 4; all four stale eyebrows replaced; `what-we-do.html` given connective copy (166 → 304 words) with its four cards left verbatim. |
 | — | 5 — How to engage + conflict | ✅ Complete | 2026-09-29 | Fee model on `how-to-engage.html` rebuilt to the capability statement's three stages, verbatim-identical to the homepage's. Fee-at-award added — it was missing sitewide. Body cross-links added both ways; there were none. `conflict-policy.html` cross-linked but **deliberately not trimmed** — see the entry. |
-| **1st** | **6 — About** | 🟢 **Ready to start** | — | Plus the "as at" date on `active-procurement.html` |
-| **LAST** | **7 — Launch** | ⬜ Not started | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
+| — | 6 — About | ✅ Complete | 2026-10-06 | `about.html` bio aligned to the capability statement and now matches the homepage word-for-word; "Principal Consultant" corrected to "Commercial Manager" sitewide. `active-procurement.html` **unchanged — D-W3 was already satisfied** by existing code. **But its data is 56 days stale and the table is self-suppressing: the page renders empty.** See the entry. |
+| **1st / LAST** | **7 — Launch** | 🟢 **Ready to start** | — | Gate off, `home.html` → `index.html`, robots.txt, canonical sweep, merge to `main`. Gate script is inline in **all 27** HTML files, not in `js/`. Also owed: the `home.html` redirect stub, and the `terms.html` footer decision. |
 | — | Work record (KDSF + Thunderbird) | 🛑 Blocked | — | Separate workstream per D-W5. **Hard block — plan §5.1.** |
 
 ## Log
+
+### 2026-10-06 — Session 6: About
+
+**Files touched:** `about.html`, `docs/PROGRESS.md`. `active-procurement.html` was deliberately
+**not** changed — see below. No CSS written.
+
+**`about.html` — the bio contradicted the capability statement and the homepage**
+Session 2 put the capability statement's bio on the homepage verbatim. `about.html` still carried
+the pre-restructure version, so the two pages disagreed about who Callum is:
+
+| | Was | Now |
+| --- | --- | --- |
+| Role | Principal Consultant | **Commercial Manager** (capability statement's own title) |
+| Career span | oil & gas, mining, earthworks, transport, government works | **mining, energy, civil and technology** — "technology" was missing entirely, despite a technology profile being published |
+| Qualifications | "An MBA majoring in Innovation and Organisational Structure, a Business Degree majoring in Finance, and a love of science and research fostered through a Science Degree in Applied Geology" | **MBA, BCom (Finance), BSc (Geology)** |
+| Kimberley time | *absent* | **Four years in the Kimberley with a focus on commercial risk and governance** |
+
+Verified in the browser that the bio line on `about.html` is now word-for-word the one on
+`home.html`. "Principal Consultant" is gone from the page, the meta description, the OG
+description and the portrait alt text.
+
+Two structural fixes while in there:
+- **The MBA was listed under "Sector background"** — a degree in a list of industries. Qualifications
+  now have their own grid; the sector grid lists sectors only, with Technology & data added.
+- **A stale VERIFY comment** warned about a "16+ years" figure that Session 2 had already removed
+  from the site. Reworded so it reads as a standing guard against reintroducing it, rather than
+  implying the figure is present.
+
+**Qualifications were trimmed, not just restyled.** The expanded majors ("Innovation &
+Organisational Structure", "Applied Geology") are gone. §5 keeps *credential names* on the open
+VERIFY list, and the capability statement — the approved source — states them as MBA, BCom
+(Finance), BSc (Geology). Publishing less specificity than is verified is the safe direction.
+
+Body copy 773 → 749 words.
+
+**`active-procurement.html` — D-W3 is already satisfied, so nothing was changed**
+The session brief says "add the 'as at' date". It is already there, and the existing mechanism in
+`js/procurement.js` is more rigorous than D-W3 asked for. Verified in the browser in all three
+states:
+
+| Data age | Behaviour |
+| --- | --- |
+| Fresh | Toolbar shows "Last updated 2 Oct 2026". Table renders. |
+| > 21 days | Date still shown, plus a visible staleness warning. |
+| > 42 days | Table and toolbar hidden; the notice carries the date. |
+
+To confirm the healthy state I temporarily set `lastUpdated` forward in `data/tenders.json`, took
+the measurement, and **reverted the file** — confirmed byte-identical to its pre-test state and
+absent from the commit. No fabricated currency date was committed.
+
+The page also makes no false claim about its own refresh rate: the "weekly" references describe
+the KDC's publication cadence, not Nausicaa's.
+
+**🛑 But the page currently renders empty, and that blocks launch**
+`data/tenders.json` was last updated **11 Aug 2026 — 56 days ago**, past the 42-day threshold. So
+"Upcoming Works", one of five nav items, currently shows only:
+
+> **THIS LIST IS NOT CURRENTLY BEING MAINTAINED** — It was last updated 56 days ago, on 11 Aug
+> 2026. Rather than show you procurement data that may be out of date, the table is hidden.
+
+All **five** listed opportunities have also closed (31 Aug, 3 Sep, 9 Sep ×2, 22 Sep). So even
+with the threshold raised the table would show nothing but expired tenders.
+
+**This contradicts the premise D-W3 was decided on** — "User confirmed the weekly KDC update will
+be maintained." It has not been maintained since 11 August. The suppression logic is doing its job
+and should not be touched; the data is the problem, and refreshing it needs the current KDC weekly
+email, which a session does not have.
+
+**Three options, for a decision before Session 7:**
+1. **Refresh the data** from the current KDC weekly email (`tools/` has the parser; see
+   `data/README.md`) and keep the page. Restores D-W3's premise.
+2. **Keep the page, accept it launches empty.** The suppression notice is honest and points
+   readers at the KDC. A nav item leading to an empty table is a poor first impression.
+3. **Revisit D-W3** — drop Upcoming Works from the nav until the update cadence is real, leaving
+   the page reachable but unadvertised.
+
+**Verified**
+- `about.html` 200, one `<h1>`, active nav "About", portrait loads, zero console errors.
+- Insurance block correctly absent (`piCover`/`plCover` still null, per §5).
+- Entity line still rendered from `js/config.js`; no contact detail hardcoded.
+- Nav and footer blocks still hash identically across all 17 chrome-bearing pages.
+- Zero horizontal overflow at 320, 390, 768, 1024 and 1280px.
+- Both files tag-balanced.
 
 ### 2026-09-29 — Session 5: How to engage + conflict
 
