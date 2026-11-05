@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# terms.html is linked from the footer (D-W10) but is a draft pending legal
-# review. It carries noindex, nofollow and is excluded from the sitemap.
-Disallow: /terms.html
+# /terms-archive/ holds superseded versions of the Terms of Engagement, retained
+# because each version continues to apply to engagements signed while it was in
+# force. They are deliberately NOT disallowed here: they carry noindex, nofollow,
+# which a crawler can only act on if it is allowed to fetch the page.
 
 Sitemap: https://nausicaaconsulting.com.au/sitemap.xml
